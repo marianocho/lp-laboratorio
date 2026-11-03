@@ -18,7 +18,7 @@ The build produces `dist/`. The development server listens on localhost; hosting
 ## Experience
 
 - Conceptual ceramic visualization in the hero, labeled in the interface.
-- All eight original services with descriptions and material lists always open. A photograph follows the reading position on desktop; optional anchor shortcuts offer direct access.
+- All eight original services with descriptions and material lists always open. A full-width black stage pairs a large photograph with the current service on desktop; optional anchor shortcuts offer direct access.
 - Three original transformation cases with a scroll-driven reveal, draggable comparison, keyboard control, before/split/after views and a single optional replay.
 - Three technology chapters with direct controls and desktop scrollytelling.
 - All four original team members, their roles and expandable biographies.

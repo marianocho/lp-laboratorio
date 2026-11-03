@@ -50,11 +50,13 @@ Os serviços restauradores e sobre implantes abrem o catálogo pela relação co
 
 ### Serviços: leitura contínua, sem abrir painéis
 
-Todas as descrições e listas de materiais estão abertas, no fluxo natural da página. Cada descrição explica o que o trabalho é em uma frase. No desktop, a fotografia acompanha o serviço na parte superior da área de leitura, com transição suave; passar o ponteiro ou levar foco ao item também atualiza a imagem. O contato ao lado da fotografia acompanha o serviço em foco.
+Todas as descrições e listas de materiais estão abertas, no fluxo natural da página. Cada descrição explica o que o trabalho é em uma frase. No desktop, um palco preto ocupa toda a largura da seção, com fotografia grande à esquerda e texto à direita. A fotografia original se funde ao fundo com uma máscara CSS nas bordas; o arquivo e o trabalho clínico não são alterados. A imagem, o número, o atalho ativo e a linha indicadora seguem o serviço mais próximo do centro da área útil da tela.
 
-O índice inicial oferece atalhos opcionais para os oito serviços. Não há abas, carrossel obrigatório, detalhes ocultos ou alturas artificiais por etapa. A distância de rolagem é a altura do conteúdo. Na revisão em 1440 × 900, o catálogo detalhado ocupa aproximadamente 1722 px, pouco menos de duas alturas de tela, além da introdução e do índice.
+O índice inicial oferece atalhos opcionais para os oito serviços. Não há abas, carrossel obrigatório, detalhes ocultos ou captura da rolagem. Os blocos ganham respiro para acompanhar a imagem grande: cada serviço ocupa aproximadamente meia altura de tela no desktop, expandindo se o conteúdo precisar. Há um contato contextual junto da descrição de cada serviço.
 
-Em celulares, tablets, telas baixas e com movimento reduzido, cada serviço tem sua fotografia junto do texto. O conteúdo continua aberto. Essa escolha evita uma imagem fixa ocupando espaço útil e dispensa gestos laterais ou cliques para revelar informações.
+O clique em um atalho mantém o destino acessível como posição de leitura, mas não deixa um contorno retangular permanente. A linha de destaque pertence exclusivamente ao serviço ativo. Links continuam com foco de teclado visível. O ponteiro não troca mais a fotografia ao atravessar o texto durante a rolagem.
+
+Em celulares, tablets, telas baixas e com movimento reduzido, cada serviço tem sua fotografia grande junto do texto, sobre o mesmo fundo preto. O conteúdo continua aberto. Essa escolha evita uma imagem fixa ocupando espaço útil e dispensa gestos laterais ou cliques para revelar informações.
 
 Referências consultadas: [Linear](https://linear.app/), [Apple / MacBook Pro](https://www.apple.com/macbook-pro/proled-xdr-display/), [Vercel](https://vercel.com/) e [Stripe](https://stripe.com/). Na Linear, cada bloco principal apresenta finalidade e demonstração antes de informações adicionais; na Apple, capítulos visuais convivem com destaques e caminhos diretos de consulta. Linear e Apple também foram inspecionadas no navegador. A adaptação ao Kim é uma decisão de design, não a reprodução literal dessas interfaces: explicação disponível primeiro, animação acompanhando a leitura e atalhos opcionais.
 
@@ -76,6 +78,8 @@ Estrutura, forma e acabamento são perspectivas editoriais de trabalhos distinto
 
 - A primeira versão agrupava demais os serviços e omitia integrantes e casos: substituída por inventários completos e verificáveis.
 - O explorador com oito abas ainda exigia cliques para compreender cada serviço: substituído por oito descrições e materiais abertos, com imagem acompanhando a rolagem. As descrições foram reduzidas a uma frase objetiva por serviço.
+- O cartão pequeno de fotografia não dava destaque ao trabalho: substituído por um palco preto com fotografia ampla, texto ao lado e transições suaves.
+- O foco da âncora parecia uma seleção permanente após rolar: o contorno do alvo de leitura foi removido, preservando o foco dos links e um único indicador de serviço ativo.
 - A tecnologia vinha antes da resposta à necessidade prática: catálogo e resultados foram antecipados.
 - As imagens dos serviços estavam sendo cortadas pelo formato panorâmico: o enquadramento agora preserva a fotografia inteira.
 - A troca de abas podia deslocar o fim do catálogo: o conteúdo agora ocupa seu espaço natural e permanece visível; a imagem muda sem deslocar o texto.
@@ -86,6 +90,7 @@ Estrutura, forma e acabamento são perspectivas editoriais de trabalhos distinto
 ## Validação realizada
 
 - `npm run check` e `npm run build`.
+- Revisão do palco preto: clique no serviço 5, rolagem até 6 e 7 e retorno ao 4; imagem, número, atalho e linha ativa sincronizados, sem contorno persistente no 5. Tab mantém contorno visível no link de contato. Layout conferido novamente em 1440 × 900, 820 × 1180, 390 × 844 e 320 × 680.
 - Auditoria de HTML: idioma inglês, oito serviços abertos, três casos, quatro integrantes, IDs únicos, âncoras e relações ARIA válidas, todos os arquivos de imagem presentes.
 - Navegador: oito serviços com descrições e materiais visíveis sem interação; atalhos de âncora, fotografia sincronizada e contato contextual; três casos acessíveis; botões de comparação, arraste, teclado e reprodução até o estado final; biografia expansível; menu com Escape e retorno de foco; contato contextual em inglês.
 - Revisão visual em 1440 × 900, 820 × 1180, 390 × 844 e 320 × 680. Sem excesso de largura do documento nos tamanhos conferidos; sem imagens quebradas ou erros de console observados.

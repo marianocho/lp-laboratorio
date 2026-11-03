@@ -92,14 +92,14 @@ function setupTabs(buttonSelector, panelSelector, key, onSelect) {
     });
   });
 }
-// Every service stays open. Scroll, hover or keyboard focus only updates its photograph.
+// All descriptions stay open; the photograph and marker follow the same service.
 const serviceCatalog = $("[data-service-catalog]");
+const serviceShowcase = $(".service-showcase");
 const serviceRows = $$("[data-service-row]");
 const serviceScenes = $$("[data-service-scene]");
 const serviceJumps = $$("[data-service-jump]");
 const serviceCounter = $("[data-service-count]");
 const serviceProgress = $(".service-gallery-progress i");
-const hoverPointer = matchMedia("(hover: hover) and (pointer: fine)");
 let activeService = -1;
 function setServiceActive(index) {
   if (index === activeService) return;
@@ -113,25 +113,19 @@ function setServiceActive(index) {
     if (i === index) link.setAttribute("aria-current", "location");
     else link.removeAttribute("aria-current");
   });
-  const serviceName = $("h3", serviceRows[index]).textContent;
-  const serviceContact = $(".service-current-contact");
-  serviceContact.dataset.serviceContact = serviceName;
-  serviceContact.setAttribute("aria-label", `Discuss ${serviceName}`);
   serviceCounter.textContent = String(index + 1).padStart(2, "0");
   serviceProgress.style.transform = `scaleX(${(index + 1) / serviceRows.length})`;
 }
 serviceRows.forEach((row, index) => {
-  row.addEventListener("pointerenter", () => {
-    if (hoverPointer.matches) setServiceActive(index);
-  });
   row.addEventListener("focusin", () => setServiceActive(index));
 });
 function updateServiceScroll() {
   const rect = serviceCatalog.getBoundingClientRect();
   if (rect.top > innerHeight || rect.bottom < 0) return;
+  const stageVisible = getComputedStyle(serviceShowcase).display !== "none";
   const readingLine =
-    parseFloat(getComputedStyle(header).height) +
-    Math.min(180, (innerHeight - header.offsetHeight) * 0.2);
+    header.offsetHeight +
+    (innerHeight - header.offsetHeight) * (stageVisible ? 0.5 : 0.25);
   let nearest = 0;
   let distance = Infinity;
   serviceRows.forEach((row, index) => {
