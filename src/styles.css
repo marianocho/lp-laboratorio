@@ -1006,6 +1006,7 @@ summary:focus-visible,
 }
 .history-portrait {
   position: relative;
+  background: #15251b;
   height: 100%;
   min-height: 700px;
   isolation: isolate;
@@ -1028,6 +1029,7 @@ summary:focus-visible,
   object-fit: contain;
   object-position: bottom;
   filter: saturate(0.6);
+  mix-blend-mode: lighten;
 }
 .history-portrait::after {
   content: "";
