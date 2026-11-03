@@ -1,0 +1,14 @@
+{
+  "name": "laboratorio-kim",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node --check src/main.js && node --check scripts/build.mjs && node --check scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
