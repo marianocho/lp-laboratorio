@@ -1,53 +1,104 @@
-# Pesquisa e estratégia editorial
+# Pesquisa, prioridades e revisão de experiência
 
-Pesquisa realizada em 3 de novembro de 2026.
+Atualizado em 3 de novembro de 2026. O conteúdo público da página está integralmente em inglês, incluindo navegação, textos alternativos, controles e mensagens de WhatsApp. Nomes próprios e o endereço mantêm a grafia original.
 
-## Objetivo e público
+## Público e objetivo
 
-O objetivo da nova página é abrir conversas qualificadas com dentistas e clínicas. Essa é uma inferência editorial baseada na apresentação do site, nos canais separados de pedidos e na linguagem de parceria com profissionais. Não há informações públicas suficientes para afirmar especialidades prioritárias, tíquete médio ou perfil comercial desejado além desse público.
+A página procura abrir conversas qualificadas com dentistas e clínicas. Essa é uma inferência editorial baseada no site original, nos canais separados de pedidos e no posicionamento de parceria profissional. Não há dados públicos suficientes para determinar especialidades comerciais prioritárias ou tíquete médio. O site não se apresenta como uma clínica que atende pacientes.
 
-As decisões de navegação favorecem quem precisa avaliar capacidade técnica, encontrar uma solução protética e entender como iniciar uma parceria. A página não se apresenta como uma clínica que atende pacientes.
+## Inventário e fidelidade
 
-## Inventário factual
+Todos os oito serviços, quatro integrantes e três casos apresentados no original estão presentes individualmente, com fotografias provenientes do domínio oficial. As descrições foram reescritas em inglês para clareza, preservando escopo, materiais e responsabilidades.
 
-| Informação | Fonte e observação |
+| Serviço original | Materiais apresentados |
 | --- | --- |
-| Fundação em 1995 por Dr. Chang Kook Kim; origem familiar | Site oficial e história publicada pelo LinkedIn oficial |
-| Fresagem própria em titânio monobloco e tecnologia CAD/CAM | Seção de titânio do site oficial |
-| Coroas, inlays/onlays, facetas, protocolos, barras/overdentures, provisórios, placas, próteses totais e PPR | Catálogo do site oficial |
-| Logística própria, atendimento nacional e auxílio na seleção de componentes | Destaques do site oficial; cobertura e condições devem ser alinhadas com a equipe |
-| Rua Correia Dias, 392, Paraíso, São Paulo | Site e LinkedIn oficiais |
-| Pedidos digitais: (11) 5904-8888 | Destino do WhatsApp no site atual |
-| Pedidos analógicos: (11) 96841-7556 | Destino específico de pedidos analógicos no site atual |
-| digitalkim@laboratoriokim.com.br | Site oficial |
+| Crown / Inlay / Onlay | Zirconia, lithium disilicate, ceromer, titanium, nickel-chrome, graphene, hybrid |
+| Bränemark Protocol | Resin, zirconia, ceramic, PMMA, nickel-chrome, titanium, cobalt-chrome, stock teeth |
+| Clip Bars / Overdenture | Titanium, nickel-chrome, cobalt-chrome |
+| Veneers | Lithium disilicate |
+| Temporary (Prototypes) | Resin, PMMA |
+| Occlusal Guards | Acrylic resin, printed resin, milled resin |
+| Complete Denture | Resin, stock teeth |
+| Removable Partial Denture | Resin, stock teeth, cobalt-chrome |
 
-Não foram utilizados os números animados de experiência/parceiros do site, pois a leitura depende do momento da animação. Também foram evitadas comparações como “líder”, “melhor” e “grupo seleto”, além de tolerâncias quantitativas e garantias de resultados.
+| Equipe original | Função |
+| --- | --- |
+| Chang Kim | Founding Partner |
+| Mirian Lee | Founding Partner · Administrative Director |
+| Andrea Haikawa | General Manager |
+| Pedro Kim | Administrative Manager |
+
+Os casos são **Total Rehabilitation**, **Ceramic Veneers** e **Implant-Supported Protocol**. Os seis arquivos de antes/depois foram reutilizados sem retoque, geração ou alteração clínica. A interface revela cada fotografia original; não interpola a anatomia nem simula um resultado. As fotografias podem ter enquadramentos diferentes. Os botões Before e After permitem examinar cada imagem inteira, além da vista dividida.
+
+Outros fatos preservados: fundação em 1995 por Dr. Chang Kook Kim, origem familiar, fresagem própria de titânio monobloco, CAD/CAM, auxílio em componentes, logística própria em São Paulo e atendimento nacional. Condições de cobertura são alinhadas com a equipe.
 
 ## Ordem de prioridade
 
-| Ordem | Conteúdo | Importância para a decisão do dentista |
+| Ordem | Conteúdo | Justificativa |
 | --- | --- | --- |
-| 1 | Proposta central: precisão, naturalidade e parceria | Identifica imediatamente o laboratório e o valor para a clínica. Contato disponível desde a primeira dobra. |
-| 2 | Evidência técnica: titânio monobloco, cerâmica e acabamento | Dá substância à promessa visual. A fresagem própria é o diferencial mais concreto encontrado na pesquisa. |
-| 3 | Soluções organizadas por necessidade | Permite localizar rapidamente o tipo de trabalho e explorar materiais, sem apresentar oito serviços com o mesmo peso na abertura. |
-| 4 | Relação com a clínica e operação | Explica os pontos práticos da parceria: diálogo, apoio em componentes e logística. |
-| 5 | História e fundador | Reforça continuidade e confiança depois que a capacidade técnica está compreendida. |
-| 6 | Conversa e canais específicos | Converte o interesse em contato, com caminhos digital e analógico distintos e sem promessa não verificada de prazo. |
+| 1 | Proposta de valor e contato | Identifica o laboratório, o público profissional e a combinação de tecnologia com cuidado humano. |
+| 2 | Catálogo completo | A primeira pergunta prática do dentista é se o laboratório executa o trabalho de que precisa. Os oito serviços têm descrição e materiais abertos em sequência, além de um índice de atalhos. Nenhum clique é necessário para entender o catálogo. |
+| 3 | Transformações reais | Apresenta evidências visuais concretas antes de aprofundar a narrativa tecnológica. Cada caso é diretamente acessível. |
+| 4 | Tecnologia e acabamento | Explica o diferencial de fresagem e a contribuição do trabalho técnico. Usa uma sequência curta de estrutura, forma e acabamento. |
+| 5 | Parceria e operação | Responde às dúvidas práticas sobre apoio técnico, comunicação e logística. |
+| 6 | Equipe e história | Mostra as quatro pessoas, suas responsabilidades e a continuidade desde 1995. |
+| 7 | Contato e canais de pedidos | Oferece conversa inicial, pedidos digitais, pedidos analógicos, e-mail, endereço e redes. O serviço escolhido acompanha o contato inicial. |
 
-## Narrativa de rolagem
+Os serviços restauradores e sobre implantes abrem o catálogo pela relação com o posicionamento técnico encontrado. Essa ordem é editorial, não uma afirmação de faturamento, demanda ou superioridade clínica.
 
-“A precisão por trás de cada sorriso” conecta o efeito percebido pelo paciente ao trabalho que acontece no laboratório. A primeira imagem é uma visualização conceitual; a cena seguinte apresenta fotografias reais do laboratório.
+## Escolha das interações
 
-A sequência fixa revela três perspectivas: estrutura em titânio, forma cerâmica e atenção ao acabamento. Essa sequência é uma narrativa editorial, não uma instrução clínica ou a documentação de um caso único. As imagens representam trabalhos distintos, e as legendas identificam material e origem.
+### Serviços: leitura contínua, sem abrir painéis
 
-O comportamento acompanha a rolagem nativa, sem scroll hijacking. Etapas selecionáveis, menu por âncoras e categorias permitem que o visitante vá direto ao que interessa. Com movimento reduzido, as etapas passam a ser controladas por botões e a seção deixa de exigir uma longa rolagem.
+Todas as descrições e listas de materiais estão abertas, no fluxo natural da página. Cada descrição explica o que o trabalho é em uma frase. No desktop, a fotografia acompanha o serviço na parte superior da área de leitura, com transição suave; passar o ponteiro ou levar foco ao item também atualiza a imagem. O contato ao lado da fotografia acompanha o serviço em foco.
 
-## Fontes e limites
+O índice inicial oferece atalhos opcionais para os oito serviços. Não há abas, carrossel obrigatório, detalhes ocultos ou alturas artificiais por etapa. A distância de rolagem é a altura do conteúdo. Na revisão em 1440 × 900, o catálogo detalhado ocupa aproximadamente 1722 px, pouco menos de duas alturas de tela, além da introdução e do índice.
 
-- [Site atual do Laboratório Kim](https://laboratoriokim.com.br/): história, catálogo, titânio, operação e contatos. A página é uma aplicação JavaScript; o conteúdo e os links foram verificados também no navegador e nos recursos servidos pelo domínio.
-- [LinkedIn oficial atual](https://www.linkedin.com/company/laboratoriokim): posicionamento profissional, fundação e história familiar.
-- [Instagram oficial](https://www.instagram.com/laboratoriokim/): endereço confirmado nos links do site. A plataforma bloqueou a extração pública automatizada nesta sessão. Não foram atribuídas ao Instagram alegações que não puderam ser lidas.
+Em celulares, tablets, telas baixas e com movimento reduzido, cada serviço tem sua fotografia junto do texto. O conteúdo continua aberto. Essa escolha evita uma imagem fixa ocupando espaço útil e dispensa gestos laterais ou cliques para revelar informações.
 
-As fotografias de próteses e do fundador foram copiadas dos recursos públicos do domínio original para evitar dependência de hotlinks. Não foram usados casos de pacientes identificáveis ou avaliações de terceiros no novo site.
+Referências consultadas: [Linear](https://linear.app/), [Apple / MacBook Pro](https://www.apple.com/macbook-pro/proled-xdr-display/), [Vercel](https://vercel.com/) e [Stripe](https://stripe.com/). Na Linear, cada bloco principal apresenta finalidade e demonstração antes de informações adicionais; na Apple, capítulos visuais convivem com destaques e caminhos diretos de consulta. Linear e Apple também foram inspecionadas no navegador. A adaptação ao Kim é uma decisão de design, não a reprodução literal dessas interfaces: explicação disponível primeiro, animação acompanhando a leitura e atalhos opcionais.
 
-Antes de substituir o domínio atual, cabe à equipe confirmar a atualização dos contatos, os materiais comercializados e os textos finais. A versão de trabalho é publicada em uma prévia privada separada.
+### Transformações: descoberta e controle
+
+Uma seção fixa curta no desktop permite revelar o antes/depois pela rolagem nativa. Os três casos são abas diretas; o usuário não precisa percorrê-los em sequência. O divisor é um controle de intervalo nativo com teclado, arraste e indicação textual acessível. Há botões Before, Split e After e uma reprodução única de 2,6 segundos, com pausa.
+
+Ao selecionar caso, arrastar, usar o teclado ou escolher uma vista, o visitante assume o controle: a rolagem deixa de alterar sua comparação. Não há troca automática de casos, repetição contínua ou captura da rolagem. Em telas pequenas, a seção flui normalmente.
+
+### Tecnologia: narrativa em três capítulos
+
+Estrutura, forma e acabamento são perspectivas editoriais de trabalhos distintos, não etapas documentadas de um único caso clínico. As fotos e legendas identificam o trabalho original. A rolagem move a sequência em desktop; os três botões também levam diretamente a cada capítulo. Em telas pequenas ou baixas, os botões selecionam capítulos sem uma longa área fixa.
+
+### Movimento e acesso
+
+`prefers-reduced-motion` remove animações e áreas fixas prolongadas. Permanecem os botões de capítulos e comparação. Navegação por âncoras, skip link, foco visível, Escape no menu, setas/Home/End nas abas e painel de detalhes nativo para biografias. Sem JavaScript, todos os serviços e casos aparecem em sequência e as biografias continuam funcionais.
+
+## Autocrítica e correções realizadas
+
+- A primeira versão agrupava demais os serviços e omitia integrantes e casos: substituída por inventários completos e verificáveis.
+- O explorador com oito abas ainda exigia cliques para compreender cada serviço: substituído por oito descrições e materiais abertos, com imagem acompanhando a rolagem. As descrições foram reduzidas a uma frase objetiva por serviço.
+- A tecnologia vinha antes da resposta à necessidade prática: catálogo e resultados foram antecipados.
+- As imagens dos serviços estavam sendo cortadas pelo formato panorâmico: o enquadramento agora preserva a fotografia inteira.
+- A troca de abas podia deslocar o fim do catálogo: o conteúdo agora ocupa seu espaço natural e permanece visível; a imagem muda sem deslocar o texto.
+- A rolagem poderia disputar o controle do comparador com o visitante: a interação manual interrompe o controle por rolagem.
+- Áreas fixas em celulares e telas baixas poderiam esconder controles: nesses formatos, a leitura segue o fluxo normal.
+- O retrato do fundador sozinho não representava a equipe original: quatro retratos autênticos, funções visíveis e biografias expansíveis.
+
+## Validação realizada
+
+- `npm run check` e `npm run build`.
+- Auditoria de HTML: idioma inglês, oito serviços abertos, três casos, quatro integrantes, IDs únicos, âncoras e relações ARIA válidas, todos os arquivos de imagem presentes.
+- Navegador: oito serviços com descrições e materiais visíveis sem interação; atalhos de âncora, fotografia sincronizada e contato contextual; três casos acessíveis; botões de comparação, arraste, teclado e reprodução até o estado final; biografia expansível; menu com Escape e retorno de foco; contato contextual em inglês.
+- Revisão visual em 1440 × 900, 820 × 1180, 390 × 844 e 320 × 680. Sem excesso de largura do documento nos tamanhos conferidos; sem imagens quebradas ou erros de console observados.
+- Regras de movimento reduzido e fallback sem JavaScript revisadas no código. Não foi feita emulação do sistema operacional para movimento reduzido nem teste com leitor de tela nesta sessão.
+
+Essa revisão é técnica e editorial; não substitui testes de usabilidade com dentistas reais. A hipótese principal a validar com o público é o tempo para encontrar um serviço e iniciar uma conversa.
+
+## Fontes e contatos
+
+- [Site oficial](https://laboratoriokim.com.br/): catálogo, materiais, equipe, fotografias, transformações, tecnologia, operação e contatos. O conteúdo da aplicação JavaScript foi conferido também nos recursos públicos servidos pelo domínio.
+- [LinkedIn oficial](https://www.linkedin.com/company/laboratoriokim): história e posicionamento profissional.
+- [Instagram oficial](https://www.instagram.com/laboratoriokim/): endereço confirmado no site. A extração pública automatizada foi bloqueada; não foram atribuídas ao Instagram alegações não verificadas.
+- Digital: +55 (11) 5904-8888. Analógico: +55 (11) 96841-7556. E-mail: digitalkim@laboratoriokim.com.br.
+- Endereço: Rua Correia Dias, 392, Paraíso, São Paulo.
+
+Não foram adicionados depoimentos, números de parceiros, garantias, prazos ou alegações de liderança não verificados. A imagem da abertura é conceitual e está identificada como tal. A prévia permanece privada, separada do domínio atual do laboratório.

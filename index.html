@@ -1,23 +1,23 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#080d0b" />
-    <title>Laboratório Kim — A precisão por trás de cada sorriso</title>
+    <title>Kim Dental Laboratory — Precision behind every smile</title>
     <meta
       name="description"
-      content="Prótese dentária desde 1995. Fresagem em titânio monobloco, estética e tecnologia CAD/CAM para dentistas e clínicas de todo o Brasil."
+      content="Dental prosthetics since 1995. Explore all eight services, titanium monoblock milling, real transformations and the people behind Kim Dental Laboratory."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:locale" content="en_US" />
     <meta
       property="og:title"
-      content="Laboratório Kim — A precisão por trás de cada sorriso"
+      content="Kim Dental Laboratory — Precision behind every smile"
     />
     <meta
       property="og:description"
-      content="Tecnologia de ponta. Sensibilidade humana. Conheça uma nova perspectiva em prótese dentária."
+      content="Advanced technology. A human touch. Dental prosthetics for dentists and clinics throughout Brazil."
     />
     <meta
       property="og:image"
@@ -40,51 +40,113 @@
     />
     <link rel="stylesheet" href="/src/styles.css" />
     <script type="module" src="/src/main.js"></script>
+    <noscript
+      ><style>
+        .service-showcase {
+          display: none !important;
+        }
+        .service-catalog {
+          display: block !important;
+        }
+        .service-entries {
+          display: grid !important;
+          grid-template-columns: repeat(
+            auto-fit,
+            minmax(min(100%, 280px), 1fr)
+          );
+          gap: 32px;
+        }
+        .service-entry-image {
+          display: block !important;
+          max-width: 240px;
+          margin-bottom: 20px;
+        }
+
+        .case-panel[hidden] {
+          display: block !important;
+          margin-top: 48px;
+        }
+        .case-tabs,
+        .comparison-toolbar,
+        .comparison-range,
+        .story-navigation {
+          display: none !important;
+        }
+        .scroll-story,
+        .results-scroll {
+          height: auto !important;
+        }
+        .story-sticky,
+        .results-sticky {
+          position: static !important;
+          height: auto !important;
+        }
+        .case-panel {
+          display: block !important;
+        }
+        .story-copy-stack {
+          display: block !important;
+        }
+        .story-copy {
+          visibility: visible !important;
+          opacity: 1 !important;
+          transform: none !important;
+          margin-bottom: 30px;
+        }
+        .comparison-before {
+          clip-path: inset(0 50% 0 0);
+        }
+        .mobile-nav {
+          position: static !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .site-header {
+          position: relative !important;
+          height: auto !important;
+        }
+        .header-inner {
+          min-height: 76px;
+        }
+      </style></noscript
+    >
   </head>
   <body>
-    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="page-progress" aria-hidden="true"><span></span></div>
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="#inicio" aria-label="Laboratório Kim — início"
+        <a class="brand" href="#home" aria-label="Kim Dental Laboratory — home"
           ><span class="brand-name">kim<span class="brand-dot">.</span></span
-          ><span class="brand-descriptor"
-            >LABORATÓRIO<br />DE PRÓTESE DENTÁRIA</span
-          ></a
+          ><span class="brand-descriptor">DENTAL<br />LABORATORY</span></a
         >
-        <nav class="desktop-nav" aria-label="Navegação principal">
-          <a href="#precisao">Nossa essência</a
-          ><a href="#tecnologia">Tecnologia</a><a href="#solucoes">Soluções</a
-          ><a href="#historia">Desde 1995</a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#services">Our services</a
+          ><a href="#transformations">Real transformations</a
+          ><a href="#technology">Technology</a><a href="#team">Our team</a>
         </nav>
-        <a class="header-contact" href="#contato"
-          >Vamos conversar <span aria-hidden="true">↗</span></a
-        >
-        <button
+        <a class="header-contact" href="#contact"
+          >Let's talk <span aria-hidden="true">↗</span></a
+        ><button
           class="menu-toggle"
-          aria-label="Abrir menu"
+          aria-label="Open menu"
           aria-controls="mobile-nav"
           aria-expanded="false"
         >
           <span></span><span></span>
         </button>
       </div>
-      <nav
-        id="mobile-nav"
-        class="mobile-nav"
-        aria-label="Navegação móvel"
-        inert
-      >
-        <a href="#precisao">Nossa essência <span>01</span></a
-        ><a href="#tecnologia">Tecnologia <span>02</span></a
-        ><a href="#solucoes">Soluções <span>03</span></a
-        ><a href="#historia">Desde 1995 <span>04</span></a
-        ><a href="#contato">Vamos conversar <span>↗</span></a>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+        <a href="#services">Our services <span>01</span></a
+        ><a href="#transformations">Real transformations <span>02</span></a
+        ><a href="#technology">Technology <span>03</span></a
+        ><a href="#team">Our team <span>04</span></a
+        ><a href="#contact">Let's talk <span>↗</span></a>
       </nav>
     </header>
-
-    <main id="conteudo">
-      <section id="inicio" class="hero" aria-labelledby="hero-title">
+    <main id="main">
+      <section id="home" class="hero" aria-labelledby="hero-title">
         <div class="hero-art" aria-hidden="true">
           <img
             src="/images/hero-ceramica.jpg"
@@ -97,88 +159,904 @@
         <div class="hero-inner wrap">
           <div class="hero-copy">
             <div class="eyebrow hero-eyebrow">
-              <span class="status-dot"></span> UM NOVO OLHAR PARA A PRÓTESE
+              <span class="status-dot"></span> A NEW PERSPECTIVE ON DENTAL
+              PROSTHETICS
             </div>
             <h1 id="hero-title">
-              A precisão<br />por trás de<br /><span>cada sorriso.</span>
+              The precision<br />behind every<br /><span>smile.</span>
             </h1>
             <p>
-              Tecnologia de ponta. Sensibilidade humana.<br />Parceria com a sua
-              clínica, desde 1995.
+              Advanced technology. A human touch.<br />Your clinical partner,
+              since 1995.
             </p>
-            <a class="button button-primary" href="#contato"
-              >Fale sobre seu caso
-              <span class="button-arrow" aria-hidden="true">↗</span></a
-            >
+            <div class="hero-actions">
+              <a class="button button-primary" href="#contact"
+                >Discuss a case
+                <span class="button-arrow" aria-hidden="true">↗</span></a
+              ><a class="hero-services-link" href="#services"
+                >Explore our services <span aria-hidden="true">↓</span></a
+              >
+            </div>
           </div>
           <div class="hero-product-label">
             <span class="hairline"></span>
             <div>
-              ESTÉTICA. FUNÇÃO. NATURALIDADE.<small
-                >Uma nova perspectiva em prótese dentária.</small
+              ESTHETICS. FUNCTION. INDIVIDUALITY.<small
+                >Thoughtfully made. Down to the last detail.</small
               >
             </div>
           </div>
           <div class="hero-footer">
-            <a class="scroll-cue" href="#precisao"
-              ><span class="scroll-icon" aria-hidden="true">↓</span> Role para
-              descobrir</a
-            >
-            <span class="hero-edition"
-              >SÃO PAULO · BRASIL <span>23°34′ S &nbsp; 46°38′ O</span></span
-            >
-            <span class="hero-note">Visualização conceitual</span>
+            <a class="scroll-cue" href="#services"
+              ><span class="scroll-icon" aria-hidden="true">↓</span> Discover
+              the difference</a
+            ><span class="hero-edition"
+              >SÃO PAULO · BRAZIL
+              <span>PRECISION, WITH A HUMAN PERSPECTIVE</span></span
+            ><span class="hero-note">Conceptual visualization</span>
           </div>
         </div>
       </section>
-
       <div class="trust-strip">
         <div class="wrap trust-inner">
-          <span><i></i> Ao lado de dentistas e clínicas</span
-          ><span>Desde <strong>1995</strong></span
-          ><span>Fresagem <strong>CAD/CAM</strong></span
-          ><span>Atendimento <strong>nacional</strong></span>
+          <span><i></i> For dentists and clinics</span
+          ><span>Established <strong>1995</strong></span
+          ><span>In-house <strong>CAD/CAM</strong></span
+          ><span>Across <strong>Brazil</strong></span>
         </div>
       </div>
-
       <section
-        id="precisao"
-        class="manifesto wrap section-space"
-        aria-labelledby="manifesto-title"
+        id="services"
+        class="services section-space"
+        aria-labelledby="services-title"
       >
-        <div class="section-topline reveal">
-          <span class="eyebrow">01 / NOSSA ESSÊNCIA</span
-          ><span class="tiny-label">O DETALHE MUDA TUDO</span>
-        </div>
-        <h2 id="manifesto-title" class="manifesto-heading" data-word-reveal>
-          Um sorriso é a soma de pequenos detalhes. Nenhum deles é pequeno para
-          nós.
-        </h2>
-        <div class="manifesto-bottom reveal">
-          <span class="plus-mark" aria-hidden="true">✳</span>
-          <p>
-            Entre o seu planejamento e o sorriso do paciente, existe um trabalho
-            que pede precisão. E pessoas que se importam tanto quanto você.
-          </p>
-          <a class="text-link" href="#tecnologia"
-            >Conheça o que nos move <span aria-hidden="true">↗</span></a
-          >
+        <div class="wrap">
+          <div class="section-topline reveal">
+            <span class="eyebrow">01 / OUR SERVICES</span
+            ><span class="tiny-label">EIGHT SPECIALTIES. ONE LABORATORY.</span>
+          </div>
+          <div class="section-heading reveal">
+            <h2 id="services-title">
+              Made for your<br /><span>next case.</span>
+            </h2>
+            <p>
+              From a single restoration to a complete arch.<br />Explore the
+              work, the possibilities and the materials — all in one place.
+            </p>
+          </div>
+          <nav class="service-shortcuts" aria-label="Jump to a service">
+            <a href="#service-crowns" data-service-jump="0"
+              ><span>01</span>Crown / Inlay / Onlay<span aria-hidden="true"
+                >↘</span
+              ></a
+            ><a href="#service-protocol" data-service-jump="1"
+              ><span>02</span>Bränemark Protocol<span aria-hidden="true"
+                >↘</span
+              ></a
+            ><a href="#service-bars" data-service-jump="2"
+              ><span>03</span>Clip Bars / Overdenture<span aria-hidden="true"
+                >↘</span
+              ></a
+            ><a href="#service-veneers" data-service-jump="3"
+              ><span>04</span>Veneers<span aria-hidden="true">↘</span></a
+            ><a href="#service-temporaries" data-service-jump="4"
+              ><span>05</span>Temporary (Prototypes)<span aria-hidden="true"
+                >↘</span
+              ></a
+            ><a href="#service-guards" data-service-jump="5"
+              ><span>06</span>Occlusal Guards<span aria-hidden="true"
+                >↘</span
+              ></a
+            ><a href="#service-complete" data-service-jump="6"
+              ><span>07</span>Complete Denture<span aria-hidden="true"
+                >↘</span
+              ></a
+            ><a href="#service-partial" data-service-jump="7"
+              ><span>08</span>Removable Partial Denture<span aria-hidden="true"
+                >↘</span
+              ></a
+            >
+          </nav>
+          <div class="service-catalog" data-service-catalog>
+            <div class="service-showcase">
+              <div class="service-showcase-meta">
+                <span><span class="status-dot"></span> A CLOSER LOOK</span
+                ><span><b data-service-count>01</b> / 08</span>
+              </div>
+              <div class="service-scene-stack">
+                <figure
+                  class="service-scene active"
+                  data-service-scene="0"
+                  aria-hidden="false"
+                >
+                  <img
+                    src="/images/coroas.jpg"
+                    alt="Crown / Inlay / Onlay produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <span>RESTORATIVE DENTISTRY</span
+                    ><strong>Crown / Inlay / Onlay</strong
+                    ><small>KIM LABORATORY / ORIGINAL PHOTOGRAPH</small>
+                  </figcaption>
+                </figure>
+                <figure
+                  class="service-scene"
+                  data-service-scene="1"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="/images/protocolo.jpg"
+                    alt="Bränemark Protocol produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <span>IMPLANT PROSTHETICS</span
+                    ><strong>Bränemark Protocol</strong
+                    ><small>KIM LABORATORY / ORIGINAL PHOTOGRAPH</small>
+                  </figcaption>
+                </figure>
+                <figure
+                  class="service-scene"
+                  data-service-scene="2"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="/images/bars.jpg"
+                    alt="Clip Bars / Overdenture produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <span>IMPLANT PROSTHETICS</span
+                    ><strong>Clip Bars / Overdenture</strong
+                    ><small>KIM LABORATORY / ORIGINAL PHOTOGRAPH</small>
+                  </figcaption>
+                </figure>
+                <figure
+                  class="service-scene"
+                  data-service-scene="3"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="/images/facetas.jpg"
+                    alt="Veneers produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <span>ESTHETIC DENTISTRY</span><strong>Veneers</strong
+                    ><small>KIM LABORATORY / ORIGINAL PHOTOGRAPH</small>
+                  </figcaption>
+                </figure>
+                <figure
+                  class="service-scene"
+                  data-service-scene="4"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="/images/temporaries.jpg"
+                    alt="Temporary (Prototypes) produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <span>TREATMENT PLANNING</span
+                    ><strong>Temporary (Prototypes)</strong
+                    ><small>KIM LABORATORY / ORIGINAL PHOTOGRAPH</small>
+                  </figcaption>
+                </figure>
+                <figure
+                  class="service-scene"
+                  data-service-scene="5"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="/images/guard.jpg"
+                    alt="Occlusal Guards produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <span>OCCLUSAL PROTECTION</span
+                    ><strong>Occlusal Guards</strong
+                    ><small>KIM LABORATORY / ORIGINAL PHOTOGRAPH</small>
+                  </figcaption>
+                </figure>
+                <figure
+                  class="service-scene"
+                  data-service-scene="6"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="/images/denture.jpg"
+                    alt="Complete Denture produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <span>REMOVABLE PROSTHETICS</span
+                    ><strong>Complete Denture</strong
+                    ><small>KIM LABORATORY / ORIGINAL PHOTOGRAPH</small>
+                  </figcaption>
+                </figure>
+                <figure
+                  class="service-scene"
+                  data-service-scene="7"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="/images/partial.jpg"
+                    alt="Removable Partial Denture produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <span>REMOVABLE PROSTHETICS</span
+                    ><strong>Removable Partial Denture</strong
+                    ><small>KIM LABORATORY / ORIGINAL PHOTOGRAPH</small>
+                  </figcaption>
+                </figure>
+                <div
+                  class="service-image-corner corner-tl"
+                  aria-hidden="true"
+                ></div>
+                <div
+                  class="service-image-corner corner-br"
+                  aria-hidden="true"
+                ></div>
+              </div>
+              <div class="service-gallery-progress" aria-hidden="true">
+                <i></i>
+              </div>
+              <div class="service-showcase-note">
+                <span>SCROLL TO EXPLORE THE COLLECTION</span
+                ><span aria-hidden="true">↓</span>
+              </div>
+              <a
+                href="#contact"
+                class="text-link service-current-contact"
+                data-service-contact="Crown / Inlay / Onlay"
+                aria-label="Discuss Crown / Inlay / Onlay"
+                >Discuss this service <span aria-hidden="true">↗</span></a
+              >
+              <a href="#contact" class="service-guidance"
+                >Not sure where to start? <span>Talk with our team ↗</span></a
+              >
+            </div>
+            <div class="service-entries">
+              <article
+                id="service-crowns"
+                class="service-entry active"
+                tabindex="-1"
+                data-service-row="0"
+                aria-labelledby="service-title-crowns"
+              >
+                <div class="service-entry-image">
+                  <img
+                    src="/images/coroas.jpg"
+                    alt="Crown / Inlay / Onlay produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="service-entry-heading">
+                  <span class="eyebrow">01 / RESTORATIVE DENTISTRY</span>
+                  <h3 id="service-title-crowns">Crown / Inlay / Onlay</h3>
+                </div>
+                <p class="service-description">
+                  Custom restorations for a single tooth, from partial inlays
+                  and onlays to full-coverage crowns.
+                </p>
+                <p class="service-materials">
+                  <span>Materials</span> Zirconia · Lithium disilicate · Ceromer
+                  · Titanium · Nickel-chrome · Graphene · Hybrid
+                </p>
+                <a
+                  href="#contact"
+                  class="service-entry-contact"
+                  data-service-contact="Crown / Inlay / Onlay"
+                  aria-label="Discuss Crown / Inlay / Onlay"
+                  >Discuss this service <span aria-hidden="true">↗</span></a
+                >
+              </article>
+              <article
+                id="service-protocol"
+                class="service-entry"
+                tabindex="-1"
+                data-service-row="1"
+                aria-labelledby="service-title-protocol"
+              >
+                <div class="service-entry-image">
+                  <img
+                    src="/images/protocolo.jpg"
+                    alt="Bränemark Protocol produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="service-entry-heading">
+                  <span class="eyebrow">02 / IMPLANT PROSTHETICS</span>
+                  <h3 id="service-title-protocol">Bränemark Protocol</h3>
+                </div>
+                <p class="service-description">
+                  Fixed, implant-supported prostheses that replace a complete
+                  dental arch.
+                </p>
+                <p class="service-materials">
+                  <span>Materials</span> Resin · Zirconia · Ceramic · PMMA ·
+                  Nickel-chrome · Titanium · Cobalt-chrome · Stock teeth
+                </p>
+                <a
+                  href="#contact"
+                  class="service-entry-contact"
+                  data-service-contact="Bränemark Protocol"
+                  aria-label="Discuss Bränemark Protocol"
+                  >Discuss this service <span aria-hidden="true">↗</span></a
+                >
+              </article>
+              <article
+                id="service-bars"
+                class="service-entry"
+                tabindex="-1"
+                data-service-row="2"
+                aria-labelledby="service-title-bars"
+              >
+                <div class="service-entry-image">
+                  <img
+                    src="/images/bars.jpg"
+                    alt="Clip Bars / Overdenture produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="service-entry-heading">
+                  <span class="eyebrow">03 / IMPLANT PROSTHETICS</span>
+                  <h3 id="service-title-bars">Clip Bars / Overdenture</h3>
+                </div>
+                <p class="service-description">
+                  Precision bars that connect implants and support the retention
+                  of a removable overdenture.
+                </p>
+                <p class="service-materials">
+                  <span>Materials</span> Titanium · Nickel-chrome ·
+                  Cobalt-chrome
+                </p>
+                <a
+                  href="#contact"
+                  class="service-entry-contact"
+                  data-service-contact="Clip Bars / Overdenture"
+                  aria-label="Discuss Clip Bars / Overdenture"
+                  >Discuss this service <span aria-hidden="true">↗</span></a
+                >
+              </article>
+              <article
+                id="service-veneers"
+                class="service-entry"
+                tabindex="-1"
+                data-service-row="3"
+                aria-labelledby="service-title-veneers"
+              >
+                <div class="service-entry-image">
+                  <img
+                    src="/images/facetas.jpg"
+                    alt="Veneers produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="service-entry-heading">
+                  <span class="eyebrow">04 / ESTHETIC DENTISTRY</span>
+                  <h3 id="service-title-veneers">Veneers</h3>
+                </div>
+                <p class="service-description">
+                  Ceramic laminates designed to refine tooth shape, proportion,
+                  texture and shade.
+                </p>
+                <p class="service-materials">
+                  <span>Materials</span> Lithium disilicate
+                </p>
+                <a
+                  href="#contact"
+                  class="service-entry-contact"
+                  data-service-contact="Veneers"
+                  aria-label="Discuss Veneers"
+                  >Discuss this service <span aria-hidden="true">↗</span></a
+                >
+              </article>
+              <article
+                id="service-temporaries"
+                class="service-entry"
+                tabindex="-1"
+                data-service-row="4"
+                aria-labelledby="service-title-temporaries"
+              >
+                <div class="service-entry-image">
+                  <img
+                    src="/images/temporaries.jpg"
+                    alt="Temporary (Prototypes) produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="service-entry-heading">
+                  <span class="eyebrow">05 / TREATMENT PLANNING</span>
+                  <h3 id="service-title-temporaries">Temporary (Prototypes)</h3>
+                </div>
+                <p class="service-description">
+                  Provisional restorations and prototypes to evaluate form and
+                  function before the definitive work.
+                </p>
+                <p class="service-materials">
+                  <span>Materials</span> Resin · PMMA
+                </p>
+                <a
+                  href="#contact"
+                  class="service-entry-contact"
+                  data-service-contact="Temporary (Prototypes)"
+                  aria-label="Discuss Temporary (Prototypes)"
+                  >Discuss this service <span aria-hidden="true">↗</span></a
+                >
+              </article>
+              <article
+                id="service-guards"
+                class="service-entry"
+                tabindex="-1"
+                data-service-row="5"
+                aria-labelledby="service-title-guards"
+              >
+                <div class="service-entry-image">
+                  <img
+                    src="/images/guard.jpg"
+                    alt="Occlusal Guards produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="service-entry-heading">
+                  <span class="eyebrow">06 / OCCLUSAL PROTECTION</span>
+                  <h3 id="service-title-guards">Occlusal Guards</h3>
+                </div>
+                <p class="service-description">
+                  Custom occlusal appliances for protection and
+                  clinician-directed bruxism management.
+                </p>
+                <p class="service-materials">
+                  <span>Materials</span> Acrylic resin · Printed resin · Milled
+                  resin
+                </p>
+                <a
+                  href="#contact"
+                  class="service-entry-contact"
+                  data-service-contact="Occlusal Guards"
+                  aria-label="Discuss Occlusal Guards"
+                  >Discuss this service <span aria-hidden="true">↗</span></a
+                >
+              </article>
+              <article
+                id="service-complete"
+                class="service-entry"
+                tabindex="-1"
+                data-service-row="6"
+                aria-labelledby="service-title-complete"
+              >
+                <div class="service-entry-image">
+                  <img
+                    src="/images/denture.jpg"
+                    alt="Complete Denture produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="service-entry-heading">
+                  <span class="eyebrow">07 / REMOVABLE PROSTHETICS</span>
+                  <h3 id="service-title-complete">Complete Denture</h3>
+                </div>
+                <p class="service-description">
+                  Removable prostheses that replace all teeth in an arch, with
+                  individually planned tooth arrangement.
+                </p>
+                <p class="service-materials">
+                  <span>Materials</span> Resin · Stock teeth
+                </p>
+                <a
+                  href="#contact"
+                  class="service-entry-contact"
+                  data-service-contact="Complete Denture"
+                  aria-label="Discuss Complete Denture"
+                  >Discuss this service <span aria-hidden="true">↗</span></a
+                >
+              </article>
+              <article
+                id="service-partial"
+                class="service-entry"
+                tabindex="-1"
+                data-service-row="7"
+                aria-labelledby="service-title-partial"
+              >
+                <div class="service-entry-image">
+                  <img
+                    src="/images/partial.jpg"
+                    alt="Removable Partial Denture produced by Kim Dental Laboratory"
+                    width="1200"
+                    height="700"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="service-entry-heading">
+                  <span class="eyebrow">08 / REMOVABLE PROSTHETICS</span>
+                  <h3 id="service-title-partial">Removable Partial Denture</h3>
+                </div>
+                <p class="service-description">
+                  Removable replacements for missing teeth, using resin or a
+                  metal framework.
+                </p>
+                <p class="service-materials">
+                  <span>Materials</span> Resin · Stock teeth · Cobalt-chrome
+                </p>
+                <a
+                  href="#contact"
+                  class="service-entry-contact"
+                  data-service-contact="Removable Partial Denture"
+                  aria-label="Discuss Removable Partial Denture"
+                  >Discuss this service <span aria-hidden="true">↗</span></a
+                >
+              </article>
+            </div>
+          </div>
+          <div class="service-bottom-note">
+            <span class="status-dot"></span> Material selection and case
+            requirements are discussed with your clinical team.
+          </div>
         </div>
       </section>
-
       <section
-        id="tecnologia"
+        id="transformations"
+        class="transformations"
+        aria-labelledby="transformations-title"
+      >
+        <div class="wrap results-header">
+          <div class="section-topline reveal">
+            <span class="eyebrow">02 / REAL TRANSFORMATIONS</span
+            ><span class="tiny-label">THE WORK, IN PERSPECTIVE</span>
+          </div>
+          <div class="section-heading reveal">
+            <h2 id="transformations-title">
+              Behind every result,<br /><span>a story of detail.</span>
+            </h2>
+            <p>
+              Three cases from our laboratory.<br />Explore the before and
+              after, at your own pace.
+            </p>
+          </div>
+        </div>
+        <div class="results-scroll" data-results-scroll>
+          <div class="results-sticky">
+            <div class="wrap case-shell">
+              <div
+                class="case-tabs"
+                role="tablist"
+                aria-label="Real transformation cases"
+              >
+                <button
+                  id="case-tab-rehabilitation"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="case-panel-rehabilitation"
+                  tabindex="0"
+                  data-case="rehabilitation"
+                >
+                  <span>01</span>Total Rehabilitation<span aria-hidden="true"
+                    >↗</span
+                  ></button
+                ><button
+                  id="case-tab-ceramic"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="case-panel-ceramic"
+                  tabindex="-1"
+                  data-case="ceramic"
+                >
+                  <span>02</span>Ceramic Veneers<span aria-hidden="true"
+                    >↗</span
+                  ></button
+                ><button
+                  id="case-tab-implant"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="case-panel-implant"
+                  tabindex="-1"
+                  data-case="implant"
+                >
+                  <span>03</span>Implant-Supported Protocol<span
+                    aria-hidden="true"
+                    >↗</span
+                  >
+                </button>
+              </div>
+              <div class="case-display">
+                <article
+                  class="case-panel"
+                  id="case-panel-rehabilitation"
+                  role="tabpanel"
+                  aria-labelledby="case-tab-rehabilitation"
+                  data-case-panel="rehabilitation"
+                >
+                  <div class="case-comparison-column">
+                    <div class="comparison" style="--comparison: 50%">
+                      <img
+                        class="comparison-after"
+                        src="/images/full-after.jpg"
+                        alt="After: Total Rehabilitation case from Kim Dental Laboratory"
+                        width="1200"
+                        height="700"
+                        loading="lazy"
+                      />
+                      <div class="comparison-before">
+                        <img
+                          src="/images/full-before.jpg"
+                          alt="Before: Total Rehabilitation case from Kim Dental Laboratory"
+                          width="1200"
+                          height="700"
+                          loading="lazy"
+                        />
+                      </div>
+                      <span class="comparison-badge before-badge">Before</span
+                      ><span class="comparison-badge after-badge">After</span>
+                      <div class="comparison-divider" aria-hidden="true">
+                        <span>↔</span>
+                      </div>
+                      <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="50"
+                        aria-label="Before and after comparison for Total Rehabilitation"
+                        aria-valuetext="50% before, 50% after"
+                        class="comparison-range"
+                      />
+                    </div>
+                    <div class="comparison-toolbar">
+                      <span
+                        ><span aria-hidden="true">↔</span> Drag to
+                        compare</span
+                      >
+                      <div
+                        class="comparison-presets"
+                        aria-label="Comparison views"
+                      >
+                        <button data-compare-value="100">Before</button
+                        ><button data-compare-value="50" class="active">
+                          Split</button
+                        ><button data-compare-value="0">After</button>
+                      </div>
+                      <button class="replay-button" data-replay>
+                        <span aria-hidden="true">↻</span> Play reveal
+                      </button>
+                    </div>
+                  </div>
+                  <div class="case-copy">
+                    <span class="eyebrow">CASE 01 / REAL TRANSFORMATIONS</span>
+                    <h3>A complete perspective.</h3>
+                    <p>
+                      A full rehabilitation brings many details into one plan.
+                      Explore the original photographs to see the changes in
+                      form, arrangement and overall appearance.
+                    </p>
+                    <div class="case-focus">
+                      <span>THE FOCUS</span>
+                      <p>Full-arch planning · Esthetics · Function</p>
+                    </div>
+                    <a class="text-link" href="#contact"
+                      >Let's discuss your next case
+                      <span aria-hidden="true">↗</span></a
+                    >
+                  </div>
+                </article>
+                <article
+                  class="case-panel"
+                  id="case-panel-ceramic"
+                  role="tabpanel"
+                  aria-labelledby="case-tab-ceramic"
+                  data-case-panel="ceramic"
+                  hidden
+                >
+                  <div class="case-comparison-column">
+                    <div class="comparison" style="--comparison: 50%">
+                      <img
+                        class="comparison-after"
+                        src="/images/veneers-after.jpg"
+                        alt="After: Ceramic Veneers case from Kim Dental Laboratory"
+                        width="1200"
+                        height="700"
+                        loading="lazy"
+                      />
+                      <div class="comparison-before">
+                        <img
+                          src="/images/veneers-before.jpg"
+                          alt="Before: Ceramic Veneers case from Kim Dental Laboratory"
+                          width="1200"
+                          height="700"
+                          loading="lazy"
+                        />
+                      </div>
+                      <span class="comparison-badge before-badge">Before</span
+                      ><span class="comparison-badge after-badge">After</span>
+                      <div class="comparison-divider" aria-hidden="true">
+                        <span>↔</span>
+                      </div>
+                      <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="50"
+                        aria-label="Before and after comparison for Ceramic Veneers"
+                        aria-valuetext="50% before, 50% after"
+                        class="comparison-range"
+                      />
+                    </div>
+                    <div class="comparison-toolbar">
+                      <span
+                        ><span aria-hidden="true">↔</span> Drag to
+                        compare</span
+                      >
+                      <div
+                        class="comparison-presets"
+                        aria-label="Comparison views"
+                      >
+                        <button data-compare-value="100">Before</button
+                        ><button data-compare-value="50" class="active">
+                          Split</button
+                        ><button data-compare-value="0">After</button>
+                      </div>
+                      <button class="replay-button" data-replay>
+                        <span aria-hidden="true">↻</span> Play reveal
+                      </button>
+                    </div>
+                  </div>
+                  <div class="case-copy">
+                    <span class="eyebrow">CASE 02 / REAL TRANSFORMATIONS</span>
+                    <h3>Small details. A different expression.</h3>
+                    <p>
+                      Surface texture, proportions and shade all contribute to
+                      the final expression. Move the divider to explore this
+                      ceramic veneer case.
+                    </p>
+                    <div class="case-focus">
+                      <span>THE FOCUS</span>
+                      <p>Ceramic laminates · Shape · Surface detail</p>
+                    </div>
+                    <a class="text-link" href="#contact"
+                      >Let's discuss your next case
+                      <span aria-hidden="true">↗</span></a
+                    >
+                  </div>
+                </article>
+                <article
+                  class="case-panel"
+                  id="case-panel-implant"
+                  role="tabpanel"
+                  aria-labelledby="case-tab-implant"
+                  data-case-panel="implant"
+                  hidden
+                >
+                  <div class="case-comparison-column">
+                    <div class="comparison" style="--comparison: 50%">
+                      <img
+                        class="comparison-after"
+                        src="/images/implant-after.jpg"
+                        alt="After: Implant-Supported Protocol case from Kim Dental Laboratory"
+                        width="1200"
+                        height="700"
+                        loading="lazy"
+                      />
+                      <div class="comparison-before">
+                        <img
+                          src="/images/implant-before.jpg"
+                          alt="Before: Implant-Supported Protocol case from Kim Dental Laboratory"
+                          width="1200"
+                          height="700"
+                          loading="lazy"
+                        />
+                      </div>
+                      <span class="comparison-badge before-badge">Before</span
+                      ><span class="comparison-badge after-badge">After</span>
+                      <div class="comparison-divider" aria-hidden="true">
+                        <span>↔</span>
+                      </div>
+                      <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="50"
+                        aria-label="Before and after comparison for Implant-Supported Protocol"
+                        aria-valuetext="50% before, 50% after"
+                        class="comparison-range"
+                      />
+                    </div>
+                    <div class="comparison-toolbar">
+                      <span
+                        ><span aria-hidden="true">↔</span> Drag to
+                        compare</span
+                      >
+                      <div
+                        class="comparison-presets"
+                        aria-label="Comparison views"
+                      >
+                        <button data-compare-value="100">Before</button
+                        ><button data-compare-value="50" class="active">
+                          Split</button
+                        ><button data-compare-value="0">After</button>
+                      </div>
+                      <button class="replay-button" data-replay>
+                        <span aria-hidden="true">↻</span> Play reveal
+                      </button>
+                    </div>
+                  </div>
+                  <div class="case-copy">
+                    <span class="eyebrow">CASE 03 / REAL TRANSFORMATIONS</span>
+                    <h3>A new foundation for the smile.</h3>
+                    <p>
+                      An implant-supported rehabilitation connects the
+                      prosthetic structure with the visible result. Compare both
+                      stages of this case from our laboratory.
+                    </p>
+                    <div class="case-focus">
+                      <span>THE FOCUS</span>
+                      <p>Implant prosthetics · Rehabilitation · Esthetics</p>
+                    </div>
+                    <a class="text-link" href="#contact"
+                      >Let's discuss your next case
+                      <span aria-hidden="true">↗</span></a
+                    >
+                  </div>
+                </article>
+              </div>
+              <div class="case-footnote">
+                <span
+                  >Original case photographs from Kim Dental Laboratory.
+                  Individual outcomes vary.</span
+                ><span class="results-scroll-label"
+                  ><span class="status-dot"></span> SCROLL TO REVEAL · DRAG TO
+                  EXPLORE</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="technology"
         class="technology"
         aria-labelledby="technology-title"
       >
-        <div class="technology-intro wrap reveal">
-          <span class="eyebrow">02 / PRECISÃO EM MOVIMENTO</span>
-          <h2 id="technology-title">
-            Por fora, natural.<br /><span>Por dentro, extraordinário.</span>
+        <div class="wrap technology-intro">
+          <span class="eyebrow reveal"
+            >03 / THE PRECISION BENEATH THE SURFACE</span
+          >
+          <h2 id="technology-title" class="manifesto-heading" data-word-reveal>
+            What looks effortless is considered in every detail.
           </h2>
-          <p>
-            Uma jornada entre matéria, tecnologia e sensibilidade.<br />Continue
-            rolando para olhar mais de perto.
+          <p class="reveal">
+            A closer look at the structure, the surface and the people who bring
+            them together.
           </p>
         </div>
         <div class="scroll-story" data-scroll-story>
@@ -191,25 +1069,25 @@
                 <div class="story-frame active" data-frame="0">
                   <img
                     src="/images/titanio.jpg"
-                    alt="Estruturas reais do Laboratório Kim fresadas em bloco de titânio"
+                    alt="Titanium structures milled by Kim Dental Laboratory"
                     width="1200"
                     height="700"
                     loading="lazy"
                   />
                 </div>
-                <div class="story-frame" data-frame="1">
+                <div class="story-frame" data-frame="1" aria-hidden="true">
                   <img
                     src="/images/coroas.jpg"
-                    alt="Restaurações cerâmicas produzidas pelo Laboratório Kim"
+                    alt="Ceramic restorations made by Kim Dental Laboratory"
                     width="1200"
                     height="700"
                     loading="lazy"
                   />
                 </div>
-                <div class="story-frame" data-frame="2">
+                <div class="story-frame" data-frame="2" aria-hidden="true">
                   <img
                     src="/images/facetas.jpg"
-                    alt="Detalhe de facetas cerâmicas do Laboratório Kim"
+                    alt="Finishing details on ceramic veneers by Kim Dental Laboratory"
                     width="1200"
                     height="700"
                     loading="lazy"
@@ -221,8 +1099,8 @@
                   <span data-visual-number>01 — 03</span>
                 </div>
                 <div class="visual-bottom">
-                  <span data-material-label>Ti / TITÂNIO MONOBLOCO</span
-                  ><span>FOTOGRAFIA DO LABORATÓRIO</span>
+                  <span data-material-label>Ti / TITANIUM MONOBLOCK</span
+                  ><span>ORIGINAL LABORATORY PHOTOGRAPH</span>
                 </div>
               </div>
               <div class="story-content">
@@ -232,453 +1110,338 @@
                 </div>
                 <div class="story-copy-stack">
                   <article class="story-copy active" data-story-step="0">
-                    <span class="eyebrow">A ESTRUTURA</span>
-                    <h3>Um único bloco.<br />Inúmeros detalhes.</h3>
+                    <span class="eyebrow">THE STRUCTURE</span>
+                    <h3>One solid block.<br />A world of precision.</h3>
                     <p>
-                      Com fresagem própria em titânio monobloco, a estrutura
-                      nasce de uma só peça. Sem etapas de fundição ou solda.
+                      Our in-house titanium monoblock milling creates a
+                      structure from a single piece. CAD/CAM technology shapes
+                      the material without casting or welding stages.
                     </p>
                     <div class="story-tags">
-                      <span>Fresagem própria</span><span>CAD/CAM</span>
+                      <span>In-house milling</span><span>CAD/CAM</span
+                      ><span>Material integrity</span>
                     </div>
                   </article>
-                  <article class="story-copy" data-story-step="1" inert>
-                    <span class="eyebrow">A FORMA</span>
-                    <h3>Tecnologia encontra<br />sensibilidade.</h3>
+                  <article class="story-copy" data-story-step="1">
+                    <span class="eyebrow">THE FORM</span>
+                    <h3>Technology meets<br />a trained eye.</h3>
                     <p>
-                      Forma, textura e cor. O olhar técnico dá à cerâmica uma
-                      expressão natural, respeitando a individualidade de cada
-                      caso.
+                      Shade, proportion and surface texture. The technical
+                      process and the ceramist's eye work together to give each
+                      restoration its individual character.
                     </p>
                     <div class="story-tags">
-                      <span>Estética individualizada</span><span>Cerâmica</span>
+                      <span>Individual esthetics</span
+                      ><span>Ceramic craftsmanship</span>
                     </div>
                   </article>
-                  <article class="story-copy" data-story-step="2" inert>
-                    <span class="eyebrow">O DETALHE</span>
-                    <h3>Para ser natural,<br />cada detalhe conta.</h3>
+                  <article class="story-copy" data-story-step="2">
+                    <span class="eyebrow">THE FINISH</span>
+                    <h3>The smallest details.<br />The greatest care.</h3>
                     <p>
-                      A atenção vai além do que os olhos veem. O acabamento
-                      traduz o cuidado de quem entende que sua entrega também é
-                      a nossa.
+                      Our attention extends beyond the visible surface. Every
+                      finishing decision reflects the responsibility we share
+                      with the dentist behind the case.
                     </p>
                     <div class="story-tags">
-                      <span>Acabamento cuidadoso</span
-                      ><span>Parceria clínica</span>
+                      <span>Careful finishing</span
+                      ><span>Clinical partnership</span>
                     </div>
                   </article>
                 </div>
-                <div class="story-navigation" aria-label="Etapas da jornada">
+                <div class="story-navigation" aria-label="Technology chapters">
                   <button
                     class="active"
                     data-story-go="0"
-                    aria-label="Ver etapa 1: a estrutura"
+                    aria-label="View chapter 1: structure"
                     aria-current="step"
                   >
-                    01 <span>Estrutura</span></button
-                  ><button data-story-go="1" aria-label="Ver etapa 2: a forma">
-                    02 <span>Forma</span></button
+                    01 <span>Structure</span></button
+                  ><button data-story-go="1" aria-label="View chapter 2: form">
+                    02 <span>Form</span></button
                   ><button
                     data-story-go="2"
-                    aria-label="Ver etapa 3: o detalhe"
+                    aria-label="View chapter 3: finish"
                   >
-                    03 <span>Detalhe</span>
+                    03 <span>Finish</span>
                   </button>
                 </div>
                 <span class="story-scroll-hint"
-                  >EXPLORE COM A ROLAGEM <span aria-hidden="true">↓</span></span
+                  >SCROLL TO LOOK CLOSER <span aria-hidden="true">↓</span></span
                 >
               </div>
             </div>
           </div>
         </div>
-        <noscript
-          ><p class="wrap">
-            Fresagem própria em titânio monobloco, cerâmicas e acabamento
-            cuidadoso. Entre em contato para conhecer nossas soluções.
-          </p></noscript
-        >
-      </section>
-
-      <section
-        id="solucoes"
-        class="solutions section-space"
-        aria-labelledby="solutions-title"
-      >
-        <div class="wrap">
-          <div class="section-topline reveal">
-            <span class="eyebrow">03 / POSSIBILIDADES PARA SUA CLÍNICA</span
-            ><span class="tiny-label"
-              >TÉCNICA A SERVIÇO DO SEU PLANEJAMENTO</span
-            >
+        <div class="technology-facts wrap">
+          <div>
+            <span>01</span>
+            <h3>Biocompatibility</h3>
+            <p>Titanium for dental structures.</p>
           </div>
-          <div class="section-heading reveal">
-            <h2 id="solutions-title">
-              Cada caso, um universo.<br /><span
-                >Vamos encontrar a solução.</span
-              >
-            </h2>
-            <p>
-              Da restauração unitária à reabilitação completa.<br />Explore as
-              possibilidades do nosso laboratório.
-            </p>
+          <div>
+            <span>02</span>
+            <h3>Material integrity</h3>
+            <p>Milled from a solid block.</p>
           </div>
-          <div
-            class="solution-tabs"
-            role="tablist"
-            aria-label="Categorias de soluções"
-          >
-            <button
-              id="tab-estetica"
-              role="tab"
-              aria-selected="true"
-              aria-controls="panel-estetica"
-              data-category="estetica"
-            >
-              Estética e restauração <span>01</span></button
-            ><button
-              id="tab-implantes"
-              role="tab"
-              aria-selected="false"
-              aria-controls="panel-implantes"
-              data-category="implantes"
-              tabindex="-1"
-            >
-              Prótese sobre implantes <span>02</span></button
-            ><button
-              id="tab-reabilitacao"
-              role="tab"
-              aria-selected="false"
-              aria-controls="panel-reabilitacao"
-              data-category="reabilitacao"
-              tabindex="-1"
-            >
-              Reabilitação e proteção <span>03</span>
-            </button>
+          <div>
+            <span>03</span>
+            <h3>Corrosion resistance</h3>
+            <p>A characteristic of titanium.</p>
           </div>
-          <div
-            id="panel-estetica"
-            role="tabpanel"
-            aria-labelledby="tab-estetica"
-            class="solution-panel"
-            data-panel="estetica"
-            tabindex="0"
-          >
-            <div class="solution-feature">
-              <div class="solution-photo">
-                <img
-                  src="/images/facetas.jpg"
-                  alt="Facetas cerâmicas produzidas no Laboratório Kim"
-                  width="1200"
-                  height="700"
-                  loading="lazy"
-                /><span>FACETAS CERÂMICAS / LABORATÓRIO KIM</span>
-              </div>
-              <div class="solution-details">
-                <span class="eyebrow">A BELEZA ESTÁ NA INDIVIDUALIDADE</span>
-                <h3>Natural em<br />cada expressão.</h3>
-                <p>
-                  Restaurações que integram estética e função ao seu
-                  planejamento.
-                </p>
-                <div class="service-list">
-                  <details>
-                    <summary>Coroas, inlays e onlays <span>+</span></summary>
-                    <p>
-                      Restaurações indiretas em materiais como zircônia e
-                      dissilicato de lítio. A indicação é definida conforme o
-                      caso clínico.
-                    </p>
-                  </details>
-                  <details>
-                    <summary>Facetas cerâmicas <span>+</span></summary>
-                    <p>
-                      Laminados em dissilicato de lítio, com atenção à forma, à
-                      textura e à integração estética.
-                    </p>
-                  </details>
-                  <details>
-                    <summary>Provisórios e protótipos <span>+</span></summary>
-                    <p>
-                      Peças em resina e PMMA para as etapas de avaliação e
-                      transição do tratamento.
-                    </p>
-                  </details>
-                </div>
-                <a
-                  class="text-link"
-                  data-service-contact="Estética e restauração"
-                  href="#contato"
-                  >Converse sobre seu planejamento
-                  <span aria-hidden="true">↗</span></a
-                >
-              </div>
-            </div>
-          </div>
-          <div
-            id="panel-implantes"
-            role="tabpanel"
-            aria-labelledby="tab-implantes"
-            class="solution-panel"
-            data-panel="implantes"
-            tabindex="0"
-            hidden
-          >
-            <div class="solution-feature">
-              <div class="solution-photo">
-                <img
-                  src="/images/estrutura.jpg"
-                  alt="Barra em titânio produzida pelo Laboratório Kim"
-                  width="1200"
-                  height="700"
-                  loading="lazy"
-                /><span>ESTRUTURA EM TITÂNIO / LABORATÓRIO KIM</span>
-              </div>
-              <div class="solution-details">
-                <span class="eyebrow">A BASE DE UMA NOVA POSSIBILIDADE</span>
-                <h3>Da estrutura<br />à reabilitação.</h3>
-                <p>
-                  Um parceiro para desenvolver a solução protética sobre
-                  implantes.
-                </p>
-                <div class="service-list">
-                  <details>
-                    <summary>Protocolos sobre implantes <span>+</span></summary>
-                    <p>
-                      Soluções fixas para reabilitação de arcadas, com
-                      possibilidades em resina, zircônia, cerâmica e estruturas
-                      metálicas.
-                    </p>
-                  </details>
-                  <details>
-                    <summary>Barras e overdentures <span>+</span></summary>
-                    <p>
-                      Estruturas de retenção para próteses removíveis sobre
-                      implantes, conforme o planejamento clínico.
-                    </p>
-                  </details>
-                  <details>
-                    <summary>Seleção de componentes <span>+</span></summary>
-                    <p>
-                      Apoio ao dentista na seleção de componentes para o
-                      trabalho protético. Fale com a equipe sobre o seu caso.
-                    </p>
-                  </details>
-                </div>
-                <a
-                  class="text-link"
-                  data-service-contact="Prótese sobre implantes"
-                  href="#contato"
-                  >Converse sobre seu planejamento
-                  <span aria-hidden="true">↗</span></a
-                >
-              </div>
-            </div>
-          </div>
-          <div
-            id="panel-reabilitacao"
-            role="tabpanel"
-            aria-labelledby="tab-reabilitacao"
-            class="solution-panel"
-            data-panel="reabilitacao"
-            tabindex="0"
-            hidden
-          >
-            <div class="solution-feature">
-              <div class="solution-photo">
-                <img
-                  src="/images/protocolo.jpg"
-                  alt="Trabalho protético real do Laboratório Kim"
-                  width="1200"
-                  height="700"
-                  loading="lazy"
-                /><span>PRÓTESE DENTÁRIA / LABORATÓRIO KIM</span>
-              </div>
-              <div class="solution-details">
-                <span class="eyebrow">CUIDADO EM DIFERENTES NECESSIDADES</span>
-                <h3>Função que<br />faz parte da vida.</h3>
-                <p>
-                  Alternativas para reabilitar e proteger, em diálogo com a sua
-                  clínica.
-                </p>
-                <div class="service-list">
-                  <details>
-                    <summary>Próteses totais <span>+</span></summary>
-                    <p>
-                      Reabilitações removíveis para substituição dos dentes de
-                      uma arcada, com atenção à anatomia e à estética.
-                    </p>
-                  </details>
-                  <details>
-                    <summary>
-                      Próteses parciais removíveis <span>+</span>
-                    </summary>
-                    <p>
-                      Soluções em resina e cobalto-cromo para reabilitação de
-                      perdas dentárias parciais.
-                    </p>
-                  </details>
-                  <details>
-                    <summary>Placas oclusais <span>+</span></summary>
-                    <p>
-                      Dispositivos personalizados em resina acrílica, impressa
-                      ou fresada, conforme a indicação do dentista.
-                    </p>
-                  </details>
-                </div>
-                <a
-                  class="text-link"
-                  data-service-contact="Reabilitação e proteção"
-                  href="#contato"
-                  >Converse sobre seu planejamento
-                  <span aria-hidden="true">↗</span></a
-                >
-              </div>
-            </div>
+          <div>
+            <span>04</span>
+            <h3>Digital precision</h3>
+            <p>CAD/CAM-guided manufacturing.</p>
           </div>
         </div>
       </section>
-
       <section
         class="partnership section-space wrap"
         aria-labelledby="partnership-title"
       >
         <div class="section-topline reveal">
-          <span class="eyebrow">04 / DO MESMO LADO</span
-          ><span class="tiny-label">DA SUA CLÍNICA AO LABORATÓRIO</span>
+          <span class="eyebrow">04 / ON YOUR SIDE</span
+          ><span class="tiny-label">FROM YOUR CLINIC TO OUR LABORATORY</span>
         </div>
-        <div class="partnership-intro reveal">
+        <div class="section-heading reveal">
           <h2 id="partnership-title">
-            Sua clínica tem um parceiro.<br /><span>Em cada etapa.</span>
+            Your clinical partner.<br /><span>At every stage.</span>
           </h2>
           <p>
-            Boa prótese também se faz com proximidade.<br />Vamos alinhar os
-            detalhes do seu próximo caso.
+            Good work starts with a good conversation.<br />Let's align the
+            details of your next case.
           </p>
         </div>
         <div class="partnership-grid">
           <article class="reveal">
             <span class="line-icon" aria-hidden="true">↗</span
             ><span class="card-index">01</span>
-            <h3>Uma conversa <br />que faz diferença.</h3>
+            <h3>A conversation<br />that makes a difference.</h3>
             <p>
-              Contato direto para alinhar necessidades, materiais e
-              possibilidades do trabalho protético.
+              Direct contact to discuss the requirements, materials and
+              possibilities of your prosthetic work.
             </p>
           </article>
           <article class="reveal">
-            <span class="line-icon component-icon" aria-hidden="true">⊕</span
+            <span class="line-icon" aria-hidden="true">⊕</span
             ><span class="card-index">02</span>
-            <h3>Apoio nas <br />escolhas técnicas.</h3>
+            <h3>Support for<br />technical decisions.</h3>
             <p>
-              Auxílio na seleção de componentes para conectar o planejamento ao
-              trabalho laboratorial.
+              Help with implant component selection, connecting your clinical
+              plan to the laboratory process.
             </p>
           </article>
           <article class="reveal">
             <span class="line-icon" aria-hidden="true">⇄</span
             ><span class="card-index">03</span>
-            <h3>Mais perto. <br />Mesmo de longe.</h3>
+            <h3>Closer to you.<br />Across Brazil.</h3>
             <p>
-              Logística própria em São Paulo e atendimento a clínicas de todo o
-              Brasil. Consulte a cobertura.
+              Our own delivery fleet in São Paulo and service for clinics
+              nationwide. Ask our team about coverage.
             </p>
           </article>
         </div>
       </section>
-
-      <section id="historia" class="history" aria-labelledby="history-title">
-        <div class="history-inner wrap">
-          <div class="history-portrait">
-            <span class="history-year" aria-hidden="true">1995</span
-            ><img
-              src="/images/kim.png"
-              alt="Dr. Chang Kook Kim, fundador do Laboratório Kim"
-              width="1024"
-              height="1536"
-              loading="lazy"
-            /><span class="portrait-caption"
-              >DR. CHANG KOOK KIM <span>FUNDADOR</span></span
-            >
+      <section
+        id="team"
+        class="team-section section-space"
+        aria-labelledby="team-title"
+      >
+        <div class="wrap">
+          <div class="section-topline reveal">
+            <span class="eyebrow">05 / OUR TEAM</span
+            ><span class="tiny-label">THE PEOPLE BEHIND THE PRECISION</span>
           </div>
-          <div class="history-copy reveal">
-            <span class="eyebrow">05 / O TEMPO TAMBÉM CONSTRÓI PRECISÃO</span>
-            <h2 id="history-title">O futuro tem<br /><span>uma história.</span></h2>
+          <div class="section-heading reveal">
+            <h2 id="team-title">
+              A shared standard.<br /><span>A personal commitment.</span>
+            </h2>
             <p>
-              Em 1995, o Dr. Chang Kook Kim deu início a um laboratório com
-              valores de família. Hoje, essa origem segue presente em cada
-              trabalho.
+              Meet the people connecting clinical understanding,<br />technical
+              care and the day-to-day needs of your practice.
             </p>
-            <p>
-              A tecnologia evolui. O compromisso de cuidar dos detalhes e
-              construir relações de confiança atravessa gerações.
-            </p>
-            <div class="history-signature">
-              Uma história construída, sorriso a sorriso.<span
-                >LABORATÓRIO KIM · DESDE 1995</span
+          </div>
+          <div class="team-grid">
+            <article class="team-member reveal">
+              <div class="team-photo">
+                <span class="team-index">01</span
+                ><img
+                  src="/images/kim.png"
+                  alt="Portrait of Chang Kim"
+                  width="1024"
+                  height="1536"
+                  loading="lazy"
+                />
+              </div>
+              <div class="team-member-copy">
+                <h3>Chang Kim</h3>
+                <p class="team-role">Founding Partner</p>
+                <details class="team-details">
+                  <summary>
+                    Meet Chang <span aria-hidden="true">+</span>
+                  </summary>
+                  <p>
+                    <strong>Clinical perspective. Laboratory precision.</strong>
+                    Guides complex case planning, prosthetic quality and
+                    component selection. Sets technical standards and mentors
+                    the laboratory team.
+                  </p>
+                </details>
+              </div>
+            </article>
+            <article class="team-member reveal">
+              <div class="team-photo">
+                <span class="team-index">02</span
+                ><img
+                  src="/images/mirian.png"
+                  alt="Portrait of Mirian Lee"
+                  width="1024"
+                  height="1536"
+                  loading="lazy"
+                />
+              </div>
+              <div class="team-member-copy">
+                <h3>Mirian Lee</h3>
+                <p class="team-role">
+                  Founding Partner · Administrative Director
+                </p>
+                <details class="team-details">
+                  <summary>
+                    Meet Mirian <span aria-hidden="true">+</span>
+                  </summary>
+                  <p>
+                    <strong>The care behind the operation.</strong> Oversees
+                    logistics, delivery coordination and customer service, while
+                    supporting consistent operations and continuous improvement.
+                  </p>
+                </details>
+              </div>
+            </article>
+            <article class="team-member reveal">
+              <div class="team-photo">
+                <span class="team-index">03</span
+                ><img
+                  src="/images/andrea.png"
+                  alt="Portrait of Andrea Haikawa"
+                  width="1024"
+                  height="1536"
+                  loading="lazy"
+                />
+              </div>
+              <div class="team-member-copy">
+                <h3>Andrea Haikawa</h3>
+                <p class="team-role">General Manager</p>
+                <details class="team-details">
+                  <summary>
+                    Meet Andrea <span aria-hidden="true">+</span>
+                  </summary>
+                  <p>
+                    <strong>Connecting the details of every case.</strong>
+                    Coordinates cases from start to finish, aligns expectations
+                    with clinics and organizes the workflow around clinical
+                    priorities.
+                  </p>
+                </details>
+              </div>
+            </article>
+            <article class="team-member reveal">
+              <div class="team-photo">
+                <span class="team-index">04</span
+                ><img
+                  src="/images/pedro.png"
+                  alt="Portrait of Pedro Kim"
+                  width="1024"
+                  height="1536"
+                  loading="lazy"
+                />
+              </div>
+              <div class="team-member-copy">
+                <h3>Pedro Kim</h3>
+                <p class="team-role">Administrative Manager</p>
+                <details class="team-details">
+                  <summary>
+                    Meet Pedro <span aria-hidden="true">+</span>
+                  </summary>
+                  <p>
+                    <strong>Keeping your partnership moving.</strong>
+                    Coordinates quotations, approvals and billing, schedules
+                    collections and deliveries, and keeps case documentation
+                    organized.
+                  </p>
+                </details>
+              </div>
+            </article>
+          </div>
+          <div class="heritage reveal" id="about">
+            <div class="heritage-year">
+              1995<span>THE START OF OUR STORY</span>
+            </div>
+            <div class="heritage-copy">
+              <h3>The future has a history.</h3>
+              <p>
+                Founded by Dr. Chang Kook Kim in São Paulo, our laboratory grew
+                from a family vision. Technology has evolved. Dedication,
+                responsibility and the value of a lasting partnership continue
+                to guide our work.
+              </p>
+              <a
+                class="text-link"
+                href="https://www.instagram.com/laboratoriokim/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Behind the scenes on Instagram
+                <span aria-hidden="true">↗</span></a
               >
             </div>
-            <a
-              class="text-link"
-              href="https://www.instagram.com/laboratoriokim/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Veja os bastidores no Instagram
-              <span aria-hidden="true">↗</span></a
-            >
           </div>
         </div>
       </section>
-
       <section
-        id="contato"
+        id="contact"
         class="contact section-space"
         aria-labelledby="contact-title"
       >
         <div class="wrap">
           <div class="section-topline reveal">
             <span class="eyebrow"
-              ><span class="status-dot"></span> O PRÓXIMO CAPÍTULO É COM
-              VOCÊ</span
-            ><span class="tiny-label">VAMOS CONSTRUIR JUNTOS</span>
+              ><span class="status-dot"></span> THE NEXT CHAPTER STARTS WITH
+              YOU</span
+            ><span class="tiny-label">LET'S BUILD IT TOGETHER</span>
           </div>
           <div class="contact-main">
             <h2 id="contact-title" class="reveal">
-              Seu próximo caso.<br /><span>Nossa próxima parceria.</span>
+              Your next case.<br /><span>Our next collaboration.</span>
             </h2>
             <div class="contact-action reveal">
-              <p>
-                Conte com um laboratório que olha<br />para os detalhes junto
-                com você.
-              </p>
+              <p>A laboratory that looks at<br />the details alongside you.</p>
               <a
                 class="button button-primary"
                 id="contact-digital"
-                href="https://wa.me/551159048888?text=Ol%C3%A1%2C%20sou%20dentista%20e%20gostaria%20de%20conversar%20sobre%20um%20caso."
+                href="https://wa.me/551159048888?text=Hello%2C%20I%27m%20a%20dentist%20and%20I%27d%20like%20to%20discuss%20a%20case."
                 target="_blank"
                 rel="noopener noreferrer"
-                >Iniciar conversa
+                >Start a conversation
                 <span class="button-arrow" aria-hidden="true">↗</span></a
-              ><span class="contact-helper"
-                >ATENDIMENTO A DENTISTAS E CLÍNICAS</span
-              >
+              ><span class="contact-helper">FOR DENTISTS AND CLINICS</span>
+              <p class="contact-context" id="contact-context" hidden></p>
             </div>
           </div>
           <div class="contact-options">
             <a
-              href="https://wa.me/551159048888?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20um%20pedido%20digital."
+              href="https://wa.me/551159048888?text=Hello%2C%20I%27d%20like%20to%20discuss%20a%20digital%20order."
               target="_blank"
               rel="noopener noreferrer"
-              ><span>PEDIDOS DIGITAIS</span><strong>(11) 5904-8888</strong
+              ><span>DIGITAL ORDERS</span><strong>+55 (11) 5904-8888</strong
               ><span class="option-arrow" aria-hidden="true">↗</span></a
             ><a
-              href="https://wa.me/5511968417556?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20um%20pedido%20anal%C3%B3gico."
+              href="https://wa.me/5511968417556?text=Hello%2C%20I%27d%20like%20to%20discuss%20an%20analog%20order."
               target="_blank"
               rel="noopener noreferrer"
-              ><span>PEDIDOS ANALÓGICOS</span><strong>(11) 96841-7556</strong
+              ><span>ANALOG ORDERS</span><strong>+55 (11) 96841-7556</strong
               ><span class="option-arrow" aria-hidden="true">↗</span></a
             ><a href="mailto:digitalkim@laboratoriokim.com.br"
-              ><span>PREFERE E-MAIL?</span
+              ><span>PREFER EMAIL?</span
               ><strong>digitalkim@laboratoriokim.com.br</strong
               ><span class="option-arrow" aria-hidden="true">↗</span></a
             >
@@ -686,26 +1449,23 @@
         </div>
       </section>
     </main>
-
     <footer class="site-footer">
       <div class="wrap">
         <div class="footer-main">
           <a
             class="brand footer-brand"
-            href="#inicio"
-            aria-label="Laboratório Kim — voltar ao início"
+            href="#home"
+            aria-label="Kim Dental Laboratory — back to top"
             ><span class="brand-name">kim<span class="brand-dot">.</span></span
-            ><span class="brand-descriptor"
-              >LABORATÓRIO<br />DE PRÓTESE DENTÁRIA</span
-            ></a
+            ><span class="brand-descriptor">DENTAL<br />LABORATORY</span></a
           >
           <address>
-            Rua Correia Dias, 392 · Paraíso<br />São Paulo, SP
+            Rua Correia Dias, 392 · Paraíso<br />São Paulo, Brazil
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Laborat%C3%B3rio+Kim+Rua+Correia+Dias+392+S%C3%A3o+Paulo"
+              href="https://www.google.com/maps/search/?api=1&amp;query=Laborat%C3%B3rio+Kim+Rua+Correia+Dias+392+S%C3%A3o+Paulo"
               target="_blank"
               rel="noopener noreferrer"
-              >Como chegar ↗</a
+              >Get directions ↗</a
             >
           </address>
           <div class="footer-social">
@@ -724,10 +1484,10 @@
         </div>
         <div class="footer-bottom">
           <span
-            >© <span id="current-year">2026</span> Laboratório Kim. Todos os
-            direitos reservados.</span
-          ><span>PRECISÃO EM CADA DETALHE.</span
-          ><a href="#inicio">Voltar ao topo ↑</a>
+            >© <span id="current-year">2026</span> Kim Dental Laboratory. All
+            rights reserved.</span
+          ><span>PRECISION IN EVERY DETAIL.</span
+          ><a href="#home">Back to top ↑</a>
         </div>
       </div>
     </footer>
