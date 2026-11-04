@@ -8,6 +8,7 @@ const $$ = (selector, parent = document) => [
 const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
 const motion = matchMedia("(prefers-reduced-motion: reduce)");
 const compact = matchMedia("(max-width: 700px), (max-height: 720px)");
+const immersive = matchMedia("(min-width: 901px) and (min-height: 741px) and (prefers-reduced-motion: no-preference)");
 const header = $(".site-header");
 const menuButton = $(".menu-toggle");
 const mobileNav = $("#mobile-nav");
@@ -98,49 +99,122 @@ function setupTabs(buttonSelector, panelSelector, key, onSelect) {
     });
   });
 }
-// All descriptions stay open; the photograph and marker follow the same service.
+// The opening scroll moves the logo into the center of the full-width tree.
+const heroStory = $("[data-hero-story]");
+const heroStage = $(".hero-stage");
+const heroCopy = $(".hero-copy");
+const heroLogo = $(".hero-logo");
+const heroTree = $(".hero-tree");
+const treePaths = $$(".tree-branches path");
+const treePillars = $$(".tree-pillar");
+const smooth = (value) => { const x = clamp(value); return x * x * (3 - 2 * x); };
+function updateHeroStory() {
+  if (!immersive.matches) {
+    [heroCopy, heroLogo, heroTree, ...treePillars, ...treePaths].forEach((element) => element.removeAttribute("style"));
+    heroCopy.inert = false;
+    heroCopy.removeAttribute("aria-hidden");
+    heroTree.removeAttribute("aria-hidden");
+    heroStory.dataset.scene = "flow";
+    return;
+  }
+  const range = Math.max(1, heroStory.offsetHeight - heroStage.offsetHeight);
+  const value = clamp(-heroStory.getBoundingClientRect().top / range);
+  const fade = smooth((value - .08) / .22);
+  heroCopy.style.opacity = 1 - fade;
+  heroCopy.style.transform = `translateY(${-24 * fade}px)`;
+  heroCopy.inert = value > .32;
+  heroCopy.setAttribute("aria-hidden", String(value > .32));
+  const scale = value < .38
+    ? 1 + 1.2 * smooth(value / .38)
+    : 2.2 - 1.55 * smooth((value - .38) / .32);
+  heroLogo.style.left = `${77 - 27 * smooth((value - .08) / .55)}%`;
+  heroLogo.style.top = `${50 - 25 * smooth((value - .18) / .5)}%`;
+  heroLogo.style.transform = `translate(-50%, -50%) scale(${scale})`;
+  heroTree.style.opacity = smooth((value - .5) / .18);
+  heroTree.style.visibility = value > .5 ? "visible" : "hidden";
+  heroTree.setAttribute("aria-hidden", String(value <= .5));
+  treePaths.forEach((path) => path.style.strokeDashoffset = 1 - smooth((value - .54) / .24));
+  treePillars.forEach((pillar, index) => {
+    const reveal = smooth((value - .6 - index * .045) / .16);
+    pillar.style.opacity = reveal;
+    pillar.style.transform = `translateY(${24 * (1 - reveal)}px)`;
+  });
+  heroStory.dataset.scene = value > .78 ? "advantages" : value > .15 ? "zoom" : "intro";
+}
+
+// One shared stage keeps the current photograph and copy together.
 const serviceCatalog = $("[data-service-catalog]");
+const serviceStage = $(".service-stage");
 const serviceShowcase = $(".service-showcase");
 const serviceRows = $$("[data-service-row]");
 const serviceScenes = $$("[data-service-scene]");
 const serviceJumps = $$("[data-service-jump]");
 const serviceCounter = $("[data-service-count]");
 const serviceProgress = $(".service-gallery-progress i");
+const servicePrev = $("[data-service-prev]");
+const serviceNext = $("[data-service-next]");
 let activeService = -1;
-function setServiceActive(index) {
-  if (index === activeService) return;
+function setServiceActive(index, force = false) {
+  if (index === activeService && !force) return;
   activeService = index;
-  serviceRows.forEach((row, i) => row.classList.toggle("active", i === index));
+  serviceRows.forEach((row, i) => {
+    row.classList.toggle("active", i === index);
+    row.inert = immersive.matches && i !== index;
+    if (immersive.matches) row.setAttribute("aria-hidden", String(i !== index));
+    else row.removeAttribute("aria-hidden");
+  });
   serviceScenes.forEach((scene, i) => {
     scene.classList.toggle("active", i === index);
     scene.setAttribute("aria-hidden", String(i !== index));
   });
-  serviceJumps.forEach((link, i) => {
-    if (i === index) link.setAttribute("aria-current", "location");
+  serviceJumps.forEach((link) => {
+    if (Number(link.dataset.serviceJump) === index) link.setAttribute("aria-current", "location");
     else link.removeAttribute("aria-current");
   });
   serviceCounter.textContent = String(index + 1).padStart(2, "0");
   serviceProgress.style.transform = `scaleX(${(index + 1) / serviceRows.length})`;
+  servicePrev.disabled = index === 0;
+  serviceNext.disabled = index === serviceRows.length - 1;
 }
-serviceRows.forEach((row, index) => {
-  row.addEventListener("focusin", () => setServiceActive(index));
-});
+function jumpToService(index, historyMethod = "replaceState", behavior = "smooth") {
+  if (!immersive.matches) return;
+  index = clamp(index, 0, serviceRows.length - 1);
+  if (historyMethod) {
+    const url = new URL(location.href);
+    url.hash = serviceRows[index].id;
+    history[historyMethod](history.state, "", url);
+  }
+  const segment = (serviceCatalog.offsetHeight - serviceStage.offsetHeight) / serviceRows.length;
+  const top = scrollY + serviceCatalog.getBoundingClientRect().top - header.offsetHeight + segment * (index + .35);
+  window.scrollTo({ top, behavior });
+}
+serviceJumps.forEach((link) => link.addEventListener("click", (event) => {
+  if (!immersive.matches) return;
+  event.preventDefault();
+  jumpToService(Number(link.dataset.serviceJump), "pushState");
+}));
+servicePrev.addEventListener("click", () => jumpToService(activeService - 1));
+serviceNext.addEventListener("click", () => jumpToService(activeService + 1));
+function routeServiceHash() {
+  const index = serviceRows.findIndex((row) => `#${row.id}` === location.hash);
+  if (index >= 0) jumpToService(index, null, "instant");
+}
+window.addEventListener("hashchange", routeServiceHash);
 function updateServiceScroll() {
   const rect = serviceCatalog.getBoundingClientRect();
   if (rect.top > innerHeight || rect.bottom < 0) return;
-  const stageVisible = getComputedStyle(serviceShowcase).display !== "none";
-  const readingLine =
-    header.offsetHeight +
-    (innerHeight - header.offsetHeight) * (stageVisible ? 0.5 : 0.25);
+  if (immersive.matches) {
+    const value = clamp((header.offsetHeight - rect.top) / Math.max(1, rect.height - serviceStage.offsetHeight));
+    setServiceActive(Math.min(serviceRows.length - 1, Math.floor(value * serviceRows.length)));
+    return;
+  }
+  const readingLine = header.offsetHeight + (innerHeight - header.offsetHeight) * .25;
   let nearest = 0;
   let distance = Infinity;
   serviceRows.forEach((row, index) => {
     const bounds = row.getBoundingClientRect();
     const nextDistance = Math.abs(bounds.top + bounds.height / 2 - readingLine);
-    if (nextDistance < distance) {
-      nearest = index;
-      distance = nextDistance;
-    }
+    if (nextDistance < distance) { nearest = index; distance = nextDistance; }
   });
   setServiceActive(nearest);
 }
@@ -318,6 +392,7 @@ storyButtons.forEach((button) =>
   }),
 );
 function updateScroll() {
+  updateHeroStory();
   updateServiceScroll();
   const y = window.scrollY;
   header.classList.toggle("scrolled", y > 90);
@@ -382,6 +457,10 @@ motion.addEventListener("change", () => {
   scheduleScroll();
 });
 compact.addEventListener("change", scheduleScroll);
+immersive.addEventListener("change", () => {
+  setServiceActive(Math.max(0, activeService), true);
+  scheduleScroll();
+});
 setStoryStep(0);
 updateScroll();
 
@@ -431,21 +510,33 @@ $$("[data-service-contact]").forEach((link) =>
     updateContactLinks();
   }),
 );
-const pillarRoot = $(".hero-pillars");
-const pillars = $$("[data-pillar]");
-function selectPillar(index) {
-  pillarRoot.dataset.activePillar = String(index);
-  pillars.forEach((button, i) => {
-    button.classList.toggle("active", i === index);
-    button.setAttribute("aria-pressed", String(i === index));
-  });
+const portraits = $$(".team-photo");
+function setBiography(portrait, open) {
+  portrait.setAttribute("aria-expanded", String(open));
+  $(".team-bio", portrait).setAttribute("aria-hidden", String(!open));
 }
-pillars.forEach((button, index) => {
-  button.addEventListener("click", () => selectPillar(index));
-  button.addEventListener("pointerenter", (event) => {
-    if (event.pointerType === "mouse") selectPillar(index);
+portraits.forEach((portrait) => {
+  setBiography(portrait, false);
+  portrait.addEventListener("pointerenter", (event) => {
+    if (event.pointerType === "mouse") setBiography(portrait, true);
   });
-  button.addEventListener("focus", () => selectPillar(index));
+  portrait.addEventListener("pointerleave", (event) => {
+    if (event.pointerType === "mouse" && !portrait.matches(":focus-visible")) setBiography(portrait, false);
+  });
+  portrait.addEventListener("focus", () => {
+    if (portrait.matches(":focus-visible")) setBiography(portrait, true);
+  });
+  portrait.addEventListener("blur", () => setBiography(portrait, false));
+  portrait.addEventListener("click", (event) => {
+    const open = event.pointerType === "mouse" || portrait.getAttribute("aria-expanded") !== "true";
+    portraits.forEach((item) => setBiography(item, item === portrait && open));
+  });
+  portrait.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setBiography(portrait, false);
+  });
+});
+document.addEventListener("pointerdown", (event) => {
+  if (!event.target.closest(".team-photo")) portraits.forEach((portrait) => setBiography(portrait, false));
 });
 // Update dynamic labels too, retaining case, service and comparison positions.
 document.addEventListener("languagechange", () => {
@@ -465,6 +556,7 @@ document.addEventListener("languagechange", () => {
   scheduleScroll();
 });
 initI18n();
+requestAnimationFrame(routeServiceHash);
 $("#current-year").textContent = new Intl.DateTimeFormat("en", {
   year: "numeric",
   timeZone: "America/Sao_Paulo",

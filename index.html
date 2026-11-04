@@ -24,7 +24,7 @@
       content="https://laboratorio-kim-experiencia.faradays-8974.chatgpt.site/images/protocolo.jpg"
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
     <link
       rel="preload"
       href="/fonts/manrope-regular.ttf"
@@ -37,6 +37,11 @@
     <noscript
       ><style>
         .language-control { display: none !important; }
+        .hero-logo { position: relative; left: auto; top: auto; transform: none; margin: 50px auto 0; }
+        .hero-tree { margin-top: 0; }
+        .team-photo { aspect-ratio: auto !important; }
+        .team-bio { position: static !important; opacity: 1 !important; transform: none !important; display: block !important; }
+        .team-info-icon { display: none !important; }
         .service-showcase {
           display: none !important;
         }
@@ -118,8 +123,7 @@
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="#home" aria-label="Kim Dental Laboratory — home"
-          ><span class="brand-name">kim<span class="brand-dot">.</span></span
-          ><span class="brand-descriptor">DENTAL<br />LABORATORY</span></a
+          ><img class="brand-logo" src="/images/kim-logo-original.png" width="1107" height="1107" alt="" /></a
         >
         <nav class="desktop-nav" aria-label="Main navigation">
           <a href="#services">Our services</a
@@ -156,8 +160,9 @@
       </nav>
     </header>
     <main id="main">
-      <section id="home" class="hero" aria-labelledby="hero-title">
-        <div class="hero-inner wrap">
+      <section id="home" class="hero" aria-labelledby="hero-title" data-hero-story>
+        <div class="hero-stage">
+          <div class="hero-inner wrap">
           <div class="hero-copy">
             <h1 id="hero-title"><span class="hero-title-lead">Specialists in</span><br /><span>Dental Prosthetics</span></h1>
             <p>Leader in prosthetic solutions, providing dentists with unparalleled advantages and cutting-edge results.</p>
@@ -166,19 +171,27 @@
               <a class="hero-services-link" href="#services">Our Services <span aria-hidden="true">↓</span></a>
             </div>
           </div>
-          <div class="hero-pillars" data-active-pillar="0">
-            <div class="pillar-topline"><h2>Exclusivities</h2><span aria-hidden="true">01 — 03</span></div>
-            <svg class="pillar-network" viewBox="0 0 480 170" aria-hidden="true" fill="none">
-              <circle class="network-hub-halo" cx="240" cy="38" r="34"/><circle class="network-hub" cx="240" cy="38" r="25"/>
-              <text x="240" y="44" text-anchor="middle" fill="currentColor" stroke="none" font-size="20" font-family="Arial,sans-serif">kim.</text>
-              <g class="network-route" data-pillar-visual="0"><path d="M220 55C190 100 80 60 80 116"/><circle cx="80" cy="136" r="23"/><g transform="translate(67 123)"><path d="M1 4h15v16H1zM16 9h6l4 5v6H16M16 14h10"/><circle cx="6" cy="21" r="3"/><circle cx="21" cy="21" r="3"/></g></g>
-              <g class="network-route" data-pillar-visual="1"><path d="M240 63v50"/><circle cx="240" cy="136" r="23"/><circle cx="240" cy="136" r="12"/><ellipse cx="240" cy="136" rx="5" ry="12"/><path d="M228 136h24"/></g>
-              <g class="network-route" data-pillar-visual="2"><path d="M260 55C290 100 400 60 400 116"/><circle cx="400" cy="136" r="23"/><g transform="translate(388 123)"><path d="M5 2h14v7H5zM8 9v13l4 3 4-3V9M6 13h12M6 17h12M8 21h8"/></g></g>
+          </div>
+          <div class="hero-logo" aria-hidden="true"><img src="/images/kim-logo-original.png" width="1107" height="1107" alt="" /></div>
+          <div class="hero-tree wrap" role="group" aria-label="Laboratory advantages">
+            <svg class="tree-branches" viewBox="0 0 1200 180" preserveAspectRatio="none" aria-hidden="true" fill="none">
+              <path pathLength="1" d="M600 0C600 100 200 65 200 180"/>
+              <path pathLength="1" d="M600 0V180"/>
+              <path pathLength="1" d="M600 0C600 100 1000 65 1000 180"/>
             </svg>
-            <div class="pillar-list" role="group" aria-label="Laboratory advantages">
-              <button class="pillar active" type="button" data-pillar="0" aria-pressed="true"><span class="pillar-number" aria-hidden="true">01</span><span class="pillar-copy"><strong>In-house logistics</strong><span>Our fleet of motoboys is always ready to serve your clinic.</span></span><span class="pillar-indicator" aria-hidden="true">●</span></button>
-              <button class="pillar" type="button" data-pillar="1" aria-pressed="false"><span class="pillar-number" aria-hidden="true">02</span><span class="pillar-copy"><strong>National coverage</strong><span>Headquartered in São Paulo, serving clinics throughout Brazil.</span></span><span class="pillar-indicator" aria-hidden="true">●</span></button>
-              <button class="pillar" type="button" data-pillar="2" aria-pressed="false"><span class="pillar-number" aria-hidden="true">03</span><span class="pillar-copy"><strong>Implant component selection</strong><span>We understand the difficulty and seriousness of choosing the right implant components.</span></span><span class="pillar-indicator" aria-hidden="true">●</span></button>
+            <div class="tree-pillars">
+              <article class="tree-pillar">
+                <div class="tree-icon"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none"><path d="M2 6h16v17H2zM18 11h7l5 6v6H18M18 17h12"/><circle cx="8" cy="24" r="3"/><circle cx="24" cy="24" r="3"/></svg></div>
+                <h2>In-house logistics</h2><p>Our fleet of motoboys is always ready to serve your clinic.</p>
+              </article>
+              <article class="tree-pillar">
+                <div class="tree-icon"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none"><circle cx="16" cy="16" r="13"/><ellipse cx="16" cy="16" rx="5.5" ry="13"/><path d="M3 16h26"/></svg></div>
+                <h2>National coverage</h2><p>Headquartered in São Paulo, serving clinics throughout Brazil.</p>
+              </article>
+              <article class="tree-pillar">
+                <div class="tree-icon"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none"><path d="M8 3h16v7H8zM12 10v15l4 4 4-4V10M9 14h14M9 19h14M12 24h8"/></svg></div>
+                <h2>Implant component selection</h2><p>We understand the difficulty and seriousness of choosing the right implant components.</p>
+              </article>
             </div>
           </div>
         </div>
@@ -244,6 +257,7 @@
             >
           </nav>
           <div class="service-catalog" data-service-catalog>
+            <div class="service-stage">
             <div class="service-showcase">
               <div class="service-showcase-meta">
                 <span><span class="status-dot"></span> THE COLLECTION</span
@@ -363,8 +377,11 @@
                   <i></i>
                 </div>
                 <div class="service-showcase-note">
-                  <span>SCROLL TO EXPLORE THE COLLECTION</span
-                  ><span aria-hidden="true">↓</span>
+                  <span>SCROLL TO EXPLORE THE COLLECTION</span>
+                  <div class="service-step-controls">
+                    <button type="button" data-service-prev aria-label="Previous service"><span aria-hidden="true">←</span></button>
+                    <button type="button" data-service-next aria-label="Next service"><span aria-hidden="true">→</span></button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -678,6 +695,7 @@
                 >
               </article>
             </div>
+          </div>
           </div>
           <div class="service-bottom-note">
             <span class="status-dot"></span> Material selection and case
@@ -1222,7 +1240,7 @@
           </div>
           <div class="team-grid">
             <article class="team-member reveal">
-              <div class="team-photo">
+              <button class="team-photo" type="button" aria-label="Meet Chang" aria-expanded="false" aria-controls="team-bio-chang" aria-describedby="team-bio-chang">
                 <span class="team-index">01</span
                 ><img
                   src="/images/kim.png"
@@ -1231,25 +1249,22 @@
                   height="1536"
                   loading="lazy"
                 />
-              </div>
-              <div class="team-member-copy">
-                <h3>Chang Kim</h3>
-                <p class="team-role">Founding Partner</p>
-                <details class="team-details">
-                  <summary>
-                    Meet Chang <span aria-hidden="true">+</span>
-                  </summary>
-                  <p>
+                <span class="team-info-icon" aria-hidden="true"></span>
+                <span class="team-bio" id="team-bio-chang">
                     <strong>Clinical perspective. Laboratory precision.</strong>
                     Guides complex case planning, prosthetic quality and
                     component selection. Sets technical standards and mentors
                     the laboratory team.
-                  </p>
-                </details>
+                  </span>
+              </button>
+              <div class="team-member-copy">
+                <h3>Chang Kim</h3>
+                <p class="team-role">Founding Partner</p>
+
               </div>
             </article>
             <article class="team-member reveal">
-              <div class="team-photo">
+              <button class="team-photo" type="button" aria-label="Meet Mirian" aria-expanded="false" aria-controls="team-bio-mirian" aria-describedby="team-bio-mirian">
                 <span class="team-index">02</span
                 ><img
                   src="/images/mirian.png"
@@ -1258,26 +1273,23 @@
                   height="1536"
                   loading="lazy"
                 />
-              </div>
+                <span class="team-info-icon" aria-hidden="true"></span>
+                <span class="team-bio" id="team-bio-mirian">
+                    <strong>The care behind the operation.</strong> Oversees
+                    logistics, delivery coordination and customer service, while
+                    supporting consistent operations and continuous improvement.
+                  </span>
+              </button>
               <div class="team-member-copy">
                 <h3>Mirian Lee</h3>
                 <p class="team-role">
                   Founding Partner · Administrative Director
                 </p>
-                <details class="team-details">
-                  <summary>
-                    Meet Mirian <span aria-hidden="true">+</span>
-                  </summary>
-                  <p>
-                    <strong>The care behind the operation.</strong> Oversees
-                    logistics, delivery coordination and customer service, while
-                    supporting consistent operations and continuous improvement.
-                  </p>
-                </details>
+
               </div>
             </article>
             <article class="team-member reveal">
-              <div class="team-photo">
+              <button class="team-photo" type="button" aria-label="Meet Andrea" aria-expanded="false" aria-controls="team-bio-andrea" aria-describedby="team-bio-andrea">
                 <span class="team-index">03</span
                 ><img
                   src="/images/andrea.png"
@@ -1286,25 +1298,22 @@
                   height="1536"
                   loading="lazy"
                 />
-              </div>
-              <div class="team-member-copy">
-                <h3>Andrea Haikawa</h3>
-                <p class="team-role">General Manager</p>
-                <details class="team-details">
-                  <summary>
-                    Meet Andrea <span aria-hidden="true">+</span>
-                  </summary>
-                  <p>
+                <span class="team-info-icon" aria-hidden="true"></span>
+                <span class="team-bio" id="team-bio-andrea">
                     <strong>Connecting the details of every case.</strong>
                     Coordinates cases from start to finish, aligns expectations
                     with clinics and organizes the workflow around clinical
                     priorities.
-                  </p>
-                </details>
+                  </span>
+              </button>
+              <div class="team-member-copy">
+                <h3>Andrea Haikawa</h3>
+                <p class="team-role">General Manager</p>
+
               </div>
             </article>
             <article class="team-member reveal">
-              <div class="team-photo">
+              <button class="team-photo" type="button" aria-label="Meet Pedro" aria-expanded="false" aria-controls="team-bio-pedro" aria-describedby="team-bio-pedro">
                 <span class="team-index">04</span
                 ><img
                   src="/images/pedro.png"
@@ -1313,21 +1322,18 @@
                   height="1536"
                   loading="lazy"
                 />
-              </div>
-              <div class="team-member-copy">
-                <h3>Pedro Kim</h3>
-                <p class="team-role">Administrative Manager</p>
-                <details class="team-details">
-                  <summary>
-                    Meet Pedro <span aria-hidden="true">+</span>
-                  </summary>
-                  <p>
+                <span class="team-info-icon" aria-hidden="true"></span>
+                <span class="team-bio" id="team-bio-pedro">
                     <strong>Keeping your partnership moving.</strong>
                     Coordinates quotations, approvals and billing, schedules
                     collections and deliveries, and keeps case documentation
                     organized.
-                  </p>
-                </details>
+                  </span>
+              </button>
+              <div class="team-member-copy">
+                <h3>Pedro Kim</h3>
+                <p class="team-role">Administrative Manager</p>
+
               </div>
             </article>
           </div>
@@ -1417,8 +1423,7 @@
             class="brand footer-brand"
             href="#home"
             aria-label="Kim Dental Laboratory — back to top"
-            ><span class="brand-name">kim<span class="brand-dot">.</span></span
-            ><span class="brand-descriptor">DENTAL<br />LABORATORY</span></a
+            ><img class="brand-logo" src="/images/kim-logo-original.png" width="1107" height="1107" alt="" loading="lazy" /></a
           >
           <address>
             Rua Correia Dias, 392 · Paraíso<br />São Paulo, Brazil

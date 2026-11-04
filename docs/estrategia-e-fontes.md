@@ -1,6 +1,6 @@
 # Pesquisa, prioridades e revisão de experiência
 
-Atualizado em 3 de novembro de 2026. A página está disponível em inglês, português brasileiro e coreano. A seleção inclui navegação, textos alternativos, controles, metadados e mensagens de WhatsApp. Inglês é o padrão; a escolha fica salva no navegador e também pode ser compartilhada pelo parâmetro `lang`. Nomes próprios e contatos mantêm a grafia original.
+Atualizado em 4 de novembro de 2026. A página está disponível em inglês, português brasileiro e coreano. A seleção inclui navegação, textos alternativos, controles, metadados e mensagens de WhatsApp. Inglês é o padrão; a escolha fica salva no navegador e também pode ser compartilhada pelo parâmetro `lang`. Nomes próprios e contatos mantêm a grafia original.
 
 ## Público e objetivo
 
@@ -52,19 +52,17 @@ Os serviços restauradores e sobre implantes abrem o catálogo pela relação co
 
 O título “Specialists in Dental Prosthetics”, a descrição e os três pilares foram reutilizados do site oficial nas três traduções publicadas pelo laboratório. A versão original foi conferida no recurso público `https://laboratoriokim.com.br/assets/index-V3Zx_-eR.js`. Não se acrescentaram novos números ou garantias. A afirmação promocional de liderança é texto do próprio laboratório, mantido por solicitação do usuário.
 
-Os pilares são logística própria, cobertura nacional e seleção de componentes para implantes, com as descrições originais. Permanecem visíveis juntos; foco, ponteiro e toque destacam o caminho correspondente em um diagrama SVG. O desenho ilustra a relação dos três diferenciais com o laboratório, sem representar rastreamento ou cobertura geográfica detalhada. Não há rotação automática que esconda conteúdo.
+Os pilares são logística própria, cobertura nacional e seleção de componentes para implantes, com as descrições originais. A primeira tela mostra somente a proposta de valor à esquerda e o logo oficial à direita. Ao rolar, o logo cresce, move-se ao centro e dá lugar a uma árvore em largura total. Os três ícones têm título e descrição abaixo, visíveis juntos. Não há rótulo de exclusividades nem contador 01–03. Em telas pequenas/baixas e com movimento reduzido, a mesma informação segue no fluxo normal. O desenho não representa rastreamento nem cobertura geográfica detalhada.
 
 A imagem conceitual do dente, a chamada “A new perspective...”, “Discover the difference” e a legenda conceitual foram retiradas da abertura. A ordem dos dois fragmentos do título foi adaptada em coreano, mantendo as palavras originais.
 
-### Serviços: leitura contínua, sem abrir painéis
+### Serviços: uma cena por vez, sem abrir painéis
 
-Todas as descrições e listas de materiais estão abertas, no fluxo natural da página. Cada descrição explica o que o trabalho é em uma frase. No desktop, um palco preto ocupa toda a largura da seção, com fotografia grande à esquerda e texto à direita. A fotografia original se funde ao fundo com uma máscara CSS nas bordas; o arquivo e o trabalho clínico não são alterados. A imagem, o número, o atalho ativo e a linha indicadora seguem o serviço mais próximo do centro da área útil da tela.
+No desktop, o palco preto mantém apenas uma fotografia, título, descrição e lista de materiais visíveis por vez. A rolagem nativa troca a cena inteira, sem mostrar uma parte do próximo serviço. A fotografia original se funde ao fundo com máscara CSS; o arquivo clínico não é alterado. O índice, o contador e o destaque acompanham a posição real, inclusive depois de clicar em um atalho.
 
-O índice inicial oferece atalhos opcionais para os oito serviços. Não há abas, carrossel obrigatório, detalhes ocultos ou captura da rolagem. Os blocos ganham respiro para acompanhar a imagem grande: cada serviço ocupa aproximadamente meia altura de tela no desktop, expandindo se o conteúdo precisar. Há um contato contextual junto da descrição de cada serviço; o clique abre diretamente o WhatsApp com o nome do trabalho no idioma selecionado.
+O índice inicial dá acesso direto aos oito serviços; botões anterior/próximo também oferecem navegação por teclado. Links diretos para cada serviço são preservados. Cada cena tem um contato que abre o WhatsApp com o nome do trabalho no idioma selecionado. As cenas inativas ficam fora da navegação de teclado e da árvore acessível até serem selecionadas.
 
-O clique em um atalho mantém o destino acessível como posição de leitura, mas não deixa um contorno retangular permanente. A linha de destaque pertence exclusivamente ao serviço ativo. Links continuam com foco de teclado visível. O ponteiro não troca mais a fotografia ao atravessar o texto durante a rolagem.
-
-Em celulares, tablets, telas baixas e com movimento reduzido, cada serviço tem sua fotografia grande junto do texto, sobre o mesmo fundo preto. O conteúdo continua aberto. Essa escolha evita uma imagem fixa ocupando espaço útil e dispensa gestos laterais ou cliques para revelar informações.
+Em celulares, tablets, telas baixas e com movimento reduzido, cada serviço tem sua fotografia junto do texto, em sequência sobre o fundo preto. Todas as informações ficam disponíveis sem cliques. O desktop usa uma sequência de rolagem mais longa para isolar cada trabalho; os atalhos são uma alternativa de consulta rápida.
 
 Referências consultadas: [Linear](https://linear.app/), [Apple / MacBook Pro](https://www.apple.com/macbook-pro/proled-xdr-display/), [Vercel](https://vercel.com/) e [Stripe](https://stripe.com/). Na Linear, cada bloco principal apresenta finalidade e demonstração antes de informações adicionais; na Apple, capítulos visuais convivem com destaques e caminhos diretos de consulta. Linear e Apple também foram inspecionadas no navegador. A adaptação ao Kim é uma decisão de design, não a reprodução literal dessas interfaces: explicação disponível primeiro, animação acompanhando a leitura e atalhos opcionais.
 
@@ -86,7 +84,7 @@ O WhatsApp flutuante leva ao canal digital oficial; o canal analógico continua 
 
 ### Movimento e acesso
 
-`prefers-reduced-motion` remove animações e áreas fixas prolongadas. Permanecem os botões de capítulos e comparação. Navegação por âncoras, skip link, foco visível, Escape no menu, setas/Home/End nas abas e painel de detalhes nativo para biografias. Sem JavaScript, todos os serviços e casos aparecem em sequência e as biografias continuam funcionais.
+`prefers-reduced-motion` remove animações e áreas fixas prolongadas. Permanecem os botões de capítulos e comparação. Navegação por âncoras, skip link, foco visível, Escape no menu, setas/Home/End nas abas e controles acessíveis para as biografias. Os textos aparecem sobre os retratos ao passar o mouse, receber foco de teclado ou tocar. Escape fecha a biografia. Nomes e cargos permanecem visíveis abaixo. Sem JavaScript, serviços, casos e biografias aparecem abertos em sequência.
 
 ## Autocrítica e correções realizadas
 
@@ -96,10 +94,10 @@ O WhatsApp flutuante leva ao canal digital oficial; o canal analógico continua 
 - O foco da âncora parecia uma seleção permanente após rolar: o contorno do alvo de leitura foi removido, preservando o foco dos links e um único indicador de serviço ativo.
 - A tecnologia vinha antes da resposta à necessidade prática: catálogo e resultados foram antecipados.
 - As imagens dos serviços estavam sendo cortadas pelo formato panorâmico: o enquadramento agora preserva a fotografia inteira.
-- A troca de abas podia deslocar o fim do catálogo: o conteúdo agora ocupa seu espaço natural e permanece visível; a imagem muda sem deslocar o texto.
+- A prévia de dois serviços simultâneos dispersava a atenção: em telas grandes, texto e imagem agora trocam juntos em uma única cena; telas compactas mantêm o fluxo normal.
 - A rolagem poderia disputar o controle do comparador com o visitante: a interação manual interrompe o controle por rolagem.
 - Áreas fixas em celulares e telas baixas poderiam esconder controles: nesses formatos, a leitura segue o fluxo normal.
-- O retrato do fundador sozinho não representava a equipe original: quatro retratos autênticos, funções visíveis e biografias expansíveis.
+- O retrato do fundador sozinho não representava a equipe original: quatro retratos autênticos, funções visíveis e biografias sobre as imagens.
 
 ## Revisão independente desta atualização
 
@@ -109,10 +107,12 @@ Um terceiro subagente iniciou a revisão de UX e identificou dois pontos: a seta
 
 ## Validação realizada
 
-- `npm run check` e `npm run build`. A checagem inclui cobertura de 261 mensagens por idioma, placeholders, metadados e o inventário de oito serviços, três casos e quatro integrantes.
+A atualização de 4 de novembro conferiu a abertura, a árvore e o logo oficial; apenas uma cena de serviço no desktop; atalho 5 seguido de rolagem; botões anterior/próximo; recarga por link direto; biografia por foco de teclado e Escape. Layouts revisados em 1440 × 900, 1024 × 768, 390 × 844 e 320 × 680, incluindo português e coreano. As verificações abaixo também registram a revisão anterior dos componentes preservados.
+
+- `npm run check` e `npm run build`. A checagem inclui cobertura de 259 mensagens por idioma, placeholders, metadados e o inventário de oito serviços, três casos e quatro integrantes.
 - Revisão do palco preto: clique no serviço 5, rolagem até 6 e 7 e retorno ao 4; imagem, número, atalho e linha ativa sincronizados, sem contorno persistente no 5. Tab mantém contorno visível no link de contato. Layout conferido novamente em 1440 × 900, 820 × 1180, 390 × 844 e 320 × 680.
-- Auditoria de HTML: idioma inglês, oito serviços abertos, três casos, quatro integrantes, IDs únicos, âncoras e relações ARIA válidas, todos os arquivos de imagem presentes.
-- Navegador: oito serviços com descrições e materiais visíveis sem interação; atalhos de âncora, fotografia sincronizada e contato contextual; três casos acessíveis; botões de comparação, arraste, teclado e reprodução até o estado final; biografia expansível; menu com Escape e retorno de foco; contato contextual em inglês.
+- Auditoria de HTML: idioma inglês, oito serviços, três casos, quatro integrantes, IDs únicos, âncoras e relações ARIA válidas, todos os arquivos de imagem presentes.
+- Revisão anterior do navegador: oito serviços com descrições e materiais no fluxo; atalhos de âncora, fotografia sincronizada e contato contextual; três casos acessíveis; botões de comparação, arraste, teclado e reprodução até o estado final; biografia expansível; menu com Escape e retorno de foco; contato contextual em inglês.
 - Revisão visual em 1440 × 900, 820 × 1180, 390 × 844 e 320 × 680. Sem excesso de largura do documento nos tamanhos conferidos; sem imagens quebradas ou erros de console observados.
 - Idiomas: alternância EN → PT → KO → EN, preferência salva após abrir a raiz sem parâmetro, WhatsApp localizado, menu com Escape, comparação preservando caso e posição após trocar idioma; revisão em 1440 × 900, 820 × 1180, 390 × 844 e 320 × 680 sem excesso de largura ou imagens quebradas.
 - Regras de movimento reduzido e fallback sem JavaScript revisadas no código. Não foi feita emulação do sistema operacional para movimento reduzido nem teste com leitor de tela nesta sessão.

@@ -1,8 +1,14 @@
-# Imagem de abertura
+# Identidade visual e imagens
 
-Arquivo final: `public/images/hero-ceramica.jpg`.
+## Logo oficial
 
-Criado com a ferramenta integrada ImageGen. A imagem é uma ilustração conceitual de produto, identificada como tal na primeira seção. Não representa uma peça real ou um caso clínico do Laboratório Kim.
+O cabeçalho, o rodapé e a animação de abertura usam o arquivo original do laboratório, preservando suas cores e desenho. Fonte: https://laboratoriokim.com.br/assets/kim-logo-CPsGHs5V.png, obtido em 4 de novembro de 2026 e salvo em `public/images/kim-logo-original.png`. O CSS apenas enquadra a área útil da imagem, que tem margens transparentes. O ícone da aba também vem do site oficial (PNG servido como .ico, salvo como `public/favicon.png`): https://laboratoriokim.com.br/assets/favicon-iHKjhv11.ico.
+
+## Imagem conceitual anterior — fora de uso
+
+Arquivo arquivado: `public/images/hero-ceramica.jpg`.
+
+Criado com a ferramenta integrada ImageGen. A imagem é uma ilustração conceitual de produto, identificada como tal na primeira versão da página. Não é mais exibida no site. Não representa uma peça real ou um caso clínico do Laboratório Kim.
 
 ## Prompt utilizado
 

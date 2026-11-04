@@ -1,4 +1,6 @@
 export default {
+  "Previous service": "이전 서비스",
+  "Next service": "다음 서비스",
   "Kim Dental Laboratory | Specialists in Dental Prosthetics": "Kim Dental Laboratory | 치과 보철 전문가",
   "Dental prosthetics since 1995. Explore all eight services, titanium monoblock milling, real transformations and the people behind Kim Dental Laboratory.": "1995년부터 이어온 치과 보철 전문성. Kim Dental Laboratory의 8가지 서비스, 티타늄 모노블록 밀링, 실제 변화 사례와 팀을 만나보세요.",
   "Kim Dental Laboratory — Precision behind every smile": "Kim Dental Laboratory — 모든 미소를 완성하는 정밀함",

@@ -1,4 +1,6 @@
 export default {
+  "Previous service": "Serviço anterior",
+  "Next service": "Próximo serviço",
   "Kim Dental Laboratory | Specialists in Dental Prosthetics": "Laboratório Kim | Especialistas em Prótese Dentária",
   "Dental prosthetics since 1995. Explore all eight services, titanium monoblock milling, real transformations and the people behind Kim Dental Laboratory.": "Prótese dentária desde 1995. Conheça nossos oito serviços, a fresagem em monobloco de titânio, transformações reais e as pessoas por trás do Laboratório Kim.",
   "Kim Dental Laboratory — Precision behind every smile": "Laboratório Kim — Precisão por trás de cada sorriso",
