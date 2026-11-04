@@ -2721,19 +2721,17 @@ html:lang(ko) .hero h1 { line-height: 1.2; }
 }
 
 /* Opening story: a quiet introduction, then a full-width view of the partnership. */
-.hero { padding: 0; min-height: 0; overflow: visible; }
+.hero { padding: 0; min-height: 0; overflow: visible; --hero-logo-width: clamp(160px, 18vw, 250px); }
 .hero-stage { position: relative; padding-top: 145px; padding-bottom: 70px; }
 .hero-inner { min-height: 390px; display: block; }
 .hero-copy { max-width: 660px; padding: 0; }
 .hero-logo {
-  position: absolute; top: 285px; left: 77%; width: clamp(160px, 18vw, 250px);
-  aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center;
-  transform: translate(-50%, -50%); color: #f0f1eb;
-  background: radial-gradient(circle at 40% 30%, #244936, #0a1911 75%);
-  border: 1px solid #b4d8bd5c; box-shadow: 0 0 0 16px #b4d8bd04, 0 0 100px #64a77e12;
+  position: absolute; top: 285px; left: 77%; width: var(--hero-logo-width);
+  aspect-ratio: 2.625; display: grid; place-items: center;
+  transform: translate(-50%, -50%);
 }
 .brand-logo { width: 145px; height: 55px; object-fit: cover; object-position: center 53%; }
-.hero-logo > img { width: 84%; height: 32%; object-fit: cover; object-position: center 53%; }
+.hero-logo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 53%; }
 .hero-tree { position: relative; margin-top: 90px; }
 .tree-branches { display: block; width: 100%; height: 170px; stroke: #b4d8bd80; stroke-width: 1; }
 .tree-branches path { vector-effect: non-scaling-stroke; }
@@ -2759,7 +2757,7 @@ html:lang(ko) .hero h1 { line-height: 1.2; }
   .js .hero-inner { position: absolute; inset: var(--header) 0 0; min-height: 0; display: flex; align-items: center; }
   .js .hero-copy { width: 54%; will-change: opacity, transform; }
   .js .hero-logo { left: 77%; top: 50%; z-index: 2; will-change: transform, left, top; }
-  .js .hero-tree { position: absolute; top: calc(var(--hub-y) + 65px); left: 0; right: 0; margin: 0 auto; opacity: 0; visibility: hidden; }
+  .js .hero-tree { position: absolute; top: calc(var(--hub-y) + var(--hero-logo-width) * .124); left: 0; right: 0; margin: 0 auto; opacity: 0; visibility: hidden; }
   .js .tree-branches { height: var(--branch-height); }
   .js .tree-branches path { stroke-dasharray: 1; stroke-dashoffset: 1; }
   .js .tree-pillar { opacity: 0; transform: translateY(24px); }
@@ -2846,4 +2844,49 @@ html:lang(ko) .hero h1 { line-height: 1.2; }
 }
 @media (prefers-reduced-motion: reduce) {
   .js .team-bio, .team-photo img { transition: none; }
+}
+
+/* A luminous green spectrum travels around the opening contact action. */
+@property --contact-glow-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.button-glow {
+  position: relative;
+  isolation: isolate;
+  color: #effff3;
+  background: #102219;
+  border: 1px solid #5eae78;
+}
+.button-glow:hover { background: #173625; }
+.button-glow .button-arrow { border-color: #b9f6cb55; }
+.button-glow::before,
+.button-glow::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  padding: 2px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(from var(--contact-glow-angle), #145a35 0deg, #20bc73 65deg, #c4ff75 120deg, #eefff1 155deg, #69f0bc 195deg, #22b97a 245deg, #145a35 360deg);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: contact-glow-orbit 5s linear infinite;
+}
+.button-glow::before { z-index: 1; }
+.button-glow::after {
+  z-index: -1;
+  inset: -5px;
+  padding: 5px;
+  filter: blur(8px);
+  opacity: .7;
+  transition: opacity .25s;
+}
+.button-glow:hover::after { opacity: 1; }
+@keyframes contact-glow-orbit { to { --contact-glow-angle: 360deg; } }
+@media (prefers-reduced-motion: reduce) {
+  .button-glow::before, .button-glow::after { animation: none; transition: none; }
 }
