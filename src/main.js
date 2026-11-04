@@ -1,3 +1,5 @@
+import { initI18n, t, getLanguage } from "./i18n.js";
+
 document.documentElement.classList.add("js");
 const $ = (selector, parent = document) => parent.querySelector(selector);
 const $$ = (selector, parent = document) => [
@@ -9,10 +11,14 @@ const compact = matchMedia("(max-width: 700px), (max-height: 720px)");
 const header = $(".site-header");
 const menuButton = $(".menu-toggle");
 const mobileNav = $("#mobile-nav");
+const heroTitle = $("#hero-title");
+const heroTitleLead = $(".hero-title-lead", heroTitle);
+const heroTitleSubject = $("span:last-child", heroTitle);
+const heroTitleBreak = $("br", heroTitle);
 
 function setMenu(open) {
   menuButton.setAttribute("aria-expanded", String(open));
-  menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  menuButton.setAttribute("aria-label", t(open ? "Close menu" : "Open menu"));
   mobileNav.classList.toggle("open", open);
   mobileNav.inert = !open;
   document.body.classList.toggle("menu-open", open);
@@ -159,7 +165,7 @@ function setComparison(item, value) {
   $(".after-badge", item.frame).hidden = value > 92;
   item.range.setAttribute(
     "aria-valuetext",
-    `${value}% before, ${100 - value}% after`,
+    t("{before}% before, {after}% after", { before: value, after: 100 - value }),
   );
   item.presets.forEach((button) => {
     const selected = Number(button.dataset.compareValue) === value;
@@ -171,7 +177,7 @@ function stopPlayback() {
   cancelAnimationFrame(playbackFrame);
   if (playingComparison)
     playingComparison.replay.innerHTML =
-      '<span aria-hidden="true">↻</span> Play reveal';
+      `<span aria-hidden="true">↻</span> ${t('Play reveal')}`;
   playingComparison = null;
 }
 function takeComparisonControl() {
@@ -203,7 +209,7 @@ comparisons.forEach((item) => {
       return;
     }
     playingComparison = item;
-    item.replay.innerHTML = '<span aria-hidden="true">Ⅱ</span> Pause reveal';
+    item.replay.innerHTML = `<span aria-hidden="true">Ⅱ</span> ${t('Pause reveal')}`;
     const start = performance.now();
     function play(now) {
       const elapsed = (now - start) / 2600;
@@ -232,17 +238,22 @@ resultsObserver.observe(results);
 
 const manifesto = $("[data-word-reveal]");
 const manifestoText = manifesto.textContent.trim();
-manifesto.setAttribute("aria-label", manifestoText);
-manifesto.replaceChildren(
-  ...manifestoText.split(/\s+/).flatMap((word, index) => {
-    const span = document.createElement("span");
-    span.className = "word";
-    span.setAttribute("aria-hidden", "true");
-    span.textContent = word;
-    return index ? [document.createTextNode(" "), span] : [span];
-  }),
-);
-const words = $$(".word", manifesto);
+let words = [];
+function renderManifesto() {
+  const text = t(manifestoText.replace(/\s+/g, " "));
+  manifesto.setAttribute("aria-label", text);
+  manifesto.replaceChildren(
+    ...text.split(/\s+/).flatMap((word, index) => {
+      const span = document.createElement("span");
+      span.className = "word";
+      span.setAttribute("aria-hidden", "true");
+      span.textContent = word;
+      return index ? [document.createTextNode(" "), span] : [span];
+    }),
+  );
+  words = $$(".word", manifesto);
+}
+renderManifesto();
 const story = $("[data-scroll-story]");
 const sticky = $(".story-sticky");
 const frames = $$("[data-frame]");
@@ -258,7 +269,6 @@ const visualCounter = $("[data-visual-number]");
 const materialLabel = $("[data-material-label]");
 const storyProgress = $(".story-progress i");
 const scan = $(".image-scan");
-const heroArt = $(".hero-art");
 const progress = $(".page-progress span");
 let activeStep = -1;
 let manualStep = 0;
@@ -281,7 +291,7 @@ function setStoryStep(step) {
   });
   counter.textContent = `0${step + 1}`;
   visualCounter.textContent = `0${step + 1} — 03`;
-  materialLabel.textContent = materials[step];
+  materialLabel.textContent = t(materials[step]);
 }
 storyButtons.forEach((button) =>
   button.addEventListener("click", () => {
@@ -314,7 +324,6 @@ function updateScroll() {
   progress.style.transform = `scaleX(${clamp(y / Math.max(1, document.documentElement.scrollHeight - innerHeight))})`;
   if (motion.matches) {
     words.forEach((word) => word.classList.add("lit"));
-    heroArt.style.removeProperty("translate");
   } else {
     const rect = manifesto.getBoundingClientRect();
     const amount = clamp(
@@ -323,9 +332,6 @@ function updateScroll() {
     words.forEach((word, index) =>
       word.classList.toggle("lit", index / words.length < amount),
     );
-    if (!compact.matches && y < innerHeight * 1.4)
-      heroArt.style.translate = `0 ${y * 0.1}px`;
-    else heroArt.style.removeProperty("translate");
   }
   if (motion.matches || compact.matches) {
     setStoryStep(manualStep);
@@ -396,17 +402,69 @@ navLinks.forEach((link) => {
   const section = document.getElementById(link.hash.slice(1));
   if (section) sectionObserver.observe(section);
 });
+let selectedService = null;
+function updateContactLinks() {
+  const service = selectedService ? t(selectedService) : null;
+  const general = service
+    ? t("Hello, I'm a dentist and I'd like to discuss {service}.", { service })
+    : t("Hello, I'm a dentist and I'd like to discuss a case.");
+  const messages = {
+    general,
+    digital: t("Hello, I'd like to discuss a digital order."),
+    analog: t("Hello, I'd like to discuss an analog order."),
+  };
+  $$("[data-whatsapp]").forEach((link) => {
+    const type = link.dataset.whatsapp;
+    const number = type === "analog" ? "5511968417556" : "551159048888";
+    const message = type === "service"
+      ? t("Hello, I'm a dentist and I'd like to discuss {service}.", { service: t(link.dataset.serviceContact) })
+      : messages[type];
+    link.href = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+  });
+  const context = $("#contact-context");
+  context.hidden = !service;
+  context.textContent = service ? t("Your selected service: {service}", { service }) : "";
+}
 $$("[data-service-contact]").forEach((link) =>
   link.addEventListener("click", () => {
-    const service = link.dataset.serviceContact;
-    const message = `Hello, I'm a dentist and I'd like to discuss ${service}.`;
-    $("#contact-digital").href =
-      `https://wa.me/551159048888?text=${encodeURIComponent(message)}`;
-    const context = $("#contact-context");
-    context.textContent = `Your selected service: ${service}`;
-    context.hidden = false;
+    selectedService = link.dataset.serviceContact;
+    updateContactLinks();
   }),
 );
+const pillarRoot = $(".hero-pillars");
+const pillars = $$("[data-pillar]");
+function selectPillar(index) {
+  pillarRoot.dataset.activePillar = String(index);
+  pillars.forEach((button, i) => {
+    button.classList.toggle("active", i === index);
+    button.setAttribute("aria-pressed", String(i === index));
+  });
+}
+pillars.forEach((button, index) => {
+  button.addEventListener("click", () => selectPillar(index));
+  button.addEventListener("pointerenter", (event) => {
+    if (event.pointerType === "mouse") selectPillar(index);
+  });
+  button.addEventListener("focus", () => selectPillar(index));
+});
+// Update dynamic labels too, retaining case, service and comparison positions.
+document.addEventListener("languagechange", () => {
+  // Preserve the original words while using natural Korean subject order.
+  heroTitle.replaceChildren(...(getLanguage() === "ko"
+    ? [heroTitleSubject, heroTitleBreak, heroTitleLead]
+    : [heroTitleLead, heroTitleBreak, heroTitleSubject]));
+  stopPlayback();
+  comparisons.forEach((item) => {
+    setComparison(item, Number(item.range.value));
+    item.replay.innerHTML = `<span aria-hidden="true">↻</span> ${t("Play reveal")}`;
+  });
+  menuButton.setAttribute("aria-label", t(menuButton.getAttribute("aria-expanded") === "true" ? "Close menu" : "Open menu"));
+  materialLabel.textContent = t(materials[Math.max(0, activeStep)]);
+  renderManifesto();
+  updateContactLinks();
+  scheduleScroll();
+});
+initI18n();
 $("#current-year").textContent = new Intl.DateTimeFormat("en", {
   year: "numeric",
   timeZone: "America/Sao_Paulo",

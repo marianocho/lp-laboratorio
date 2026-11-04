@@ -1,6 +1,6 @@
 # Kim Dental Laboratory
 
-English website for dentists and clinics. Native HTML, CSS and JavaScript, local fonts and images, static deployment, no runtime dependencies.
+Website for dentists and clinics in English, Brazilian Portuguese and Korean. Native HTML, CSS and JavaScript, local fonts and images, static deployment, no runtime dependencies.
 
 ## Run
 
@@ -17,12 +17,13 @@ The build produces `dist/`. The development server listens on localhost; hosting
 
 ## Experience
 
-- Conceptual ceramic visualization in the hero, labeled in the interface.
+- Original laboratory headline and three original advantages in the opening, with an interactive connection diagram.
 - All eight original services with descriptions and material lists always open. A full-width black stage pairs a large photograph with the current service on desktop; optional anchor shortcuts offer direct access.
 - Three original transformation cases with a scroll-driven reveal, draggable comparison, keyboard control, before/split/after views and a single optional replay.
 - Three technology chapters with direct controls and desktop scrollytelling.
 - All four original team members, their roles and expandable biographies.
-- Digital and analog order contacts, contextual WhatsApp, email, map and official social links.
+- Floating WhatsApp and direct service-specific WhatsApp links, plus digital/analog channels, email, map and official social links.
+- Language selector with saved preference and shareable `?lang=en`, `?lang=pt` or `?lang=ko` links; translated content, metadata, accessible labels and messages.
 - Responsive layouts, native scrolling, visible focus, keyboard tabs, mobile menu with Escape and focus containment, and `prefers-reduced-motion` support.
 - Small/short screens use flowing content instead of pinned stories. Without JavaScript, all services and cases remain available.
 
@@ -30,8 +31,10 @@ The build produces `dist/`. The development server listens on localhost; hosting
 
 - `index.html`: semantic structure and English content.
 - `src/styles.css`: visual system and responsive layouts.
-- `src/main.js`: open-catalog image transitions, case tabs, comparisons, scroll sequences and navigation.
-- `public/images/`: original laboratory photographs, plus the labeled generated hero.
+- `src/main.js`: pillar interaction, open-catalog image transitions, case tabs, comparisons, scroll sequences and navigation.
+- `src/i18n.js` and `src/locales/`: locale switching and Portuguese/Korean dictionaries.
+- `scripts/check-locales.mjs`: translation coverage, placeholder and content-inventory checks.
+- `public/images/`: original laboratory photographs; the previous generated hero is retained as an unused source asset.
 - `docs/estrategia-e-fontes.md`: source inventory, priorities, interaction decisions, self-review and verification limits.
 - `docs/direcao-de-imagem.md`: hero image provenance.
 - `.openai/hosting.json`: existing private Sites preview configuration.

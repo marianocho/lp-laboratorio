@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
-    "check": "node --check src/main.js && node --check scripts/build.mjs && node --check scripts/serve.mjs"
+    "check": "node --check src/main.js && node --check src/i18n.js && node --check scripts/build.mjs && node --check scripts/serve.mjs && node scripts/check-locales.mjs"
   },
   "engines": {
     "node": ">=20"

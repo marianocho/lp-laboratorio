@@ -1,6 +1,6 @@
 # Pesquisa, prioridades e revisão de experiência
 
-Atualizado em 3 de novembro de 2026. O conteúdo público da página está integralmente em inglês, incluindo navegação, textos alternativos, controles e mensagens de WhatsApp. Nomes próprios e o endereço mantêm a grafia original.
+Atualizado em 3 de novembro de 2026. A página está disponível em inglês, português brasileiro e coreano. A seleção inclui navegação, textos alternativos, controles, metadados e mensagens de WhatsApp. Inglês é o padrão; a escolha fica salva no navegador e também pode ser compartilhada pelo parâmetro `lang`. Nomes próprios e contatos mantêm a grafia original.
 
 ## Público e objetivo
 
@@ -8,7 +8,7 @@ A página procura abrir conversas qualificadas com dentistas e clínicas. Essa �
 
 ## Inventário e fidelidade
 
-Todos os oito serviços, quatro integrantes e três casos apresentados no original estão presentes individualmente, com fotografias provenientes do domínio oficial. As descrições foram reescritas em inglês para clareza, preservando escopo, materiais e responsabilidades.
+Todos os oito serviços, quatro integrantes e três casos apresentados no original estão presentes individualmente, com fotografias provenientes do domínio oficial. As descrições foram reescritas para clareza e traduzidas nos três idiomas, preservando escopo, materiais e responsabilidades.
 
 | Serviço original | Materiais apresentados |
 | --- | --- |
@@ -36,23 +36,31 @@ Outros fatos preservados: fundação em 1995 por Dr. Chang Kook Kim, origem fami
 
 | Ordem | Conteúdo | Justificativa |
 | --- | --- | --- |
-| 1 | Proposta de valor e contato | Identifica o laboratório, o público profissional e a combinação de tecnologia com cuidado humano. |
+| 1 | Proposta de valor e contato | Identifica a especialidade com o título original, explicita logística, cobertura e apoio em componentes e oferece contato direto. |
 | 2 | Catálogo completo | A primeira pergunta prática do dentista é se o laboratório executa o trabalho de que precisa. Os oito serviços têm descrição e materiais abertos em sequência, além de um índice de atalhos. Nenhum clique é necessário para entender o catálogo. |
 | 3 | Transformações reais | Apresenta evidências visuais concretas antes de aprofundar a narrativa tecnológica. Cada caso é diretamente acessível. |
 | 4 | Tecnologia e acabamento | Explica o diferencial de fresagem e a contribuição do trabalho técnico. Usa uma sequência curta de estrutura, forma e acabamento. |
 | 5 | Parceria e operação | Responde às dúvidas práticas sobre apoio técnico, comunicação e logística. |
 | 6 | Equipe e história | Mostra as quatro pessoas, suas responsabilidades e a continuidade desde 1995. |
-| 7 | Contato e canais de pedidos | Oferece conversa inicial, pedidos digitais, pedidos analógicos, e-mail, endereço e redes. O serviço escolhido acompanha o contato inicial. |
+| 7 | Contato e canais de pedidos | Oferece conversa inicial, pedidos digitais, pedidos analógicos, e-mail, endereço e redes. O serviço escolhido acompanha o contato inicial; cada serviço também abre diretamente o WhatsApp. |
 
 Os serviços restauradores e sobre implantes abrem o catálogo pela relação com o posicionamento técnico encontrado. Essa ordem é editorial, não uma afirmação de faturamento, demanda ou superioridade clínica.
 
 ## Escolha das interações
 
+### Abertura: texto original e diferenciais concretos
+
+O título “Specialists in Dental Prosthetics”, a descrição e os três pilares foram reutilizados do site oficial nas três traduções publicadas pelo laboratório. A versão original foi conferida no recurso público `https://laboratoriokim.com.br/assets/index-V3Zx_-eR.js`. Não se acrescentaram novos números ou garantias. A afirmação promocional de liderança é texto do próprio laboratório, mantido por solicitação do usuário.
+
+Os pilares são logística própria, cobertura nacional e seleção de componentes para implantes, com as descrições originais. Permanecem visíveis juntos; foco, ponteiro e toque destacam o caminho correspondente em um diagrama SVG. O desenho ilustra a relação dos três diferenciais com o laboratório, sem representar rastreamento ou cobertura geográfica detalhada. Não há rotação automática que esconda conteúdo.
+
+A imagem conceitual do dente, a chamada “A new perspective...”, “Discover the difference” e a legenda conceitual foram retiradas da abertura. A ordem dos dois fragmentos do título foi adaptada em coreano, mantendo as palavras originais.
+
 ### Serviços: leitura contínua, sem abrir painéis
 
 Todas as descrições e listas de materiais estão abertas, no fluxo natural da página. Cada descrição explica o que o trabalho é em uma frase. No desktop, um palco preto ocupa toda a largura da seção, com fotografia grande à esquerda e texto à direita. A fotografia original se funde ao fundo com uma máscara CSS nas bordas; o arquivo e o trabalho clínico não são alterados. A imagem, o número, o atalho ativo e a linha indicadora seguem o serviço mais próximo do centro da área útil da tela.
 
-O índice inicial oferece atalhos opcionais para os oito serviços. Não há abas, carrossel obrigatório, detalhes ocultos ou captura da rolagem. Os blocos ganham respiro para acompanhar a imagem grande: cada serviço ocupa aproximadamente meia altura de tela no desktop, expandindo se o conteúdo precisar. Há um contato contextual junto da descrição de cada serviço.
+O índice inicial oferece atalhos opcionais para os oito serviços. Não há abas, carrossel obrigatório, detalhes ocultos ou captura da rolagem. Os blocos ganham respiro para acompanhar a imagem grande: cada serviço ocupa aproximadamente meia altura de tela no desktop, expandindo se o conteúdo precisar. Há um contato contextual junto da descrição de cada serviço; o clique abre diretamente o WhatsApp com o nome do trabalho no idioma selecionado.
 
 O clique em um atalho mantém o destino acessível como posição de leitura, mas não deixa um contorno retangular permanente. A linha de destaque pertence exclusivamente ao serviço ativo. Links continuam com foco de teclado visível. O ponteiro não troca mais a fotografia ao atravessar o texto durante a rolagem.
 
@@ -69,6 +77,12 @@ Ao selecionar caso, arrastar, usar o teclado ou escolher uma vista, o visitante 
 ### Tecnologia: narrativa em três capítulos
 
 Estrutura, forma e acabamento são perspectivas editoriais de trabalhos distintos, não etapas documentadas de um único caso clínico. As fotos e legendas identificam o trabalho original. A rolagem move a sequência em desktop; os três botões também levam diretamente a cada capítulo. Em telas pequenas ou baixas, os botões selecionam capítulos sem uma longa área fixa.
+
+### Idiomas e contato
+
+O seletor usa os nomes English, Português e 한국어, sem depender de bandeiras. A preferência fica salva quando o armazenamento está disponível, com opção de URL `?lang=en|pt|ko`. Os oito serviços, materiais, equipe, casos, descrições acessíveis e mensagens dinâmicas são traduzidos. A troca não recria controles ou comparadores. O título, descrição e idioma HTML acompanham a seleção. Sem JavaScript, o conteúdo inicial permanece disponível em inglês.
+
+O WhatsApp flutuante leva ao canal digital oficial; o canal analógico continua separado no contato. Nenhuma mensagem é enviada automaticamente. No celular o botão ocupa 54 × 54 px e se oculta durante a abertura do menu.
 
 ### Movimento e acesso
 
@@ -87,13 +101,20 @@ Estrutura, forma e acabamento são perspectivas editoriais de trabalhos distinto
 - Áreas fixas em celulares e telas baixas poderiam esconder controles: nesses formatos, a leitura segue o fluxo normal.
 - O retrato do fundador sozinho não representava a equipe original: quatro retratos autênticos, funções visíveis e biografias expansíveis.
 
+## Revisão independente desta atualização
+
+Dois subagentes revisaram e entregaram os dicionários em português e coreano, com cobertura e placeholders conferidos e as 12 frases originais da abertura preservadas. As recomendações incorporadas incluem a ordem natural do título coreano, quebra de linhas por palavras e teste dos nomes longos.
+
+Um terceiro subagente iniciou a revisão de UX e identificou dois pontos: a seta dos pilares parecia navegação externa e os CTAs de serviço exigiam uma segunda ação no contato. Ambos foram corrigidos: indicador circular e WhatsApp direto. Essa terceira revisão foi interrompida por limite de créditos antes de uma avaliação visual completa; a revisão visual e funcional foi concluída pelo agente principal.
+
 ## Validação realizada
 
-- `npm run check` e `npm run build`.
+- `npm run check` e `npm run build`. A checagem inclui cobertura de 261 mensagens por idioma, placeholders, metadados e o inventário de oito serviços, três casos e quatro integrantes.
 - Revisão do palco preto: clique no serviço 5, rolagem até 6 e 7 e retorno ao 4; imagem, número, atalho e linha ativa sincronizados, sem contorno persistente no 5. Tab mantém contorno visível no link de contato. Layout conferido novamente em 1440 × 900, 820 × 1180, 390 × 844 e 320 × 680.
 - Auditoria de HTML: idioma inglês, oito serviços abertos, três casos, quatro integrantes, IDs únicos, âncoras e relações ARIA válidas, todos os arquivos de imagem presentes.
 - Navegador: oito serviços com descrições e materiais visíveis sem interação; atalhos de âncora, fotografia sincronizada e contato contextual; três casos acessíveis; botões de comparação, arraste, teclado e reprodução até o estado final; biografia expansível; menu com Escape e retorno de foco; contato contextual em inglês.
 - Revisão visual em 1440 × 900, 820 × 1180, 390 × 844 e 320 × 680. Sem excesso de largura do documento nos tamanhos conferidos; sem imagens quebradas ou erros de console observados.
+- Idiomas: alternância EN → PT → KO → EN, preferência salva após abrir a raiz sem parâmetro, WhatsApp localizado, menu com Escape, comparação preservando caso e posição após trocar idioma; revisão em 1440 × 900, 820 × 1180, 390 × 844 e 320 × 680 sem excesso de largura ou imagens quebradas.
 - Regras de movimento reduzido e fallback sem JavaScript revisadas no código. Não foi feita emulação do sistema operacional para movimento reduzido nem teste com leitor de tela nesta sessão.
 
 Essa revisão é técnica e editorial; não substitui testes de usabilidade com dentistas reais. A hipótese principal a validar com o público é o tempo para encontrar um serviço e iniciar uma conversa.
@@ -106,4 +127,4 @@ Essa revisão é técnica e editorial; não substitui testes de usabilidade com 
 - Digital: +55 (11) 5904-8888. Analógico: +55 (11) 96841-7556. E-mail: digitalkim@laboratoriokim.com.br.
 - Endereço: Rua Correia Dias, 392, Paraíso, São Paulo.
 
-Não foram adicionados depoimentos, números de parceiros, garantias, prazos ou alegações de liderança não verificados. A imagem da abertura é conceitual e está identificada como tal. A prévia permanece privada, separada do domínio atual do laboratório.
+Não foram adicionados depoimentos, números de parceiros, garantias, prazos ou alegações de liderança não verificados. A imagem conceitual anterior não é mais exibida. A prévia permanece privada, separada do domínio atual do laboratório.
