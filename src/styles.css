@@ -446,36 +446,6 @@ p {
   font-size: 10px;
   color: #9aab9e;
 }
-.trust-strip {
-  border-block: 1px solid var(--line);
-  background: #0b110e;
-}
-.trust-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 88px;
-  gap: 20px;
-  font-size: 12px;
-  color: #9aaa9f;
-}
-.trust-inner i {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  background: var(--green);
-  border-radius: 50%;
-  margin-right: 10px;
-}
-.trust-inner strong {
-  font-weight: 500;
-  color: #d5ded5;
-  margin-left: 5px;
-}
-.trust-inner > span + span {
-  border-left: 1px solid var(--line);
-  padding-left: 45px;
-}
 .text-link {
   font-size: 13px;
   display: inline-flex;
@@ -1442,10 +1412,7 @@ p {
   .story-navigation button {
     padding-inline: 10px;
   }
-  .trust-inner > span + span {
-    padding-left: 24px;
-  }
-  .team-grid {
+    .team-grid {
     gap: 18px;
   }
   .team-member h3 {
@@ -1572,14 +1539,7 @@ p {
   .hero-edition {
     display: none;
   }
-  .trust-inner {
-    gap: 16px;
-    font-size: 11px;
-  }
-  .trust-inner > span + span {
-    padding-left: 16px;
-  }
-  .section-space {
+      .section-space {
     padding-block: 88px;
   }
   .section-heading {
@@ -1811,25 +1771,7 @@ p {
   .scroll-cue {
     font-size: 10px;
   }
-  .trust-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding-block: 16px;
-    font-size: 11px;
-  }
-  .trust-inner > span {
-    padding-block: 11px;
-  }
-  .trust-inner > span + span {
-    border-left: 0;
-    padding-left: 0;
-  }
-  .trust-inner > span:nth-child(even) {
-    border-left: 1px solid var(--line);
-    padding-left: 20px;
-  }
-  .section-space {
+          .section-space {
     padding-block: 74px;
   }
   .section-topline {
@@ -2721,7 +2663,7 @@ html:lang(ko) .hero h1 { line-height: 1.2; }
 }
 
 /* Opening story: a quiet introduction, then a full-width view of the partnership. */
-.hero { padding: 0; min-height: 0; overflow: visible; --hero-logo-width: clamp(160px, 18vw, 250px); }
+.hero { padding: 0; min-height: 0; max-height: none; overflow: visible; --hero-logo-width: clamp(160px, 18vw, 250px); }
 .hero-stage { position: relative; padding-top: 145px; padding-bottom: 70px; }
 .hero-inner { min-height: 390px; display: block; }
 .hero-copy { max-width: 660px; padding: 0; }
@@ -2752,8 +2694,8 @@ html:lang(ko) .hero h1 { line-height: 1.2; }
 
 /* On roomy screens, each service occupies a single shared stage. */
 @media (min-width: 901px) and (min-height: 741px) and (prefers-reduced-motion: no-preference) {
-  .js .hero { height: 250svh; }
-  .js .hero-stage { position: sticky; top: 0; height: 100svh; padding: 0; overflow: hidden; --hub-y: 25svh; --branch-height: 20svh; }
+  .js .hero { height: 520svh; background: #040806; }
+  .js .hero-stage { position: sticky; top: 0; height: 100svh; padding: 0; overflow: hidden; background: radial-gradient(ellipse at 78% 38%, #16332570, transparent 49%), #040806; --hub-y: 25svh; --branch-height: 20svh; }
   .js .hero-inner { position: absolute; inset: var(--header) 0 0; min-height: 0; display: flex; align-items: center; }
   .js .hero-copy { width: 54%; will-change: opacity, transform; }
   .js .hero-logo { left: 77%; top: 50%; z-index: 2; will-change: transform, left, top; }
@@ -2889,4 +2831,38 @@ html:lang(ko) .hero h1 { line-height: 1.2; }
 @keyframes contact-glow-orbit { to { --contact-glow-angle: 360deg; } }
 @media (prefers-reduced-motion: reduce) {
   .button-glow::before, .button-glow::after { animation: none; transition: none; }
+}
+
+/* The same pinned background carries the tree into three statements and nationwide reach. */
+.hero-facts { display: grid; grid-template-columns: 1.18fr 1fr; align-items: center; gap: 60px; margin: 100px auto 30px; }
+.hero-facts-copy { display: flex; flex-direction: column; gap: clamp(28px, 4svh, 42px); }
+.hero-fact { margin: 0; font-size: clamp(40px, 4.3vw, 64px); line-height: 1.12; letter-spacing: -.045em; font-weight: 400; color: #eef1e9; }
+.hero-fact:first-child { max-width: 14ch; }
+.hero-fact:not(:first-child) { display: flex; flex-wrap: wrap; column-gap: .22em; }
+.hero-fact strong { color: var(--green); font-weight: 400; }
+.hero-fact:last-child strong { display: block; flex-basis: 100%; }
+.hero-coverage { margin: 0; width: 100%; text-align: center; }
+.brazil-map { display: block; width: 100%; max-width: 475px; margin-inline: auto; overflow: visible; filter: drop-shadow(0 0 6px #80dba43d); }
+.hero-coverage figcaption { display: flex; flex-wrap: wrap; justify-content: center; column-gap: .22em; margin: 10px 0 0; color: #b3c1b7; font-size: clamp(30px, 3.1vw, 46px); line-height: 1.2; letter-spacing: -.04em; }
+.hero-coverage strong { font-weight: 400; color: var(--green); }
+@media (min-width: 901px) and (min-height: 741px) and (prefers-reduced-motion: no-preference) {
+  .js .hero-facts { position: absolute; inset: var(--header) 0 0; margin: 0 auto; visibility: hidden; pointer-events: none; }
+  .js .hero-fact, .js .hero-coverage { opacity: 0; }
+  .js .hero-fact { will-change: opacity, transform; }
+  .js [data-brazil-outline] { stroke-dasharray: 1; stroke-dashoffset: 1; }
+}
+@media (max-width: 1100px) {
+  .hero-facts { gap: 32px; }
+  .hero-fact { font-size: clamp(36px, 4.2vw, 48px); }
+}
+@media (max-width: 900px), (max-height: 740px), (prefers-reduced-motion: reduce) {
+  .hero-facts { margin-top: 90px; }
+  .hero-facts-copy { gap: 32px; }
+}
+@media (max-width: 600px) {
+  .hero-facts { grid-template-columns: 1fr; gap: 44px; margin-top: 76px; margin-bottom: 0; }
+  .hero-facts-copy { gap: 30px; }
+  .hero-fact { font-size: clamp(34px, 9.7vw, 46px); }
+  .brazil-map { max-width: 330px; }
+  .hero-coverage figcaption { font-size: 34px; margin-top: 0; }
 }

@@ -107,18 +107,26 @@ const heroLogo = $(".hero-logo");
 const heroTree = $(".hero-tree");
 const treePaths = $$(".tree-branches path");
 const treePillars = $$(".tree-pillar");
+const heroFacts = $(".hero-facts");
+const heroFactLines = $$("[data-hero-fact]");
+const heroCoverage = $(".hero-coverage");
+const brazilOutline = $("[data-brazil-outline]");
+const coverageCaption = $("figcaption", heroCoverage);
 const smooth = (value) => { const x = clamp(value); return x * x * (3 - 2 * x); };
 function updateHeroStory() {
   if (!immersive.matches) {
-    [heroCopy, heroLogo, heroTree, ...treePillars, ...treePaths].forEach((element) => element.removeAttribute("style"));
+    [heroCopy, heroLogo, heroTree, heroFacts, heroCoverage, brazilOutline, coverageCaption, ...heroFactLines, ...treePillars, ...treePaths].forEach((element) => element.removeAttribute("style"));
     heroCopy.inert = false;
     heroCopy.removeAttribute("aria-hidden");
     heroTree.removeAttribute("aria-hidden");
+    [heroFacts, heroCoverage, ...heroFactLines].forEach((element) => element.removeAttribute("aria-hidden"));
     heroStory.dataset.scene = "flow";
     return;
   }
-  const range = Math.max(1, heroStory.offsetHeight - heroStage.offsetHeight);
-  const value = clamp(-heroStory.getBoundingClientRect().top / range);
+  const travel = Math.max(0, -heroStory.getBoundingClientRect().top / heroStage.offsetHeight);
+  // Keep the original logo-to-tree timing; later travel reveals the laboratory facts.
+  const value = clamp(travel / 1.5);
+  const treeExit = smooth((travel - 1.55) / .35);
   const fade = smooth((value - .08) / .22);
   heroCopy.style.opacity = 1 - fade;
   heroCopy.style.transform = `translateY(${-24 * fade}px)`;
@@ -130,16 +138,33 @@ function updateHeroStory() {
   heroLogo.style.left = `${77 - 27 * smooth((value - .08) / .55)}%`;
   heroLogo.style.top = `${50 - 25 * smooth((value - .18) / .5)}%`;
   heroLogo.style.transform = `translate(-50%, -50%) scale(${scale})`;
-  heroTree.style.opacity = smooth((value - .5) / .18);
-  heroTree.style.visibility = value > .5 ? "visible" : "hidden";
-  heroTree.setAttribute("aria-hidden", String(value <= .5));
+  heroLogo.style.opacity = 1 - treeExit;
+  heroTree.style.opacity = smooth((value - .5) / .18) * (1 - treeExit);
+  heroTree.style.transform = `translateY(${-25 * treeExit}px)`;
+  heroTree.style.visibility = value > .5 && treeExit < 1 ? "visible" : "hidden";
+  heroTree.setAttribute("aria-hidden", String(value <= .5 || treeExit === 1));
   treePaths.forEach((path) => path.style.strokeDashoffset = 1 - smooth((value - .54) / .24));
   treePillars.forEach((pillar, index) => {
     const reveal = smooth((value - .6 - index * .045) / .16);
     pillar.style.opacity = reveal;
     pillar.style.transform = `translateY(${24 * (1 - reveal)}px)`;
   });
-  heroStory.dataset.scene = value > .78 ? "advantages" : value > .15 ? "zoom" : "intro";
+  const factsVisible = travel > 1.85;
+  heroFacts.style.visibility = factsVisible ? "visible" : "hidden";
+  heroFacts.setAttribute("aria-hidden", String(!factsVisible));
+  heroFactLines.forEach((line, index) => {
+    const reveal = smooth((travel - 1.85 - index * .5) / .3);
+    line.style.opacity = reveal;
+    line.style.transform = `translateY(${28 * (1 - reveal)}px)`;
+    line.setAttribute("aria-hidden", String(reveal === 0));
+  });
+  const mapReveal = smooth((travel - 3.35) / .4);
+  heroCoverage.style.opacity = mapReveal;
+  heroCoverage.style.transform = `translateY(${18 * (1 - mapReveal)}px) scale(${.96 + mapReveal * .04})`;
+  heroCoverage.setAttribute("aria-hidden", String(mapReveal === 0));
+  brazilOutline.style.strokeDashoffset = 1 - smooth((travel - 3.35) / .45);
+  coverageCaption.style.opacity = smooth((travel - 3.5) / .3);
+  heroStory.dataset.scene = travel > 3.35 ? "coverage" : factsVisible ? "facts" : value > .78 ? "advantages" : value > .15 ? "zoom" : "intro";
 }
 
 // One shared stage keeps the current photograph and copy together.

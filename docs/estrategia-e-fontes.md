@@ -52,7 +52,7 @@ Os serviços restauradores e sobre implantes abrem o catálogo pela relação co
 
 O título “Specialists in Dental Prosthetics”, a descrição e os três pilares foram reutilizados do site oficial nas três traduções publicadas pelo laboratório. A versão original foi conferida no recurso público `https://laboratoriokim.com.br/assets/index-V3Zx_-eR.js`. Não se acrescentaram novos números ou garantias. A afirmação promocional de liderança é texto do próprio laboratório, mantido por solicitação do usuário.
 
-Os pilares são logística própria, cobertura nacional e seleção de componentes para implantes, com as descrições originais. A primeira tela mostra somente a proposta de valor à esquerda e o logo oficial à direita, sem esfera ou fundo circular. O contato principal tem uma borda luminosa animada em tons de verde, mantendo o texto estável e legível; com movimento reduzido, o contorno fica estático. Ao rolar, o logo cresce, move-se ao centro e dá lugar a uma árvore em largura total. Os três ícones têm título e descrição abaixo, visíveis juntos. Não há rótulo de exclusividades nem contador 01–03. Em telas pequenas/baixas e com movimento reduzido, a mesma informação segue no fluxo normal. O desenho não representa rastreamento nem cobertura geográfica detalhada.
+Os pilares são logística própria, cobertura nacional e seleção de componentes para implantes, com as descrições originais. A primeira tela mostra somente a proposta de valor à esquerda e o logo oficial à direita, sem esfera ou fundo circular. O contato principal tem uma borda luminosa animada em tons de verde, mantendo o texto estável e legível; com movimento reduzido, o contorno fica estático. Ao rolar, o logo cresce, move-se ao centro e dá lugar a uma árvore em largura total. Os três ícones têm título e descrição abaixo, visíveis juntos. Não há rótulo de exclusividades nem contador 01–03. Depois dos pilares, a mesma área fixa continua: os pilares desaparecem, as mensagens sobre público profissional, fundação em 1995 e CAD/CAM próprio entram uma a uma à esquerda. Por último, o contorno do Brasil é desenhado à direita com brilho verde discreto e a indicação de cobertura nacional. A antiga faixa horizontal foi removida. A animação é reversível pela rolagem; o atalho de serviços permanece disponível no cabeçalho. Em telas pequenas/baixas e com movimento reduzido, a mesma informação, incluindo as mensagens e o mapa completo, segue no fluxo normal. O desenho não representa rastreamento nem cobertura geográfica detalhada.
 
 A imagem conceitual do dente, a chamada “A new perspective...”, “Discover the difference” e a legenda conceitual foram retiradas da abertura. A ordem dos dois fragmentos do título foi adaptada em coreano, mantendo as palavras originais.
 
@@ -107,6 +107,8 @@ Um terceiro subagente iniciou a revisão de UX e identificou dois pontos: a seta
 
 ## Validação realizada
 
+A sequência de cobertura foi verificada em português, inglês e coreano: entrada individual das três mensagens, desenho do mapa, rolagem reversa e atalho direto para serviços. Layouts em 1440 × 900, 1024 × 768, 390 × 844 e 320 × 680. Corrigido um limite antigo de altura da abertura que provocava sobreposição no celular; mensagens e mapa agora ocupam seu espaço antes do catálogo. Sem imagens quebradas ou excesso de largura nos formatos conferidos.
+
 A atualização de 4 de novembro conferiu a abertura, a árvore e o logo oficial; apenas uma cena de serviço no desktop; atalho 5 seguido de rolagem; botões anterior/próximo; recarga por link direto; biografia por foco de teclado e Escape. Layouts revisados em 1440 × 900, 1024 × 768, 390 × 844 e 320 × 680, incluindo português e coreano. As verificações abaixo também registram a revisão anterior dos componentes preservados.
 
 - `npm run check` e `npm run build`. A checagem inclui cobertura de 259 mensagens por idioma, placeholders, metadados e o inventário de oito serviços, três casos e quatro integrantes.
@@ -128,3 +130,7 @@ Essa revisão é técnica e editorial; não substitui testes de usabilidade com 
 - Endereço: Rua Correia Dias, 392, Paraíso, São Paulo.
 
 Não foram adicionados depoimentos, números de parceiros, garantias, prazos ou alegações de liderança não verificados. A imagem conceitual anterior não é mais exibida. A prévia permanece privada, separada do domínio atual do laboratório.
+
+### Fonte do contorno geográfico
+
+Contorno simplificado do Brasil derivado de [Natural Earth 1:110m, Admin 0 Countries](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_admin_0_countries.geojson), dados de domínio público. O SVG usa 203 pontos e projeção equiretangular ajustada à latitude central. É uma ilustração de atuação nacional; não representa rotas, prazos ou rastreamento.

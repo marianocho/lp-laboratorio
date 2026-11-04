@@ -17,7 +17,7 @@ The build produces `dist/`. The development server listens on localhost; hosting
 
 ## Experience
 
-- Original laboratory headline and official logo. Scrolling enlarges and centers the logo, then draws a full-width tree of the three original advantages.
+- Original laboratory headline and official logo. Scrolling enlarges and centers the logo, then draws a full-width tree of the three original advantages. On the same background, three large statements appear in order, followed by an animated Brazil outline and nationwide coverage.
 - All eight original services. A full-width black stage presents one photograph and description at a time on desktop, with native scrolling, direct shortcuts and previous/next controls. Compact layouts show every service in normal flow.
 - Three original transformation cases with a scroll-driven reveal, draggable comparison, keyboard control, before/split/after views and a single optional replay.
 - Three technology chapters with direct controls and desktop scrollytelling.
