@@ -11,6 +11,8 @@ export default {
   "DENTAL": "DENTAL",
   "LABORATORY": "LABORATORY",
   "Main navigation": "주 메뉴",
+  "Section navigation": "섹션 탐색",
+  "Home": "처음으로",
   "Our services": "서비스",
   "Real transformations": "실제 변화 사례",
   "Technology": "기술",

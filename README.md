@@ -25,6 +25,7 @@ The build produces `dist/`. The development server listens on localhost; hosting
 - All four original team members and visible roles, with biographies over the portraits on hover, keyboard focus or touch.
 - Four original Instagram publications in a perspective carousel, with previous/next buttons, keyboard controls and links to the original posts. Official embeds load near the section and reset when leaving it; playback remains controlled by Instagram.
 - Header and floating WhatsApp hide on downward scrolling and return on upward movement or keyboard focus. Flagged language options, luminous contact buttons and an expanding Instagram profile icon refine navigation.
+- A right-hand section index tracks the current chapter and expands on hover or keyboard focus; compact screens use a tap-to-open button. Direct section links, Escape and outside-click dismissal keep navigation available while the header is hidden.
 - Floating WhatsApp and direct service-specific WhatsApp links, plus digital/analog channels, email, map and official social links.
 - Language selector with saved preference and shareable `?lang=en`, `?lang=pt` or `?lang=ko` links; translated content, metadata, accessible labels and messages.
 - Responsive layouts, native scrolling, visible focus, keyboard tabs, mobile menu with Escape and focus containment, and `prefers-reduced-motion` support.

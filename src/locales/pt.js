@@ -11,6 +11,8 @@ export default {
   "DENTAL": "LABORATÓRIO",
   "LABORATORY": "DENTÁRIO",
   "Main navigation": "Navegação principal",
+  "Section navigation": "Navegação por seções",
+  "Home": "Início",
   "Our services": "Nossos serviços",
   "Real transformations": "Transformações reais",
   "Technology": "Tecnologia",

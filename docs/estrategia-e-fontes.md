@@ -192,3 +192,11 @@ A escolha editorial mantém preto e verde-menta (#b9dfc8), com rosa-orquídea cl
 - Fallback sem JavaScript, preferência por movimento reduzido e regras de hover/touch revisados no código. Não foi feita emulação do sistema operacional nem teste com leitor de tela.
 
 Os números sobre os quatro retratos também foram removidos. A prévia compartilhável por túnel serve apenas a pasta compilada `dist/`, sem expor o repositório de trabalho.
+
+## Legibilidade e índice lateral — 5 de novembro de 2026
+
+O link de localização fica em uma linha própria abaixo da cidade, com área de toque de 44 px. O Instagram conserva seu tom roxo e a expansão do nome, com brilho reduzido. O rosa-orquídea passa a #efa2cf, mais saturado, em resultados e parceria; seu contraste calculado contra preto é 10,74:1. O menu superior ganha peso 600 e texto de 14 px (13 px em desktops menores).
+
+Um índice fixo à direita oferece seis destinos: início, serviços, transformações, tecnologia, equipe e contato. Os marcadores acompanham a posição real da página, inclusive nos capítulos longos, e expandem seus rótulos por hover ou foco. Em telas de até 700 px, fica apenas um botão até a abertura, para reduzir a área ocupada. Escape, clique externo e seleção de destino recolhem o índice. A região sai da navegação por teclado quando oculta no início da página ou durante a abertura do menu móvel. Os rótulos acompanham inglês, português e coreano, com transições desativadas para movimento reduzido.
+
+Validação: sintaxe e cobertura de 241 mensagens; inventário preservado de oito serviços, três casos e quatro pessoas; build estático e verificação do diff. Navegador em 1440 × 900, 390 × 844 e 320 × 680: expansão por teclado, Escape, saltos para contato/equipe, marcador ativo, ocultação/retorno do cabeçalho, rodapé e traduções em coreano. Sem excesso de largura observado. O comportamento de toque e movimento reduzido foi revisado no código; não houve teste em aparelho físico nem com leitor de tela. O túnel existente continua servindo somente a pasta compilada.

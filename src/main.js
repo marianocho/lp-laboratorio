@@ -467,9 +467,64 @@ header.addEventListener("focusin", showReadingChrome);
 $(".whatsapp-float").addEventListener("focusin", showReadingChrome);
 menuButton.addEventListener("click", showReadingChrome);
 
+// A compact, persistent route through the page while the reading header is hidden.
+const sectionIndex = $(".section-index");
+const indexToggle = $(".section-index-toggle");
+const indexLinks = $$(".section-index a");
+const navigationLinks = $$(".desktop-nav a, .section-index a");
+const indexedSections = indexLinks.map((link) => document.getElementById(link.hash.slice(1)));
+let currentSection = "";
+function setIndexOpen(open) {
+  sectionIndex.classList.toggle("is-open", open);
+  indexToggle.setAttribute("aria-expanded", String(open));
+}
+indexToggle.addEventListener("click", () => setIndexOpen(!sectionIndex.classList.contains("is-open")));
+sectionIndex.addEventListener("pointerenter", (event) => {
+  if (event.pointerType === "mouse" && innerWidth > 700) setIndexOpen(true);
+});
+sectionIndex.addEventListener("pointerleave", () => {
+  if (!sectionIndex.querySelector(":focus-visible")) setIndexOpen(false);
+});
+sectionIndex.addEventListener("focusin", (event) => {
+  if (event.target.matches(":focus-visible")) setIndexOpen(true);
+});
+sectionIndex.addEventListener("focusout", () => requestAnimationFrame(() => {
+  if (!sectionIndex.contains(document.activeElement) && !sectionIndex.matches(":hover")) setIndexOpen(false);
+}));
+sectionIndex.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    indexToggle.focus({ preventScroll: true });
+    setIndexOpen(false);
+  }
+});
+indexLinks.forEach((link) => link.addEventListener("click", () => setIndexOpen(false)));
+document.addEventListener("pointerdown", (event) => {
+  if (!sectionIndex.contains(event.target)) setIndexOpen(false);
+});
+function updateSectionNavigation() {
+  const visible = !document.body.classList.contains("menu-open") &&
+    (window.scrollY > 120 || sectionIndex.contains(document.activeElement));
+  sectionIndex.classList.toggle("is-visible", visible);
+  sectionIndex.inert = !visible;
+  if (!visible) setIndexOpen(false);
+  const readingLine = innerHeight * .3;
+  let active = indexedSections[0].id;
+  for (const section of indexedSections) {
+    if (section.getBoundingClientRect().top <= readingLine) active = section.id;
+  }
+  if (active === currentSection) return;
+  currentSection = active;
+  navigationLinks.forEach((link) => {
+    if (link.hash === `#${active}`) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
+}
+menuButton.addEventListener("click", scheduleScroll);
+
 function updateScroll() {
   updateChapterSequences();
   updateReadingChrome();
+  updateSectionNavigation();
   updateHeroStory();
   updateServiceScroll();
   const y = window.scrollY;
@@ -542,23 +597,6 @@ immersive.addEventListener("change", () => {
 setStoryStep(0);
 updateScroll();
 
-const navLinks = $$(".desktop-nav a");
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    for (const entry of entries)
-      if (entry.isIntersecting)
-        navLinks.forEach((link) => {
-          if (link.hash === `#${entry.target.id}`)
-            link.setAttribute("aria-current", "location");
-          else link.removeAttribute("aria-current");
-        });
-  },
-  { rootMargin: "-20% 0px -55% 0px" },
-);
-navLinks.forEach((link) => {
-  const section = document.getElementById(link.hash.slice(1));
-  if (section) sectionObserver.observe(section);
-});
 let selectedService = null;
 function updateContactLinks() {
   const service = selectedService ? t(selectedService) : null;
