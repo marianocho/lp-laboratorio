@@ -134,3 +134,32 @@ Não foram adicionados depoimentos, números de parceiros, garantias, prazos ou 
 ### Fonte do contorno geográfico
 
 Contorno simplificado do Brasil derivado de [Natural Earth 1:110m, Admin 0 Countries](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_admin_0_countries.geojson), dados de domínio público. O SVG usa 203 pontos e projeção equiretangular ajustada à latitude central. É uma ilustração de atuação nacional; não representa rotas, prazos ou rastreamento.
+
+
+## Refinamento editorial e carrossel — 4 de novembro de 2026
+
+A referência [Apple iPhone 18 Pro](https://www.apple.com/uk/iphone-18-pro/), especialmente o título central “Variable aperture. If you know, you pro.”, orientou a escala e o espaço das transições entre capítulos. Os cinco títulos de seção agora ficam centralizados, sem numeração ou subtítulos editoriais. A entrada usa rolagem nativa e uma breve subida com opacidade, sem acrescentar outro trecho fixo à página.
+
+O catálogo preserva oito serviços, atalhos diretos, fotografias, descrições, materiais e WhatsApp. Foram removidos o contador, a linha de progresso, o crédito sobreposto, a orientação de rolagem, os rótulos de categoria e a divisória entre imagem e texto. Transformações preserva os três casos e controles; tecnologia preserva seus três capítulos. Os quatro benefícios técnicos e os três benefícios da parceria entram como grupos, sem números ou grades divisórias. Equipe continua com quatro retratos e biografias, agora sobre preto. Os canais de contato ficam sem divisórias, com tipografia maior; os dois CTAs principais compartilham um único brilho fino verde, sem segunda borda externa.
+
+### Publicações originais
+
+O site original incorpora estas quatro publicações oficiais, reutilizadas em uma seção própria abaixo da equipe e da história:
+
+- [Reel — DKiNd3nOkZh](https://www.instagram.com/reel/DKiNd3nOkZh/)
+- [Reel — DRU05PGjiKY](https://www.instagram.com/reel/DRU05PGjiKY/)
+- [Reel — DMfrUAEutd4](https://www.instagram.com/reel/DMfrUAEutd4/)
+- [Publicação — DRiCPwbjl2G](https://www.instagram.com/p/DRiCPwbjl2G/)
+
+O carrossel usa perspectiva: publicação ativa central, vizinhas recuadas e quarta publicação ao fundo. Não gira automaticamente. Setas, indicadores, clique nas laterais e teclado (esquerda/direita, Home/End) permitem trocar. O gesto horizontal funciona na área do carrossel fora dos iframes; o conteúdo incorporado do Instagram recebe seus próprios gestos. No celular, controles aparecem antes dos vídeos. Elementos das publicações inativas saem da navegação por teclado; a publicação selecionada é anunciada de forma localizada.
+
+Os embeds só carregam perto da seção e são reiniciados quando se deixa uma publicação ou a seção, evitando reprodução em segundo plano. Sem JavaScript, há links individuais. O Instagram controla interface, idioma, acesso e reprodução: no navegador conferido, os reels exibiram “Watch on Instagram” e encaminham à plataforma. Não foram baixados arquivos de vídeo nem simulada reprodução local.
+
+### Verificação desta etapa
+
+- `npm run check`, `npm run build`, `git diff --check`; 246 mensagens cobertas em português e coreano, com oito serviços, três casos e quatro pessoas preservados.
+- IDs únicos, âncoras, referências ARIA e presença de todas as imagens locais conferidos.
+- Navegador em 1440 × 900, 390 × 844 e 320 × 680; sem excesso de largura observado. Títulos em coreano conferidos na menor largura.
+- Palco de serviços com apenas uma imagem/descrição visível, sem contador/progresso/divisória; benefícios e contatos sem bordas inclusive no celular.
+- Quatro embeds carregados, seleção por setas, teclado, retorno circular e troca de idioma sem perder a publicação ativa.
+- Fallback sem JavaScript e movimento reduzido revisados no código; não foram emulados nesta etapa. A revisão não substitui testes com leitores de tela ou dentistas reais.

@@ -11,7 +11,7 @@ const add = (message) => { const key = decode(message); if (/[a-zA-Z]/.test(key)
 for (const match of content.matchAll(/>([^<]+)</g)) add(match[1]);
 for (const match of content.matchAll(/(?:aria-label|alt|title)="([^"]+)"/g)) add(match[1]);
 for (const match of content.matchAll(/<meta\b[^>]*(?:name="description"|property="og:(?:title|description)")[^>]*content="([^"]+)"/g)) add(match[1]);
-for (const message of ["Language", "Open menu", "Close menu", "Play reveal", "Pause reveal", "{before}% before, {after}% after", "Hello, I'm a dentist and I'd like to discuss a case.", "Hello, I'd like to discuss a digital order.", "Hello, I'd like to discuss an analog order.", "Hello, I'm a dentist and I'd like to discuss {service}.", "Your selected service: {service}", "Ti / TITANIUM MONOBLOCK", "CERAMIC / FORM AND EXPRESSION", "FINISHING / ATTENTION TO DETAIL"]) add(message);
+for (const message of ["View publication {number}", "Publication {number} of {total}", "Instagram publication {number}", "Language", "Open menu", "Close menu", "Play reveal", "Pause reveal", "{before}% before, {after}% after", "Hello, I'm a dentist and I'd like to discuss a case.", "Hello, I'd like to discuss a digital order.", "Hello, I'd like to discuss an analog order.", "Hello, I'm a dentist and I'd like to discuss {service}.", "Your selected service: {service}", "Ti / TITANIUM MONOBLOCK", "CERAMIC / FORM AND EXPRESSION", "FINISHING / ATTENTION TO DETAIL"]) add(message);
 const placeholders = (text) => [...text.matchAll(/\{\w+\}/g)].map((m) => m[0]).sort();
 for (const [locale, dictionary] of Object.entries({pt, ko})) {
   const missing = [...messages].filter((message) => !Object.hasOwn(dictionary, message));

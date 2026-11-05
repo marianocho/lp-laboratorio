@@ -263,5 +263,15 @@ export default {
   "Hello, I'm a dentist and I'd like to discuss {service}.": "Olá! Sou dentista e gostaria de conversar sobre {service}.",
   "Your selected service: {service}": "Serviço selecionado: {service}",
   "CERAMIC / FORM AND EXPRESSION": "CERÂMICA / FORMA E EXPRESSÃO",
-  "FINISHING / ATTENTION TO DETAIL": "ACABAMENTO / ATENÇÃO AOS DETALHES"
+  "FINISHING / ATTENTION TO DETAIL": "ACABAMENTO / ATENÇÃO AOS DETALHES",
+  "The precision beneath the surface": "A precisão além da superfície",
+  "On your side": "Ao seu lado",
+  "Previous publication": "Publicação anterior",
+  "Next publication": "Próxima publicação",
+  "View on Instagram": "Ver no Instagram",
+  "Visit our Instagram": "Visite nosso Instagram",
+  "Laboratório Kim on Instagram": "Laboratório Kim no Instagram",
+  "View publication {number}": "Ver publicação {number}",
+  "Publication {number} of {total}": "Publicação {number} de {total}",
+  "Instagram publication {number}": "Publicação {number} do Instagram"
 };

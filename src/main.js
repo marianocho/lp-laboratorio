@@ -174,8 +174,6 @@ const serviceShowcase = $(".service-showcase");
 const serviceRows = $$("[data-service-row]");
 const serviceScenes = $$("[data-service-scene]");
 const serviceJumps = $$("[data-service-jump]");
-const serviceCounter = $("[data-service-count]");
-const serviceProgress = $(".service-gallery-progress i");
 const servicePrev = $("[data-service-prev]");
 const serviceNext = $("[data-service-next]");
 let activeService = -1;
@@ -196,8 +194,6 @@ function setServiceActive(index, force = false) {
     if (Number(link.dataset.serviceJump) === index) link.setAttribute("aria-current", "location");
     else link.removeAttribute("aria-current");
   });
-  serviceCounter.textContent = String(index + 1).padStart(2, "0");
-  serviceProgress.style.transform = `scaleX(${(index + 1) / serviceRows.length})`;
   servicePrev.disabled = index === 0;
   serviceNext.disabled = index === serviceRows.length - 1;
 }
@@ -563,6 +559,86 @@ portraits.forEach((portrait) => {
 document.addEventListener("pointerdown", (event) => {
   if (!event.target.closest(".team-photo")) portraits.forEach((portrait) => setBiography(portrait, false));
 });
+// Cross-origin videos stay provider-owned; reset a departing embed to stop playback.
+const reelCarousel = $("[data-reel-carousel]");
+const reelCards = $$("[data-reel]");
+const reelDots = $$("[data-reel-go]");
+let activeReel = 0;
+let reelsLoaded = false;
+function updateReelLabels(announce = false) {
+  reelCards.forEach((card, index) => {
+    $("iframe", card).title = t("Instagram publication {number}", { number: index + 1 });
+    $("[data-reel-select]", card).setAttribute("aria-label", t("View publication {number}", { number: index + 1 }));
+    reelDots[index].setAttribute("aria-label", t("View publication {number}", { number: index + 1 }));
+  });
+  if (announce) $("[data-reel-status]").textContent = t("Publication {number} of {total}", { number: activeReel + 1, total: reelCards.length });
+}
+function setReel(index, announce = true) {
+  const next = (index + reelCards.length) % reelCards.length;
+  if (reelsLoaded && activeReel !== next) {
+    const previousFrame = $("iframe", reelCards[activeReel]);
+    previousFrame.src = previousFrame.dataset.src;
+  }
+  activeReel = next;
+  reelCards.forEach((card, i) => {
+    let offset = (i - next + reelCards.length) % reelCards.length;
+    if (offset > reelCards.length / 2) offset -= reelCards.length;
+    const distance = Math.abs(offset);
+    card.style.setProperty("--reel-offset", distance === 2 ? 0 : offset);
+    card.style.setProperty("--reel-depth", `${-distance * 200}px`);
+    card.style.setProperty("--reel-angle", `${distance === 2 ? 0 : offset * -15}deg`);
+    card.style.setProperty("--reel-dim", distance ? distance === 1 ? .36 : .6 : 0);
+    card.style.setProperty("--reel-layer", 4 - distance);
+    card.classList.toggle("active", i === next);
+    card.setAttribute("aria-hidden", String(i !== next));
+    $(".reel-embed", card).inert = i !== next;
+    $("iframe", card).tabIndex = i === next ? 0 : -1;
+    $(".reel-open", card).tabIndex = i === next ? 0 : -1;
+    reelDots[i].setAttribute("aria-current", String(i === next));
+  });
+  updateReelLabels(announce);
+}
+$("[data-reel-prev]").addEventListener("click", () => setReel(activeReel - 1));
+$("[data-reel-next]").addEventListener("click", () => setReel(activeReel + 1));
+reelDots.forEach((button, index) => button.addEventListener("click", () => setReel(index)));
+$$("[data-reel-select]").forEach((button, index) => button.addEventListener("click", () => {
+  setReel(index);
+  reelCarousel.focus({ preventScroll: true });
+}));
+reelCarousel.addEventListener("keydown", (event) => {
+  const directions = { ArrowLeft: -1, ArrowRight: 1 };
+  if (event.key in directions) {
+    event.preventDefault();
+    setReel(activeReel + directions[event.key]);
+  } else if (event.key === "Home" || event.key === "End") {
+    event.preventDefault();
+    setReel(event.key === "Home" ? 0 : reelCards.length - 1);
+  }
+});
+let reelSwipe = null;
+reelCarousel.addEventListener("pointerdown", (event) => {
+  if (event.target.closest("a, button")) return;
+  reelSwipe = { x: event.clientX, y: event.clientY };
+});
+reelCarousel.addEventListener("pointerup", (event) => {
+  if (!reelSwipe) return;
+  const dx = event.clientX - reelSwipe.x;
+  const dy = event.clientY - reelSwipe.y;
+  if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5) setReel(activeReel + (dx < 0 ? 1 : -1));
+  reelSwipe = null;
+});
+reelCarousel.addEventListener("pointercancel", () => { reelSwipe = null; });
+const reelObserver = new IntersectionObserver(([entry]) => {
+  if (entry.isIntersecting === reelsLoaded) return;
+  reelsLoaded = entry.isIntersecting;
+  reelCards.forEach((card) => {
+    const frame = $("iframe", card);
+    frame.src = reelsLoaded ? frame.dataset.src : "about:blank";
+  });
+}, { rootMargin: "300px 0px" });
+reelObserver.observe(reelCarousel);
+setReel(0, false);
+
 // Update dynamic labels too, retaining case, service and comparison positions.
 document.addEventListener("languagechange", () => {
   // Preserve the original words while using natural Korean subject order.
@@ -578,6 +654,7 @@ document.addEventListener("languagechange", () => {
   materialLabel.textContent = t(materials[Math.max(0, activeStep)]);
   renderManifesto();
   updateContactLinks();
+  updateReelLabels();
   scheduleScroll();
 });
 initI18n();

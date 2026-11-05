@@ -263,5 +263,15 @@ export default {
   "Hello, I'm a dentist and I'd like to discuss {service}.": "안녕하세요. 치과의사입니다. {service} 관련 상담을 하고 싶습니다.",
   "Your selected service: {service}": "선택한 서비스: {service}",
   "CERAMIC / FORM AND EXPRESSION": "세라믹 / 형태와 표현",
-  "FINISHING / ATTENTION TO DETAIL": "마감 / 디테일을 살피는 세심함"
+  "FINISHING / ATTENTION TO DETAIL": "마감 / 디테일을 살피는 세심함",
+  "The precision beneath the surface": "보이는 것 너머의 정밀함",
+  "On your side": "치과와 함께",
+  "Previous publication": "이전 게시물",
+  "Next publication": "다음 게시물",
+  "View on Instagram": "Instagram에서 보기",
+  "Visit our Instagram": "Instagram 방문하기",
+  "Laboratório Kim on Instagram": "Instagram의 Laboratório Kim",
+  "View publication {number}": "게시물 {number} 보기",
+  "Publication {number} of {total}": "게시물 {number}/{total}",
+  "Instagram publication {number}": "Instagram 게시물 {number}"
 };

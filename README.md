@@ -18,10 +18,12 @@ The build produces `dist/`. The development server listens on localhost; hosting
 ## Experience
 
 - Original laboratory headline and official logo. Scrolling enlarges and centers the logo, then draws a full-width tree of the three original advantages. On the same background, three large statements appear in order, followed by an animated Brazil outline and nationwide coverage.
+- Large centered chapter titles, a continuous black background and grouped upward reveals for technical and partnership benefits.
 - All eight original services. A full-width black stage presents one photograph and description at a time on desktop, with native scrolling, direct shortcuts and previous/next controls. Compact layouts show every service in normal flow.
 - Three original transformation cases with a scroll-driven reveal, draggable comparison, keyboard control, before/split/after views and a single optional replay.
 - Three technology chapters with direct controls and desktop scrollytelling.
 - All four original team members and visible roles, with biographies over the portraits on hover, keyboard focus or touch.
+- Four original Instagram publications in a perspective carousel, with previous/next buttons, keyboard controls and links to the original posts. Official embeds load near the section and reset when leaving it; playback remains controlled by Instagram.
 - Floating WhatsApp and direct service-specific WhatsApp links, plus digital/analog channels, email, map and official social links.
 - Language selector with saved preference and shareable `?lang=en`, `?lang=pt` or `?lang=ko` links; translated content, metadata, accessible labels and messages.
 - Responsive layouts, native scrolling, visible focus, keyboard tabs, mobile menu with Escape and focus containment, and `prefers-reduced-motion` support.
