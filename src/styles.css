@@ -1081,14 +1081,6 @@ p {
 .team-member:hover .team-photo img {
   transform: scale(1.025);
 }
-.team-index {
-  position: absolute;
-  top: 17px;
-  left: 18px;
-  z-index: 1;
-  font-size: 9px;
-  color: #acc4b3;
-}
 .team-member-copy {
   padding: 23px 0 0;
 }
@@ -2041,11 +2033,6 @@ p {
   .team-details p {
     font-size: 12px;
   }
-  .team-index {
-    top: 12px;
-    left: 12px;
-    font-size: 8px;
-  }
   .heritage {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -2984,4 +2971,85 @@ html:not(.js) .reel-embed { display: none; }
 @media (max-width: 900px) {
   .reel-carousel { display: flex; flex-direction: column; }
   .js .reel-controls { order: -1; padding: 0 0 24px; gap: 36px; }
+}
+
+/* Mint belongs to actions and technology; orchid highlights outcomes and partnership. */
+:root { --green: #b9dfc8; --accent: #e2b8d6; --accent-soft: #cbbbdc; --ink: #f4f3ef; }
+::selection { background: var(--accent); color: #100d10; }
+#transformations-title > span, #partnership-title > span { color: var(--accent); }
+#services-title > span, #team-title > span { color: var(--green); }
+.case-tabs button[aria-selected="true"] { color: var(--accent); }
+.case-tabs button:after { background: var(--accent); }
+.case-copy h3 { color: #f3e9f0; }
+.case-focus > span { color: var(--accent); }
+.partnership-grid .line-icon { color: var(--accent); }
+.team-role { color: #c9b9c6; }
+.contact h2 span { color: var(--green); }
+.transformations, .technology, .team-section, .heritage, .site-footer, .footer-bottom { border: 0; }
+.site-header { position: fixed; border: 0; transition: transform .42s var(--ease), background .25s; }
+.whatsapp-float { transition: transform .42s var(--ease), opacity .3s, background .25s; }
+.page-progress { transition: opacity .2s; }
+.chrome-hidden .site-header { transform: translateY(-110%); pointer-events: none; }
+.chrome-hidden .whatsapp-float { transform: translateY(calc(100% + 40px)); opacity: 0; pointer-events: none; }
+.chrome-hidden .page-progress { opacity: 0; }
+.language-control { border: 0; padding: 0; border-radius: 100px; background: #ffffff08; color: #e8eee9; transition: background .2s; }
+.language-control:hover { background: #ffffff12; }
+.language-control select { width: 138px; min-height: 44px; padding: 0 14px; border-radius: 100px; font-size: 13px; font-weight: 500; }
+.language-control select:focus-visible { border-radius: 100px; }
+.header-contact.button-glow { min-width: 140px; justify-content: center; font-size: 14px; font-weight: 600; letter-spacing: -.02em; padding: 12px 22px; }
+.hero-actions .button-glow, .contact-action .button-glow { justify-content: center; padding: 17px 32px; font-size: 17px; font-weight: 600; letter-spacing: -.025em; min-width: 235px; }
+.button-glow { color: #effaf2; background: #0c1710; border: 1px solid transparent; }
+.whatsapp-float.button-glow { position: fixed; color: #c4f0d4; background: #0c1710; border-color: transparent; font-size: 13px; }
+.whatsapp-float.button-glow:hover { background: #173625; }
+.button-glow::before { background: conic-gradient(from var(--contact-glow-angle), #245e40 0deg, #4cc58a 70deg, #c6efc1 130deg, #e2b8d6 150deg, #b8f9db 180deg, #50cb95 240deg, #245e40 360deg); }
+.footer-main address a, .footer-social a { display: inline-flex; align-items: center; gap: 10px; }
+.footer-main address a svg { width: 17px; height: 20px; color: var(--green); flex-shrink: 0; }
+.footer-social a svg { width: 20px; height: 20px; flex-shrink: 0; }
+.footer-social a:hover { color: var(--accent); }
+.instagram-profile { display: inline-flex; justify-content: flex-start; align-items: center; gap: 0; width: 58px; height: 58px; margin-top: 28px; border: 1px solid #e2b8d62b; border-radius: 99px; background: #161019; color: #f8edf6; overflow: hidden; text-decoration: none; transition: width .5s var(--ease), background .25s, box-shadow .25s; }
+.instagram-mark { flex: 0 0 56px; display: grid; place-items: center; }
+.instagram-mark svg { width: 28px; height: 28px; color: #f0c0ef; filter: drop-shadow(-3px -1px 4px #744ce1) drop-shadow(3px 2px 4px #dd4d8b); }
+.instagram-handle { white-space: nowrap; opacity: 0; transform: translateX(-8px); font-size: 14px; font-weight: 600; transition: opacity .25s, transform .4s var(--ease); }
+.instagram-profile:is(:hover,:focus-visible) { width: 220px; background: #211624; box-shadow: 0 0 24px #b45a981c; }
+.instagram-profile:is(:hover,:focus-visible) .instagram-handle { opacity: 1; transform: none; }
+.chapter-scene { position: relative; }
+@media (min-height: 741px) and (prefers-reduced-motion: no-preference) {
+  .js .chapter-sequence { position: relative; height: 150svh; margin-bottom: 36px; }
+  .js .chapter-scene { position: sticky; top: 0; height: 100svh; }
+  .js .chapter-sequence .chapter-title { position: absolute; inset: 0; min-height: 0; padding: 0; margin: 0; height: 100%; }
+  .js .chapter-sequence .chapter-title h2 { transform-origin: top left; will-change: transform; }
+  .js .chapter-sequence .section-heading { position: absolute; top: 55%; left: 0; right: 0; margin: 0; transform: translateY(calc(-50% + var(--copy-y, 24px))); opacity: 0; }
+  .js .chapter-sequence .section-heading > h2 { flex-shrink: 0; }
+}
+@media (max-width: 900px) {
+  .language-control select { width: 132px; }
+  .header-actions { gap: 14px; }
+  .hero-actions .button-glow, .contact-action .button-glow { font-size: 16px; }
+}
+@media (max-width: 600px) {
+  .language-control select { width: 120px; font-size: 12px; padding-inline: 10px; }
+  .header-actions { gap: 10px; }
+  .hero-actions .button-glow, .contact-action .button-glow { min-width: 215px; }
+  .whatsapp-float.button-glow { padding: 14px; }
+  .chapter-sequence .chapter-title h2 { max-width: 100%; }
+}
+@media (max-width: 380px) {
+  .header-inner { gap: 8px; }
+  .brand-logo { width: 105px; height: 44px; }
+  .language-control select { width: 113px; }
+  .header-actions { gap: 6px; }
+}
+@media (hover: none) {
+  .instagram-profile { width: 220px; }
+  .instagram-handle { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header, .whatsapp-float, .page-progress, .instagram-profile, .instagram-handle { transition: none; }
+}
+
+.service-shortcuts { border-top: 0; }
+.service-entry:last-child, .case-copy { border: 0; }
+.header-contact.button-glow:hover { color: #effaf2; background: #173625; }
+@media (max-width: 600px) {
+  .chapter-sequence .chapter-title h2 { text-align: left; }
 }

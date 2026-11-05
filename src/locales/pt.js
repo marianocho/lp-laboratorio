@@ -273,5 +273,8 @@ export default {
   "Laboratório Kim on Instagram": "Laboratório Kim no Instagram",
   "View publication {number}": "Ver publicação {number}",
   "Publication {number} of {total}": "Publicação {number} de {total}",
-  "Instagram publication {number}": "Publicação {number} do Instagram"
+  "Instagram publication {number}": "Publicação {number} do Instagram",
+  "Get directions": "Como chegar",
+  "Instagram": "Instagram",
+  "LinkedIn": "LinkedIn"
 };

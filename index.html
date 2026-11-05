@@ -132,15 +132,14 @@
         </nav>
         <div class="header-actions">
           <label class="language-control">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg>
             <select id="site-language" aria-label="Language" translate="no">
-              <option value="en" lang="en">English</option>
-              <option value="pt" lang="pt-BR">Português</option>
-              <option value="ko" lang="ko">한국어</option>
+              <option value="en" lang="en">🇺🇸 English</option>
+              <option value="pt" lang="pt-BR">🇧🇷 Português</option>
+              <option value="ko" lang="ko">🇰🇷 한국어</option>
             </select>
           </label>
-        <a class="header-contact" href="#contact"
-          >Let's talk <span aria-hidden="true">↗</span></a
+        <a class="header-contact button-glow" href="#contact"
+          >Let's talk</a
         ><button
           class="menu-toggle"
           aria-label="Open menu"
@@ -167,7 +166,7 @@
             <h1 id="hero-title"><span class="hero-title-lead">Specialists in</span><br /><span>Dental Prosthetics</span></h1>
             <p>Leader in prosthetic solutions, providing dentists with unparalleled advantages and cutting-edge results.</p>
             <div class="hero-actions">
-              <a class="button button-primary button-glow" data-whatsapp="general" href="https://wa.me/551159048888" target="_blank" rel="noopener noreferrer">Get in Touch <span class="button-arrow" aria-hidden="true">↗</span></a>
+              <a class="button button-primary button-glow" data-whatsapp="general" href="https://wa.me/551159048888" target="_blank" rel="noopener noreferrer">Get in Touch</a>
               <a class="hero-services-link" href="#services">Our Services <span aria-hidden="true">↓</span></a>
             </div>
           </div>
@@ -217,8 +216,10 @@
         aria-labelledby="services-title"
       >
         <div class="wrap">
-          <header class="chapter-title reveal"><h2>Our services</h2></header>
-          <div class="section-heading reveal">
+          <div class="chapter-sequence" data-chapter-sequence>
+            <div class="chapter-scene">
+              <header class="chapter-title"><h2>Our services</h2></header>
+          <div class="section-heading">
             <h2 id="services-title">
               Made for your<br /><span>next case.</span>
             </h2>
@@ -226,6 +227,8 @@
               From a single restoration to a complete arch.<br />Explore the
               work, the possibilities and the materials — all in one place.
             </p>
+          </div>
+            </div>
           </div>
           <nav class="service-shortcuts" aria-label="Jump to a service">
             <a href="#service-crowns" data-service-jump="0"
@@ -682,10 +685,6 @@
             </div>
           </div>
           </div>
-          <div class="service-bottom-note">
-            <span class="status-dot"></span> Material selection and case
-            requirements are discussed with your clinical team.
-          </div>
         </div>
       </section>
       <section
@@ -694,8 +693,10 @@
         aria-labelledby="transformations-title"
       >
         <div class="wrap results-header">
-          <header class="chapter-title reveal"><h2>Real transformations</h2></header>
-          <div class="section-heading reveal">
+          <div class="chapter-sequence" data-chapter-sequence>
+            <div class="chapter-scene">
+              <header class="chapter-title"><h2>Real transformations</h2></header>
+          <div class="section-heading">
             <h2 id="transformations-title">
               Behind every result,<br /><span>a story of detail.</span>
             </h2>
@@ -703,6 +704,8 @@
               Three cases from our laboratory.<br />Explore the before and
               after, at your own pace.
             </p>
+          </div>
+            </div>
           </div>
         </div>
         <div class="results-scroll" data-results-scroll>
@@ -721,7 +724,7 @@
                   tabindex="0"
                   data-case="rehabilitation"
                 >
-                  <span>01</span>Total Rehabilitation<span aria-hidden="true"
+                  Total Rehabilitation<span aria-hidden="true"
                     >↗</span
                   ></button
                 ><button
@@ -732,7 +735,7 @@
                   tabindex="-1"
                   data-case="ceramic"
                 >
-                  <span>02</span>Ceramic Veneers<span aria-hidden="true"
+                  Ceramic Veneers<span aria-hidden="true"
                     >↗</span
                   ></button
                 ><button
@@ -743,7 +746,7 @@
                   tabindex="-1"
                   data-case="implant"
                 >
-                  <span>03</span>Implant-Supported Protocol<span
+                  Implant-Supported Protocol<span
                     aria-hidden="true"
                     >↗</span
                   >
@@ -811,7 +814,6 @@
                     </div>
                   </div>
                   <div class="case-copy">
-                    <span class="eyebrow">CASE 01 / REAL TRANSFORMATIONS</span>
                     <h3>A complete perspective.</h3>
                     <p>
                       A full rehabilitation brings many details into one plan.
@@ -890,7 +892,6 @@
                     </div>
                   </div>
                   <div class="case-copy">
-                    <span class="eyebrow">CASE 02 / REAL TRANSFORMATIONS</span>
                     <h3>Small details. A different expression.</h3>
                     <p>
                       Surface texture, proportions and shade all contribute to
@@ -969,7 +970,6 @@
                     </div>
                   </div>
                   <div class="case-copy">
-                    <span class="eyebrow">CASE 03 / REAL TRANSFORMATIONS</span>
                     <h3>A new foundation for the smile.</h3>
                     <p>
                       An implant-supported rehabilitation connects the
@@ -986,12 +986,6 @@
                     >
                   </div>
                 </article>
-              </div>
-              <div class="case-footnote">
-                <span
-                  >Original case photographs from Kim Dental Laboratory.
-                  Individual outcomes vary.</span
-                >
               </div>
             </div>
           </div>
@@ -1049,7 +1043,6 @@
                 <div class="image-scan" aria-hidden="true"></div>
                 <div class="visual-top">
                   <span class="status-dot"></span> KIM / MATERIAL LAB
-                  <span data-visual-number>01 — 03</span>
                 </div>
                 <div class="visual-bottom">
                   <span data-material-label>Ti / TITANIUM MONOBLOCK</span
@@ -1057,10 +1050,6 @@
                 </div>
               </div>
               <div class="story-content">
-                <div class="story-pages" aria-hidden="true">
-                  <span data-step-count>01</span><span>/ 03</span
-                  ><span class="story-progress"><i></i></span>
-                </div>
                 <div class="story-copy-stack">
                   <article class="story-copy active" data-story-step="0">
                     <span class="eyebrow">THE STRUCTURE</span>
@@ -1146,8 +1135,10 @@
         class="partnership section-space wrap"
         aria-labelledby="partnership-title"
       >
-        <header class="chapter-title reveal"><h2>On your side</h2></header>
-        <div class="section-heading reveal">
+        <div class="chapter-sequence" data-chapter-sequence>
+            <div class="chapter-scene">
+              <header class="chapter-title"><h2>On your side</h2></header>
+        <div class="section-heading">
           <h2 id="partnership-title">
             Your clinical partner.<br /><span>At every stage.</span>
           </h2>
@@ -1156,6 +1147,8 @@
             details of your next case.
           </p>
         </div>
+            </div>
+          </div>
         <div class="partnership-grid reveal rise-together">
           <article>
             <span class="line-icon" aria-hidden="true">↗</span
@@ -1192,8 +1185,10 @@
         aria-labelledby="team-title"
       >
         <div class="wrap">
-          <header class="chapter-title reveal"><h2>Our team</h2></header>
-          <div class="section-heading reveal">
+          <div class="chapter-sequence" data-chapter-sequence>
+            <div class="chapter-scene">
+              <header class="chapter-title"><h2>Our team</h2></header>
+          <div class="section-heading">
             <h2 id="team-title">
               A shared standard.<br /><span>A personal commitment.</span>
             </h2>
@@ -1202,11 +1197,11 @@
               care and the day-to-day needs of your practice.
             </p>
           </div>
+            </div>
+          </div>
           <div class="team-grid">
             <article class="team-member reveal">
-              <button class="team-photo" type="button" aria-label="Meet Chang" aria-expanded="false" aria-controls="team-bio-chang" aria-describedby="team-bio-chang">
-                <span class="team-index">01</span
-                ><img
+              <button class="team-photo" type="button" aria-label="Meet Chang" aria-expanded="false" aria-controls="team-bio-chang" aria-describedby="team-bio-chang"><img
                   src="/images/kim.png"
                   alt="Portrait of Chang Kim"
                   width="1024"
@@ -1228,9 +1223,7 @@
               </div>
             </article>
             <article class="team-member reveal">
-              <button class="team-photo" type="button" aria-label="Meet Mirian" aria-expanded="false" aria-controls="team-bio-mirian" aria-describedby="team-bio-mirian">
-                <span class="team-index">02</span
-                ><img
+              <button class="team-photo" type="button" aria-label="Meet Mirian" aria-expanded="false" aria-controls="team-bio-mirian" aria-describedby="team-bio-mirian"><img
                   src="/images/mirian.png"
                   alt="Portrait of Mirian Lee"
                   width="1024"
@@ -1253,9 +1246,7 @@
               </div>
             </article>
             <article class="team-member reveal">
-              <button class="team-photo" type="button" aria-label="Meet Andrea" aria-expanded="false" aria-controls="team-bio-andrea" aria-describedby="team-bio-andrea">
-                <span class="team-index">03</span
-                ><img
+              <button class="team-photo" type="button" aria-label="Meet Andrea" aria-expanded="false" aria-controls="team-bio-andrea" aria-describedby="team-bio-andrea"><img
                   src="/images/andrea.png"
                   alt="Portrait of Andrea Haikawa"
                   width="1024"
@@ -1277,9 +1268,7 @@
               </div>
             </article>
             <article class="team-member reveal">
-              <button class="team-photo" type="button" aria-label="Meet Pedro" aria-expanded="false" aria-controls="team-bio-pedro" aria-describedby="team-bio-pedro">
-                <span class="team-index">04</span
-                ><img
+              <button class="team-photo" type="button" aria-label="Meet Pedro" aria-expanded="false" aria-controls="team-bio-pedro" aria-describedby="team-bio-pedro"><img
                   src="/images/pedro.png"
                   alt="Portrait of Pedro Kim"
                   width="1024"
@@ -1364,7 +1353,7 @@
           </div>
           <p class="sr-only" data-reel-status aria-live="polite" aria-atomic="true"></p>
         </div>
-        <a class="text-link instagram-profile" href="https://www.instagram.com/laboratoriokim/" target="_blank" rel="noopener noreferrer">Visit our Instagram <span aria-hidden="true">↗</span></a>
+        <a class="instagram-profile" href="https://www.instagram.com/laboratoriokim/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram"><span class="instagram-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></span><span class="instagram-handle" translate="no">@laboratoriokim</span></a>
       </section>
       <section
         id="contact"
@@ -1372,12 +1361,6 @@
         aria-labelledby="contact-title"
       >
         <div class="wrap">
-          <div class="section-topline reveal">
-            <span class="eyebrow"
-              ><span class="status-dot"></span> THE NEXT CHAPTER STARTS WITH
-              YOU</span
-            >
-          </div>
           <div class="contact-main">
             <h2 id="contact-title" class="reveal">
               Your next case.<br /><span>Our next collaboration.</span>
@@ -1391,9 +1374,8 @@
                 href="https://wa.me/551159048888?text=Hello%2C%20I%27m%20a%20dentist%20and%20I%27d%20like%20to%20discuss%20a%20case."
                 target="_blank"
                 rel="noopener noreferrer"
-                >Start a conversation
-                <span class="button-arrow" aria-hidden="true">↗</span></a
-              ><span class="contact-helper">FOR DENTISTS AND CLINICS</span>
+                >Start a conversation</a
+              >
               <p class="contact-context" id="contact-context" hidden></p>
             </div>
           </div>
@@ -1436,7 +1418,7 @@
               href="https://www.google.com/maps/search/?api=1&amp;query=Laborat%C3%B3rio+Kim+Rua+Correia+Dias+392+S%C3%A3o+Paulo"
               target="_blank"
               rel="noopener noreferrer"
-              >Get directions ↗</a
+              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Get directions</span></a
             >
           </address>
           <div class="footer-social">
@@ -1444,12 +1426,12 @@
               href="https://www.instagram.com/laboratoriokim/"
               target="_blank"
               rel="noopener noreferrer"
-              >Instagram ↗</a
+               aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a
             ><a
               href="https://www.linkedin.com/company/laboratoriokim"
               target="_blank"
               rel="noopener noreferrer"
-              >LinkedIn ↗</a
+               aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.5 18H6V9.5h2.5V18ZM7.25 8.3a1.45 1.45 0 1 1 0-2.9 1.45 1.45 0 0 1 0 2.9ZM18 18h-2.5v-4.2c0-1-.2-1.8-1.3-1.8s-1.5.8-1.5 1.8V18h-2.5V9.5h2.4v1.2h.1c.3-.6 1.1-1.4 2.3-1.4 2.5 0 3 1.6 3 3.7V18Z"/></svg><span>LinkedIn</span></a
             >
           </div>
         </div>
@@ -1462,7 +1444,7 @@
         </div>
       </div>
     </footer>
-    <a class="whatsapp-float" data-whatsapp="general" href="https://wa.me/551159048888" target="_blank" rel="noopener noreferrer" aria-label="Contact Kim on WhatsApp">
+    <a class="whatsapp-float button-glow" data-whatsapp="general" href="https://wa.me/551159048888" target="_blank" rel="noopener noreferrer" aria-label="Contact Kim on WhatsApp">
       <svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 .9A14.9 14.9 0 0 0 3.1 23.3L1 31l7.9-2.1A14.9 14.9 0 1 0 16 .9Zm0 27.3a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.7 1.2 1.3-4.6-.3-.5A12.3 12.3 0 1 1 16 28.2Zm6.8-9.2c-.4-.2-2.2-1.1-2.5-1.2-.4-.1-.6-.2-.9.2-.2.4-.9 1.2-1.1 1.4-.2.3-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.1-2.1-2.5-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.3 0-.5 0-.7l-1.2-2.8c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5s-1.3 1.2-1.3 3 1.3 3.5 1.5 3.8c.2.2 2.6 4 6.4 5.6.9.4 1.6.6 2.1.7.9.3 1.7.2 2.4.2.7-.2 2.2-.9 2.5-1.8s.3-1.7.2-1.8c-.1-.2-.3-.3-.7-.5Z"/></svg>
       <span>WhatsApp</span>
     </a>

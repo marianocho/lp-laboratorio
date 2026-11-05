@@ -273,5 +273,8 @@ export default {
   "Laboratório Kim on Instagram": "Instagram의 Laboratório Kim",
   "View publication {number}": "게시물 {number} 보기",
   "Publication {number} of {total}": "게시물 {number}/{total}",
-  "Instagram publication {number}": "Instagram 게시물 {number}"
+  "Instagram publication {number}": "Instagram 게시물 {number}",
+  "Get directions": "오시는 길",
+  "Instagram": "Instagram",
+  "LinkedIn": "LinkedIn"
 };

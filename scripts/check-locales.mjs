@@ -7,7 +7,7 @@ const html = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const decode = (value) => value.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
 const content = html.replace(/<(script|style|svg|select)\b[^>]*>[\s\S]*?<\/\1>/g, "");
 const messages = new Set();
-const add = (message) => { const key = decode(message); if (/[a-zA-Z]/.test(key)) messages.add(key); };
+const add = (message) => { const key = decode(message); if (key === "@laboratoriokim") return; if (/[a-zA-Z]/.test(key)) messages.add(key); };
 for (const match of content.matchAll(/>([^<]+)</g)) add(match[1]);
 for (const match of content.matchAll(/(?:aria-label|alt|title)="([^"]+)"/g)) add(match[1]);
 for (const match of content.matchAll(/<meta\b[^>]*(?:name="description"|property="og:(?:title|description)")[^>]*content="([^"]+)"/g)) add(match[1]);

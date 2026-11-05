@@ -163,3 +163,32 @@ Os embeds só carregam perto da seção e são reiniciados quando se deixa uma p
 - Palco de serviços com apenas uma imagem/descrição visível, sem contador/progresso/divisória; benefícios e contatos sem bordas inclusive no celular.
 - Quatro embeds carregados, seleção por setas, teclado, retorno circular e troca de idioma sem perder a publicação ativa.
 - Fallback sem JavaScript e movimento reduzido revisados no código; não foram emulados nesta etapa. A revisão não substitui testes com leitores de tela ou dentistas reais.
+
+
+## Navegação, transições e paleta — 5 de novembro de 2026
+
+O menu fixo e o WhatsApp recolhem ao descer e reaparecem após 12 px de movimento para cima. No início da página e durante a navegação por teclado ou com menu móvel aberto, os controles permanecem acessíveis. A posição do conteúdo não muda com a visibilidade do menu, preservando os cálculos dos palcos de serviços e tecnologia. A troca de idioma mantém o seletor nativo acessível, agora em uma cápsula sem sublinhado com bandeiras dos EUA, Brasil e Coreia do Sul junto aos nomes dos idiomas.
+
+Serviços, transformações, parceria e equipe têm uma sequência curta: título isolado no centro, redução para o tamanho do título de abertura, deslocamento para sua posição final à esquerda e entrada gradual do texto. A sequência usa 50% da altura da tela como percurso adicional, sem capturar a roda ou gestos. A animação é reversível. O título de tecnologia continua no fluxo comum. Janelas com altura de até 740 px e a preferência por movimento reduzido usam conteúdo normal, sem fixação. Os títulos são medidos a partir da tipografia e do conteúdo de cada idioma.
+
+Removidos os rótulos e números dos casos, observação abaixo das comparações, orientação sobre seleção de materiais, contador/progresso de tecnologia, abertura extra do contato e a legenda abaixo do CTA. Os oito serviços, três comparações, três capítulos técnicos, quatro pessoas e contatos originais permanecem. As divisórias gerais foram removidas; indicadores de seleção dos controles continuam visíveis.
+
+Os CTAs principais perderam as setas, ganharam peso e tamanho de fonte; o contato do menu e o WhatsApp usam o mesmo contorno luminoso fino. O Instagram abaixo do carrossel começa como um ícone roxo e se expande com o nome @laboratoriokim ao passar o mouse ou receber foco de teclado. Em dispositivos sem hover, o nome já aparece. O rodapé usa os ícones das redes e um pin no link de localização.
+
+### Fundamentação da cor e decisão visual
+
+- [Palmer e Schloss, PNAS (2010)](https://pmc.ncbi.nlm.nih.gov/articles/PMC2889342/): preferências de cor são relacionadas às associações afetivas com objetos. Isso não estabelece uma combinação universal que gere mais leads.
+- [Elliot, Frontiers in Psychology (2015)](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2015.00368/full): o contexto físico e psicológico influencia a interpretação das cores; a revisão destaca limites metodológicos e de aplicação.
+- [W3C, contraste mínimo](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html): contraste de luminância é necessário para a legibilidade; a recomendação é pelo menos 4,5:1 para texto normal e 3:1 para texto grande.
+
+A escolha editorial mantém preto e verde-menta (#b9dfc8), com rosa-orquídea claro (#e2b8d6) em resultados, parceria e pequenos detalhes. O tom rosado cria uma distinção visual diante do verde; é uma decisão de design, não uma promessa científica de conversão. O verde permanece ligado às ações e à tecnologia. Contrastes calculados contra preto: menta 14,45:1; orquídea 12,06:1; texto secundário #a0aaa4 8,78:1; texto principal #f4f3ef 18,91:1. Fotografias clínicas e logo oficial não foram recoloridos.
+
+### Verificação
+
+- `npm run check`, `npm run build`, `git diff --check`; 239 mensagens cobertas em português/coreano. IDs únicos, ARIA, âncoras e arquivos de imagem conferidos.
+- Navegador: 1440 × 900, 390 × 844 e 320 × 680. Sem excesso de largura observado; seletor e texto coreano conferidos na menor largura.
+- Transição isolada, movimento até o título de abertura, estado final e rolagem reversa; menu e WhatsApp ocultos na descida e visíveis na subida.
+- Tecnologia e troca de caso continuam funcionando depois da retirada dos contadores. Instagram expandido por foco de teclado, com destino oficial preservado.
+- Fallback sem JavaScript, preferência por movimento reduzido e regras de hover/touch revisados no código. Não foi feita emulação do sistema operacional nem teste com leitor de tela.
+
+Os números sobre os quatro retratos também foram removidos. A prévia compartilhável por túnel serve apenas a pasta compilada `dist/`, sem expor o repositório de trabalho.

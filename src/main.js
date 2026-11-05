@@ -359,10 +359,7 @@ const materials = [
   "CERAMIC / FORM AND EXPRESSION",
   "FINISHING / ATTENTION TO DETAIL",
 ];
-const counter = $("[data-step-count]");
-const visualCounter = $("[data-visual-number]");
 const materialLabel = $("[data-material-label]");
-const storyProgress = $(".story-progress i");
 const scan = $(".image-scan");
 const progress = $(".page-progress span");
 let activeStep = -1;
@@ -384,8 +381,6 @@ function setStoryStep(step) {
     if (index === step) button.setAttribute("aria-current", "step");
     else button.removeAttribute("aria-current");
   });
-  counter.textContent = `0${step + 1}`;
-  visualCounter.textContent = `0${step + 1} — 03`;
   materialLabel.textContent = t(materials[step]);
 }
 storyButtons.forEach((button) =>
@@ -394,7 +389,7 @@ storyButtons.forEach((button) =>
     manualStep = step;
     if (motion.matches || compact.matches) {
       setStoryStep(step);
-      storyProgress.style.transform = `scaleX(${(step + 1) / 3})`;
+
     } else {
       const top = parseFloat(getComputedStyle(sticky).top);
       const range = Math.max(
@@ -412,7 +407,69 @@ storyButtons.forEach((button) =>
     }
   }),
 );
+// A short native-scroll pause folds the chapter title into its introduction.
+const chapterMotion = matchMedia("(min-height: 741px) and (prefers-reduced-motion: no-preference)");
+const chapterSequences = $$("[data-chapter-sequence]").map((section) => ({
+  section,
+  scene: $(".chapter-scene", section),
+  title: $(".chapter-title h2", section),
+  copy: $(".section-heading", section),
+}));
+function updateChapterSequences() {
+  chapterSequences.forEach(({ section, scene, title, copy }) => {
+    if (!chapterMotion.matches) {
+      title.style.removeProperty("transform");
+      copy.style.removeProperty("opacity");
+      copy.style.removeProperty("--copy-y");
+      copy.removeAttribute("aria-hidden");
+      return;
+    }
+    const rect = section.getBoundingClientRect();
+    if (rect.top > innerHeight || rect.bottom < 0) return;
+    const progress = clamp(-rect.top / Math.max(1, rect.height - scene.offsetHeight));
+    const move = smooth((progress - .12) / .7);
+    const reveal = smooth((progress - .35) / .5);
+    const scale = parseFloat(getComputedStyle($("h2", copy)).fontSize) / parseFloat(getComputedStyle(title).fontSize);
+    const finalTop = copy.offsetTop - copy.offsetHeight / 2 - title.offsetHeight * scale - 24;
+    title.style.transform = `translate(${-title.offsetLeft * move}px, ${(finalTop - title.offsetTop) * move}px) scale(${1 + (scale - 1) * move})`;
+    copy.style.opacity = reveal;
+    copy.style.setProperty("--copy-y", `${24 * (1 - reveal)}px`);
+    copy.setAttribute("aria-hidden", String(reveal === 0));
+  });
+}
+chapterMotion.addEventListener("change", scheduleScroll);
+document.fonts.ready.then(scheduleScroll);
+
+// Hide reading chrome on downward scroll; a small deliberate upward movement restores it.
+let chromeAnchor = window.scrollY;
+let chromeDirection = 0;
+let lastChromeY = window.scrollY;
+function showReadingChrome() { document.body.classList.remove("chrome-hidden"); }
+function updateReadingChrome() {
+  const y = clamp(window.scrollY, 0, document.documentElement.scrollHeight - innerHeight);
+  const delta = y - lastChromeY;
+  const direction = Math.sign(delta);
+  if (direction && direction !== chromeDirection) {
+    chromeAnchor = lastChromeY;
+    chromeDirection = direction;
+  }
+  const keyboardFocus = header.querySelector(":focus-visible") || $(".whatsapp-float").matches(":focus-visible");
+  if (y < 120 || document.body.classList.contains("menu-open") || keyboardFocus) {
+    showReadingChrome();
+    chromeAnchor = y;
+  } else if (Math.abs(y - chromeAnchor) >= 12) {
+    document.body.classList.toggle("chrome-hidden", direction > 0);
+    chromeAnchor = y;
+  }
+  lastChromeY = y;
+}
+header.addEventListener("focusin", showReadingChrome);
+$(".whatsapp-float").addEventListener("focusin", showReadingChrome);
+menuButton.addEventListener("click", showReadingChrome);
+
 function updateScroll() {
+  updateChapterSequences();
+  updateReadingChrome();
   updateHeroStory();
   updateServiceScroll();
   const y = window.scrollY;
@@ -431,7 +488,7 @@ function updateScroll() {
   }
   if (motion.matches || compact.matches) {
     setStoryStep(manualStep);
-    storyProgress.style.transform = `scaleX(${(manualStep + 1) / 3})`;
+
   } else {
     const rect = story.getBoundingClientRect();
     if (rect.top < innerHeight && rect.bottom > 0) {
@@ -442,7 +499,7 @@ function updateScroll() {
       const step = Math.min(2, Math.floor(value * 3));
       const local = clamp(value * 3 - step);
       setStoryStep(step);
-      storyProgress.style.transform = `scaleX(${value})`;
+
       $("img", frames[step]).style.transform = `scale(${1.1 - local * 0.07})`;
       scan.style.top = `${local * 100}%`;
     }
